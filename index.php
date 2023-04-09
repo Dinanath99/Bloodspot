@@ -2,14 +2,14 @@
 <html>
 
 <head>
-    <title>Blood Bank Website</title>
+    <title>Bloodspot</title>
     <link rel="stylesheet" href="home.css">
 </head>
 
 <body>
     <header>
         <div class="container">
-            <h1>Blood Bank</h1>
+            <h1>Bloodspot</h1>
             <nav>
                 <ul>
                     <li><a href="#about">About Us</a></li>
@@ -100,6 +100,3 @@
 </body>
 
 </html>
-<style>
-    /* Add styles here */
-</style>
