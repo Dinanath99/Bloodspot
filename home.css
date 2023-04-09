@@ -46,6 +46,9 @@ nav li a:hover {
     color: #fff;
     padding: 100px 0;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #banner h2 {
@@ -55,14 +58,22 @@ nav li a:hover {
 #banner p {
     font-size: 1.2em;
     margin-bottom: 30px;
+    color: red;
+    font-size: 20px;
 }
 
 .btn {
     background-color: #990000;
     color: #fff;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 10px 20px;
     text-decoration: none;
+    width: 200px;
+    height: 50px;
+    border-radius: 400px;
+    margin: 20px;
 }
 
 .btn:hover {

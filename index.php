@@ -22,11 +22,16 @@
     </header>
 
     <section id="banner">
+
+        <!-- blood container section -->
         <div class="container">
-            <h2>Welcome to Blood Bank</h2>
-            <p>We are here to help you save lives by donating blood. Be a hero today and donate!</p>
-            <a href="#donate" class="btn">Donate Now</a>
+            <a href="donate.php" class="btn">Donate Now</a>
         </div>
+        <div class="container">
+            <a href="#donate" class="btn">Request blood</a>
+        </div>
+
+        <!-- Request blood container -->
     </section>
 
     <section id="about">
@@ -40,61 +45,9 @@
         </div>
     </section>
 
-    <section id="donors">
-        <div class="container">
-            <h3>Donors</h3>
-            <p>Donating blood is easy and can save lives. If you are interested in becoming a donor, please fill out the
-                form below and we will contact you to schedule an appointment.</p>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name"><br>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email"><br>
-
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone"><br>
-
-                <label for="blood-type">Blood Type:</label>
-                <select id="blood-type" name="blood-type">
-                    <option value="a+">A+</option>
-                    <option value="a-">A-</option>
-                    <option value="b+">B+</option>
-                    <option value="b-">B-</option>
-                    <option value="o+">O+</option>
-                    <option value="o-">O-</option>
-                    <option value="ab+">AB+</option>
-                    <option value="ab-">AB-</option>
-                </select><br>
-
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <h3>Contact Us</h3>
-            <p>If you have any questions or comments, please fill out the form below and we will get back to you as soon
-                as possible.</p>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name"><br>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email"><br>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message"></textarea><br>
-
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-    </section>
-
     <footer>
         <div class="container">
-            <p>&copy; 2023 Blood Bank. All rights reserved.</p>
+            <p>&copy; 2023 Bloodspot. All rights reserved.</p>
         </div>
     </footer>
 </body>
