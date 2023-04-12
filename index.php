@@ -35,20 +35,54 @@
     </section>
 
     <section id="about">
-        <div class="container">
-            <h3>About Us</h3>
-            <p>Blood Bank is a non-profit organization dedicated to saving lives by providing blood to those in need.
-                Our goal is to ensure that blood is available to everyone who needs it, when they need it.</p>
-            <p>We work with hospitals, medical centers, and blood banks to ensure that there is always an adequate
-                supply of blood. We also provide education and outreach to the community to promote the importance of
-                donating blood.</p>
+        <div class="bloodsection">
+            <div class="bgroup">
+                <a href="#">A-</a>
+                <a href="#">A+</a>
+                <a href="#">AB-</a>
+                <a href="#">AB+</a>
+                <a href="#">B-</a>
+                <a href="#">A+</a>
+                <a href="#">O-</a>
+                <a href="#">O-</a>
+            </div>
+
+
         </div>
     </section>
-
     <footer>
         <div class="container">
-            <p>&copy; 2023 Bloodspot. All rights reserved.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Follow us on social media</h3>
+                    <ul class="social-icons">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3>Contact us</h3>
+                    <form>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name">
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address">
+
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Enter your message"></textarea>
+
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
         </div>
+    </footer>
+
+    <div class="container">
+        <p>&copy; 2023 Bloodspot. All rights reserved.</p>
+    </div>
     </footer>
 </body>
 
