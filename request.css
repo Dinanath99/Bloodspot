@@ -1,0 +1,51 @@
+   /* Reset default form styles */
+   * {
+       box-sizing: border-box;
+   }
+
+   body {
+       font-family: Arial, sans-serif;
+       margin: 0;
+       padding: 0;
+   }
+
+   /* Container for form */
+   .container {
+       max-width: 400px;
+       margin: 0 auto;
+       padding: 20px;
+   }
+
+   /* Form styles */
+   h1 {
+       text-align: center;
+       margin-bottom: 20px;
+       color: red;
+   }
+
+   form {
+       background-color: #f0f0f0;
+       border-radius: 5px;
+       padding: 20px;
+   }
+
+   label,
+   input,
+   select,
+   textarea {
+       display: block;
+       margin-bottom: 10px;
+       width: 100%;
+   }
+
+   input[type="submit"] {
+       background-color: #ff2d2d;
+       color: #fff;
+       padding: 10px;
+       border: none;
+       cursor: pointer;
+   }
+
+   input[type="submit"]:hover {
+       background-color: #f00;
+   }

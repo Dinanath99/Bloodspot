@@ -46,7 +46,7 @@
             <a href="login.html" class="btn">Donate Now</a>
         </div>
         <div class="container">
-            <a href="#" class="btn">Request blood</a>
+            <a href="requestblood.html" class="btn">Request blood</a>
         </div>
 
         <!-- Request blood container -->
