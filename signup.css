@@ -1,5 +1,4 @@
-@import url(index.css);
-/* login.css */
+/* signup.css */
 
 /* Reset some default styles */
 body,
@@ -9,7 +8,7 @@ html {
     font-family: Arial, sans-serif;
 }
 
-/* Container for the login form */
+/* Container for the signup form */
 .container {
     max-width: 400px;
     margin: 50px auto;
@@ -36,6 +35,7 @@ label {
 
 /* Form input fields */
 input[type="text"],
+input[type="email"],
 input[type="password"] {
     width: 100%;
     padding: 10px;
@@ -91,7 +91,3 @@ a:hover {
 .footer-bottom {
     margin-top: 50px;
     padding: 10px;
-    text-align: center;
-    background-color: #f9f9f9;
-    border-top: 1px solid #ccc;
-}

@@ -14,9 +14,7 @@
 
     <section id="donors">
         <div class="container">
-            <h3>Donors</h3>
-            <p>Donating blood is easy and can save lives. If you are interested in becoming a donor, please fill out the
-                form below and we will contact you to schedule an appointment.</p>
+            <h3>Please send us your details</h3>
             <form>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name"><br>

@@ -43,7 +43,7 @@
 
         <!-- blood container section -->
         <div class="container">
-            <a href="#" class="btn">Donate Now</a>
+            <a href="login.html" class="btn">Donate Now</a>
         </div>
         <div class="container">
             <a href="#" class="btn">Request blood</a>
