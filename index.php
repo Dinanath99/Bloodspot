@@ -1,3 +1,9 @@
+<?php
+include('dbconn.php');
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +25,9 @@
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="img/bloodspot.png" alt="Bloodspot" />
+            <a href="http://localhost/bloodspot/index.php">
+                <img src="img/bloodspot.png" alt="Bloodspot" />
+            </a>
         </div>
         <ul class="nav-links">
             <li><a href="#">About us</a></li>
@@ -36,7 +44,7 @@
                 </ul>
             </li>
             <li><a href="#">Login</a></li>
-            <li class="sign-in"><a href="#">Admin</a></li>
+            <li class="sign-in"><a href="memberlogin.html">Admin</a></li>
             <li class="create-account">
                 <a href="#">Exchange Blood</a>
             </li>

@@ -12,6 +12,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 20px;
+    overflow: hidden;
+
 }
 
 /* Add sticky class to the navbar */
@@ -113,6 +115,7 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 .container {
