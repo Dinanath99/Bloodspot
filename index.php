@@ -5,13 +5,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bloodspot</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <style>
+
+    </style>
 </head>
 
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="logo.png" alt="Bloodspot" />
+            <img src="img/bloodspot.png" alt="Bloodspot" />
         </div>
         <ul class="nav-links">
             <li><a href="#">About us</a></li>
@@ -19,12 +27,12 @@
             <li>
                 <a href="#">Categories</a>
                 <ul class="dropdown">
-                    <li><a href="#">Business</a></li>
-                    <li><a href="#">Children</a></li>
-                    <li><a href="#">Technology</a></li>
-                    <li><a href="#">Fiction</a></li>
-                    <li><a href="#">Toy &amp; Games</a></li>
-                    <li><a href="#">Romance</a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
                 </ul>
             </li>
             <li><a href="#">Login</a></li>
@@ -84,19 +92,24 @@
                     <li><a href="#">Exchange Blood</a></li>
                 </ul>
             </div>
-            <div class="footer-social">
-                <ul>
-                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                </ul>
-            </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2023 Bloodspot. All rights reserved.</p>
+        <div class="footer-social">
+            <ul>
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
         </div>
     </footer>
-
+    <!-- Add your JavaScript code here if needed -->
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
+    <script>
+        // Toggle menu on click
+        document.querySelector('.menu-toggle').addEventListener('click', function () {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
 </body>
 
 </html>
