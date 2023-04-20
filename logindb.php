@@ -17,7 +17,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
 foreach ($value as $item) {
     if ($username === $item['username'] && $password === $item['password']) {
         $_SESSION['username'] = $username;
-        header("Location: admin.php");
+        header("Location:admin.php");
     }
 
 }

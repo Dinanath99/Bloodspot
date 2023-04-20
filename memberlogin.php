@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <?php include '.\navbar\navbar.php'; ?>
 
     <!-- Add the content for the "Donate Now" login page here -->
     <section id="login-form">

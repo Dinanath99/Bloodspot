@@ -1,9 +1,3 @@
-<?php
-include('dbconn.php');
-session_start();
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +38,7 @@ session_start();
                 </ul>
             </li>
             <li><a href="#">Login</a></li>
-            <li class="sign-in"><a href="memberlogin.html">Admin</a></li>
+            <li class="sign-in"><a href="memberlogin.php">Admin</a></li>
             <li class="create-account">
                 <a href="#">Exchange Blood</a>
             </li>
@@ -59,7 +53,7 @@ session_start();
 
         <!-- blood container section -->
         <div class="container">
-            <a href="login.html" class="btn">Donate Now</a>
+            <a href="login.php" class="btn">Donate Now</a>
         </div>
         <div class="container">
             <a href="requestblood.html" class="btn">Request blood</a>

@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Donate Now - Login</title>
     <link rel="stylesheet" href="signup.css" /> <!-- Include your CSS file here -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    
+    <?php include '.\navbar\navbar.php'; ?>
+
     <!-- Add the content for the "Donate Now" login page here -->
     <section id="login-form">
         <div class="container">
@@ -22,16 +25,17 @@
                 <input type="password" id="password" name="password" placeholder="Enter your password" required />
                 <span class="eye" id="toggle-Lpass" onclick="togglePassword()">
                     <i id="hideopen" class="fa-solid fa-eye" style="color: #849a9a;"></i>
-                    <i id="hideclose"  class="fa-solid fa-eye-slash" style="color: #849a9a;"></i>
+                    <i id="hideclose" class="fa-solid fa-eye-slash" style="color: #849a9a;"></i>
                 </span>
                 <input type="submit" value="Login" class="btn" />
             </form>
             <!-- <script src="validate.js"></script> -->
-            <p>Don't have an account? <a href="donorsignup.html">Sign up</a></p>
+            <p>Don't have an account? <a href="donorsignup.php">Sign up</a></p>
             <!-- Add a link to the signup page if needed -->
         </div>
     </section>
-    
+
 
 </body>
+
 </html>
