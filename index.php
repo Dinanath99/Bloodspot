@@ -6,14 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bloodspot</title>
     <link rel="stylesheet" href="./css/style.css" />
-    <!-- fonts -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <style>
 
-    </style>
 </head>
 
 <body>
@@ -56,7 +50,7 @@
             <a href="login.php" class="btn">Donate Now</a>
         </div>
         <div class="container">
-            <a href="requestblood.html" class="btn">Request blood</a>
+            <a href="login.php" class="btn">Request blood</a>
         </div>
 
         <!-- Request blood container -->
@@ -107,10 +101,10 @@
     <!-- Add your JavaScript code here if needed -->
     <script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
     <script>
-        // Toggle menu on click
-        document.querySelector('.menu-toggle').addEventListener('click', function () {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
+    // Toggle menu on click
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.toggle('active');
+    });
     </script>
 </body>
 

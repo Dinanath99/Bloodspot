@@ -17,7 +17,7 @@
     <!-- Add the content for the "Donate Now" login page here -->
     <section id="login-form">
         <div class="container">
-            <h1>Login to Donate</h1>
+            <h1>Login</h1>
             <form action="donordashboard.html" method="post">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" placeholder="Enter your username" />
@@ -30,7 +30,7 @@
                 <input type="submit" value="Login" class="btn" />
             </form>
             <!-- <script src="validate.js"></script> -->
-            <p>Don't have an account? <a href="donorsignup.php">Sign up</a></p>
+            <p>Don't have an account? <a href="signup.php">Sign up</a></p>
             <!-- Add a link to the signup page if needed -->
         </div>
     </section>
