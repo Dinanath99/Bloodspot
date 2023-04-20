@@ -15,13 +15,6 @@ session_start();
 
 <body>
 
-    <?php
-
-$un = $_SESSION['username'];
-if (!$username) {
-    header("Location:index.php");
-}
-?>
     <div class="sidebar">
         <h1>Admin Panel</h1>
         <ul>
@@ -30,7 +23,10 @@ if (!$username) {
             <li><a href="#">Blood Requests</a></li>
             <li><a href="#">Reports</a></li>
             <li><a href="#">Settings</a></li>
-            <li><a href="#">Logout</a></li>
+            <form action="logout.php" method="post">
+                <input type="submit" name="logout" value="logout" />
+            </form>
+            <!-- <li><a href="logout.php">Logout</a></li> -->
         </ul>
     </div>
     <div class="content">

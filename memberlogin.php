@@ -1,9 +1,3 @@
-<?php
-include('dbconn.php');
-session_start();
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,32 +14,16 @@ session_start();
     <section id="login-form">
         <div class="container">
             <h1>admin member login</h1>
-            <form method="post">
+            <form action="logindb.php" method="post">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" placeholder="Enter your username" required />
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password" required />
                 <input type="submit" name="sub" value="Login" class="btn" />
             </form>
-            <?php
-            if (isset($_POST['sub'])) {
-                $username = $_POST['username'];
-                $password = $_POST['password'];
-                $query = $dsn->prepare("SELECT *FROM admin WHERE username='$username' && password='$password'");
-                $query->execute();
-                $result = $query->fetchAll(PDO::FETCH_OBJ);
-                if ($result) {
-                    $_SESSION['username'] = $username;
-                    header("location:admin.php");
 
 
-                } else {
-                    echo "<script> alert('wrong user')</script>";
-                }
 
-            }
-
-            ?>
             <p>forget password? <a href="#">forget password</a></p>
             <!-- Add a link to the signup page if needed -->
         </div>
