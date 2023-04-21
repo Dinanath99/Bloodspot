@@ -42,7 +42,16 @@ input {
     margin-bottom: 15px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
-/*to set position for eye icon in pass field in login */
+
+.toggle-password{
+    position:relative;
+}
+.toggle-password i{
+    position:absolute;
+    right:10px;
+    top:29px;
+}
+/* to set position for eye icon in pass field in login
 #toggle-Lpass {
     position: absolute;
     right: 35%;
@@ -51,23 +60,20 @@ input {
     cursor: pointer;
 }
 
-/*to set position for eye icon in pass field*/
-#toggle-pass {
+to set position for eye icon in pass field*/
+/* #toggle-pass i{
     position: absolute;
-    right: 35%;
-    top: 84%;
-    transform: translateY(-50%);
+    right: 10px;
     cursor: pointer;
-}
+} */
 
-/*to set position for eye icon in cpass field*/
-#toggle-cpass {
+/*to set position for eye icon in cpass field */
+/* #toggle-cpass i{
     position: absolute;
-    right: 35%;
-    top: 104%;
-    transform: translateY(-50%);
+    right: 10px;
+    top : 29px;
     cursor: pointer;
-  }
+  }  */
 
 
 

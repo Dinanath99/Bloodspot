@@ -16,17 +16,36 @@
         <div class="container">
             <h1>Login to Donate</h1>
             <form action="donordashboard.html" method="post">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="Enter your username" />
+                <label for="name">Username</label>
+                <input type="text" id="name" name="name" placeholder="Enter your username" />
+                <div id="name-error" class="error-message"></div>
+
+                <div class="toggle-password" id="toggle-pass" ></span>
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password" required />
-                <span class="eye" id="toggle-Lpass" onclick="togglePassword()">
+                <span class="eye"  onclick="togglePassword()">
                     <i id="hideopen" class="fa-solid fa-eye" style="color: #849a9a;"></i>
                     <i id="hideclose"  class="fa-solid fa-eye-slash" style="color: #849a9a;"></i>
                 </span>
-                <input type="submit" value="Login" class="btn" />
+                </div>
+                <button type="submit" class="btn" />Login</button>
             </form>
-            <!-- <script src="validate.js"></script> -->
+            <script>
+                function togglePassword() {
+                   const x = document.getElementById('password');
+                   const show=document.getElementById('hideopen');
+                     const hide=document.getElementById('hideclose');
+                   if (x.type === "password") {
+                      x.type = "text";
+                      show.style.display="block";
+                  hide.style.display="none";    
+                       } else{
+                   x.type = "password";
+                show.style.display="none";
+                hide.style.display="block";   
+                }
+        }
+            </script>
             <p>Don't have an account? <a href="donorsignup.html">Sign up</a></p>
             <!-- Add a link to the signup page if needed -->
         </div>
