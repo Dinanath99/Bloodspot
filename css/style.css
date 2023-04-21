@@ -1,17 +1,32 @@
 /* Reset some default styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Comfortaa', sans-serif;
+    /* additional styles for body */
+}
+
+:root {
+    --background-color: #ff2d2d;
+    --font-color: #fff;
+    --link-hover: #f00;
+}
+
 /* Style for the navbar */
 .navbar {
-    background-color: #ff2d2d;
+    background-color: #CF1217;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 20px;
+    padding: 5px 5px;
     overflow: hidden;
 
 }
@@ -26,7 +41,7 @@
 .logo img {
     width: 100px;
     height: auto;
-    border-radius: 20px;
+    /* border-radius: 5px; */
 }
 
 .nav-links {
@@ -41,15 +56,15 @@
 }
 
 .nav-links a {
-    color: #fff;
+    color: var(--font-color);
     text-decoration: none;
     transition: color 0.3s ease;
     padding: 20px 20px;
-    font-size: 30px;
+    font-size: 18px;
 }
 
 .nav-links a:hover {
-    color: #f00;
+    color: var(--link-hover);
 }
 
 .dropdown {
@@ -57,7 +72,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #ff2d2d;
+    background-color: var(--background-color);
     padding: 10px;
 }
 
@@ -74,7 +89,7 @@
 }
 
 .dropdown a:hover {
-    color: #f00;
+    color: var(--link-hover);
 }
 
 .sign-in,

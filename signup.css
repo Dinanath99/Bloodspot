@@ -1,11 +1,10 @@
-/* signup.css */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
-/* Reset some default styles */
 body,
 html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Comfortaa', sans-serif;
 }
 
 /* Container for the signup form */
@@ -35,7 +34,7 @@ label {
 
 
 input {
-    width:95%;
+    width: 95%;
     padding: 10px;
     border-radius: 5px;
     border: none;
@@ -43,6 +42,7 @@ input {
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
+<<<<<<< HEAD
 .toggle-password{
     position:relative;
 }
@@ -52,6 +52,9 @@ input {
     top:29px;
 }
 /* to set position for eye icon in pass field in login
+=======
+/*to set position for eye icon in pass field in login */
+>>>>>>> 0a76be49c16502232c5bce98aa659bc2ba2da681
 #toggle-Lpass {
     position: absolute;
     right: 35%;
@@ -73,7 +76,11 @@ to set position for eye icon in pass field*/
     right: 10px;
     top : 29px;
     cursor: pointer;
+<<<<<<< HEAD
   }  */
+=======
+}
+>>>>>>> 0a76be49c16502232c5bce98aa659bc2ba2da681
 
 
 
@@ -132,6 +139,7 @@ a:hover {
     color: rgb(182, 35, 35);
 }
 
-#hideopen,#Chideopen{
-    display:none;
+#hideopen,
+#Chideopen {
+    display: none;
 }
