@@ -49,7 +49,7 @@
                 }
         }
             </script>
-            <p>Don't have an account? <a href="signup_user.php">Sign up</a></p>
+            <p>Don't have an account? <a href="signup.php">Sign up</a></p>
             <!-- Add a link to the signup page if needed -->
         </div>
     </section>

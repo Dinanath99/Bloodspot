@@ -12,13 +12,8 @@
 <body>
     <?php include '.\navbar\navbar.php'; ?>
     <div class="container">
-<<<<<<< HEAD:donorsignup.html
         <h1>Donor Signup</h1>
         <form id="form" action="signup_user.php" method="post"  >
-=======
-        <h1>Signup</h1>
-        <form id="form" action="login.php" method="post">
->>>>>>> 0a76be49c16502232c5bce98aa659bc2ba2da681:signup.php
 
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" placeholder="Full Name" />
