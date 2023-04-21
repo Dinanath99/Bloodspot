@@ -33,7 +33,6 @@
                 </div>
                 <button type="submit" class="btn" />Login</button>
             </form>
-<<<<<<< HEAD:login.html
             <script>
                 function togglePassword() {
                    const x = document.getElementById('password');
@@ -50,11 +49,7 @@
                 }
         }
             </script>
-            <p>Don't have an account? <a href="donorsignup.html">Sign up</a></p>
-=======
-            <!-- <script src="validate.js"></script> -->
-            <p>Don't have an account? <a href="signup.php">Sign up</a></p>
->>>>>>> 0a76be49c16502232c5bce98aa659bc2ba2da681:login.php
+            <p>Don't have an account? <a href="signup_user.php">Sign up</a></p>
             <!-- Add a link to the signup page if needed -->
         </div>
     </section>
