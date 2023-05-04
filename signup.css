@@ -32,10 +32,18 @@ label {
     font-size: 14px;
     margin-bottom: 5px;
 }
-
+/* signup success*/
+.message {
+    margin-top: 15px;
+    padding: 10px;
+    color:red;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
 
 input {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     border-radius: 5px;
     border: none;
@@ -53,32 +61,6 @@ input {
     top: 29px;
 }
 
-/* to set position for eye icon in pass field in login
-#toggle-Lpass {
-    position: absolute;
-    right: 35%;
-    top: 64%;
-    transform: translateY(-50%);
-    cursor: pointer;
-}
-
-to set position for eye icon in pass field*/
-/* #toggle-pass i{
-    position: absolute;
-    right: 10px;
-    cursor: pointer;
-} */
-
-/*to set position for eye icon in cpass field */
-/* #toggle-cpass i{
-    position: absolute;
-    right: 10px;
-    top : 29px;
-    cursor: pointer;
-  }  */
-
-
-
 /* Form submit button */
 .btn {
     display: block;
@@ -87,6 +69,7 @@ to set position for eye icon in pass field*/
     text-align: center;
     background-color: #ff2d2d;
     color: #fff;
+    font-family: 'Comfortaa', sans-serif;
     font-size: 16px;
     border: none;
     border-radius: 5px;

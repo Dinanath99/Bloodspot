@@ -1,3 +1,32 @@
+<?php
+session_start();
+include('dbconn.php');
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $query = "SELECT id, email, password FROM signup WHERE email = :email AND password = :password";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':password', $password);
+    $stmt->execute();
+
+    $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($value as $item) {
+        if ($email === $item['email'] && $password === $item['password']) {
+            $_SESSION['id'] = $item['id'];
+            header("Location:userdashboard.php");
+            exit;
+        } 
+    }
+     
+    if (!isset($_SESSION['id'])) {
+        $invalid = "Invalid Credentials!";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,15 +41,14 @@
 </head>
 
 <body>
-
     <!-- Add the content for the "Donate Now" login page here -->
     <section id="login-form">
         <div class="container">
             <h1>Login</h1>
-            <form action="userlogindb.php" method="post">
-                <label for="name">Username</label>
-                <input type="text" id="name" name="name" placeholder="Enter your username" />
-                <div id="name-error" class="error-message"></div>
+            <div class="message"><?php echo isset($invalid) ? $invalid : ''; ?></div>
+            <form action="#" method="post">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" />
 
                 <div class="toggle-password" id="toggle-pass"></span>
                     <label for="password">Password</label>
@@ -30,7 +58,7 @@
                         <i id="hideclose" class="fa-solid fa-eye-slash" style="color: #849a9a;"></i>
                     </span>
                 </div>
-                <input type="submit" name="sub" class="btn" value="login" />
+                <input type="submit" name="sub" class="btn"  value="Login" />
             </form>
             <script>
             function togglePassword() {
@@ -52,8 +80,5 @@
             <!-- Add a link to the signup page if needed -->
         </div>
     </section>
-
-
 </body>
-
 </html>

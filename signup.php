@@ -1,3 +1,32 @@
+<?php
+include('dbconn.php');
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $name=$_POST['name'];
+    $email=$_POST['email'];
+    $password=$_POST['password'];
+    $confirm_password=$_POST['confirm_password'];
+
+// Check if the email already exists in the database
+$stmt = $pdo->prepare('SELECT COUNT(*) FROM signup WHERE email = :email');
+$stmt->bindParam(':email', $email);
+$stmt->execute();
+$emailCount = $stmt->fetchColumn();
+if($emailCount>0){
+    $msg='Email already exit.';
+}
+else{
+    $stmt = $pdo->prepare('INSERT INTO signup(name,email,password,confirm_password) VALUES (:name,:email,:password,:confirm_password)');
+    $stmt -> bindParam(':name',$name);
+    $stmt -> bindParam(':email',$email);
+    $stmt -> bindParam(':password',$password);
+    $stmt -> bindParam(':confirm_password',$confirm_password);
+    if($stmt ->execute()){
+        $msg = 'Signup Successfully';
+    }
+    }
+   }
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -12,8 +41,9 @@
 <body>
 
     <div class="container">
-        <h1>Signup</h1>
-        <form id="form" action="signup_user.php" method="POST">
+        <h1>Donor Signup</h1>
+        <div class="message"><?php echo isset($msg) ? $msg : ''; ?></div>
+        <form id="form" action="#" method="post"  >
 
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" placeholder="Full Name" />
@@ -49,6 +79,4 @@
 
 
 </body>
-
-
 </html>
