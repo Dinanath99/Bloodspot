@@ -2,7 +2,7 @@
 include('dbconn.php');
 session_start();
 
-if (isset($_SESSION['fullname'])) {
+if (isset($_SESSION['id'])) {
     //if fullname is set then its redirect to userdashboard page 
 } else {
 
