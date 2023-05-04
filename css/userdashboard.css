@@ -224,13 +224,12 @@ input {
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
     margin: 40px;
     width: auto;
 }
 
 .blood_type .card {
-
+    flex-direction: wrap;
     width: 25%;
     margin: 8px;
     background: #fff;
@@ -276,6 +275,6 @@ input {
 }
 
 .blood_type.card i {
-    font-size: 22px;
+    font-size: 32px;
     padding: 10px;
 }

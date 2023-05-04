@@ -83,29 +83,60 @@ if (isset($_REQUEST['logout'])) {
             </div>
             <div class="blood_type">
                 <div class="card">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>O +</h3>
+                    <i class="fa-solid fa-droplet"></i>
+                    <h3>A +</h3>
                     <p>24 units</p>
                     <button>get started</button>
                 </div>
                 <div class="card">
-                    <i class="fas fa-wordpress"></i>
-                    <h3>O -</h3>
+                    <i class="fa-solid fa-droplet"></i>
+                    <h3>A -</h3>
                     <p>35 units</p>
                     <button>get started</button>
                 </div>
                 <div class="card">
-                    <i class="fas fa-palette"></i>
-                    <h3>A</h3>
-                    <p>25 Unit</p>
+                    <i class="fa-solid fa-droplet"></i>
+                    <h3>B+</h3>
+                    <p>25 Units</p>
                     <button>get started</button>
                 </div>
                 <div class="card">
-                    <i class="fas fa-app-store-ios"></i>
-                    <h3>A+</h3>
-                    <p>100 unit</p>
+                    <i class="fa-solid fa-droplet"></i>
+                    <h3>B-</h3>
+                    <p>100 units</p>
                     <button>get started</button>
                 </div>
+                <div class="card">
+                    <i class="fa-solid fa-droplet"></i>
+                    <h3>AB+</h3>
+                    <p>100 units</p>
+                    <button>get started</button>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-droplet"></i>
+                    <h3>AB-</h3>
+                    <p>100 units</p>
+                    <button>get started</button>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-droplet"></i>
+                    <h3>O+</h3>
+                    <p>100 units</p>
+                    <button>get started</button>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-droplet"></i>
+                    <h3>O-</h3>
+                    <p>100 units</p>
+                    <button>get started</button>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-droplet"></i>
+                    <h3>test</h3>
+                    <p>100 units</p>
+                    <button>get started</button>
+                </div>
+
             </div>
 
 
