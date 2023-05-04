@@ -221,17 +221,19 @@ input {
 
 .blood_type {
     display: flex;
-    justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 40px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
     width: auto;
+    height: auto;
 }
 
 .blood_type .card {
     flex-direction: wrap;
     width: 25%;
-    margin: 8px;
+    margin: 25px;
     background: #fff;
     text-align: center;
     border-radius: 20px;

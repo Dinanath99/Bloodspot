@@ -86,56 +86,51 @@ if (isset($_REQUEST['logout'])) {
                     <i class="fa-solid fa-droplet"></i>
                     <h3>A +</h3>
                     <p>24 units</p>
-                    <button>get started</button>
+                    <button>Request</button>
                 </div>
                 <div class="card">
                     <i class="fa-solid fa-droplet"></i>
                     <h3>A -</h3>
                     <p>35 units</p>
-                    <button>get started</button>
+                    <button>Request</button>
                 </div>
                 <div class="card">
                     <i class="fa-solid fa-droplet"></i>
                     <h3>B+</h3>
                     <p>25 Units</p>
-                    <button>get started</button>
+                    <button>Request</button>
                 </div>
                 <div class="card">
                     <i class="fa-solid fa-droplet"></i>
                     <h3>B-</h3>
                     <p>100 units</p>
-                    <button>get started</button>
+                    <button>Request</button>
                 </div>
                 <div class="card">
                     <i class="fa-solid fa-droplet"></i>
                     <h3>AB+</h3>
                     <p>100 units</p>
-                    <button>get started</button>
+                    <button>Request</button>
                 </div>
                 <div class="card">
                     <i class="fa-solid fa-droplet"></i>
                     <h3>AB-</h3>
                     <p>100 units</p>
-                    <button>get started</button>
+                    <button>Request</button>
                 </div>
                 <div class="card">
                     <i class="fa-solid fa-droplet"></i>
                     <h3>O+</h3>
                     <p>100 units</p>
-                    <button>get started</button>
+                    <button>Request</button>
                 </div>
                 <div class="card">
                     <i class="fa-solid fa-droplet"></i>
                     <h3>O-</h3>
                     <p>100 units</p>
-                    <button>get started</button>
+                    <button>Request</button>
                 </div>
-                <div class="card">
-                    <i class="fa-solid fa-droplet"></i>
-                    <h3>test</h3>
-                    <p>100 units</p>
-                    <button>get started</button>
-                </div>
+
 
             </div>
 
