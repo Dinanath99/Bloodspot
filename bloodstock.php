@@ -81,6 +81,34 @@ if (isset($_REQUEST['logout'])) {
                 <h1>Bood stock</h1>
                 <i class="fas fa-user-cog"></i>
             </div>
+            <div class="blood_type">
+                <div class="card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>O +</h3>
+                    <p>24 units</p>
+                    <button>get started</button>
+                </div>
+                <div class="card">
+                    <i class="fas fa-wordpress"></i>
+                    <h3>O -</h3>
+                    <p>35 units</p>
+                    <button>get started</button>
+                </div>
+                <div class="card">
+                    <i class="fas fa-palette"></i>
+                    <h3>A</h3>
+                    <p>25 Unit</p>
+                    <button>get started</button>
+                </div>
+                <div class="card">
+                    <i class="fas fa-app-store-ios"></i>
+                    <h3>A+</h3>
+                    <p>100 unit</p>
+                    <button>get started</button>
+                </div>
+            </div>
+
+
         </section>
     </div>
 </body>

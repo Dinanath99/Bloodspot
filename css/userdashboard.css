@@ -216,3 +216,54 @@ input {
 .btn:hover {
     background-color: #f00;
 }
+
+/* blood stock section */
+
+.blood_type {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.blood_type .card {
+    width: 25%;
+    margin: 10px;
+    background: #fff;
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 20px 35px rgba(95, 2, 2, 0.1);
+}
+
+.blood_type .card h3 {
+    width: auto;
+    margin: 10px;
+    text-transform: capitalize;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.blood_type p {
+    font-size: 20px;
+}
+
+.blood_type.card button {
+    background: orangered;
+    color: #fff;
+    padding: 7px 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.blood_type .card button:hover {
+    background-color: rgb(322, 145, 33, 355);
+}
+
+.blood_type.card i {
+    font-size: 22px;
+    padding: 10px;
+}

@@ -71,7 +71,7 @@
                 </div>
                 <h3>
                     Blood unit collected</h3>
-                <p></p>
+                <p>56</p>
             </div>
             <div class="sub-box">
                 <div class="sub-img">
