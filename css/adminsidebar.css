@@ -135,3 +135,27 @@ a:hover {
     color: white;
     cursor: pointer;
 }
+
+/* donor list table */
+.donor_table {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: auto;
+    height: auto;
+}
+
+table,
+th,
+td {
+    border: 1.25px solid hsl(0, 0%, 30%);
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+center {
+    margin: 50px;
+}

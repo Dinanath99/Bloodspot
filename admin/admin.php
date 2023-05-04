@@ -66,7 +66,7 @@ include('adminsession.php');
 
         <section class="main">
             <div class="main-top">
-                <h1>Admin panel</h1>
+                <h1>Bloodspot Admin Area</h1>
                 <i class="fas fa-user-cog"></i>
             </div>
         </section>

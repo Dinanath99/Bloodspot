@@ -28,7 +28,7 @@ include('adminsession.php');
             <ul>
                 <li><a href="admin.php" class="logo">
                         <img src="logo.png" alt="">
-                        <span class="nav-item">Blood donorlist</span>
+                        <span class="nav-item">Admin Panel</span>
                     </a></li>
                 <!-- <li><a href="#">
                         <i class="fas fa-home"></i>
@@ -66,8 +66,50 @@ include('adminsession.php');
 
         <section class="main">
             <div class="main-top">
-                <h1>Admin panel</h1>
+                <h1>Blood Donor list</h1>
                 <i class="fas fa-user-cog"></i>
+            </div>
+            <div class="donor_table">
+                <center>
+                    <table border="3">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Contact</th>
+                                <th>Date of Birth</th>
+                                <th>Gender</th>
+                                <th>Blood Group</th>
+                                <th>Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>John Smith</td>
+                                <td>john.smith@example.com</td>
+                                <td>(555) 555-1212</td>
+                                <td>1980-05-01</td>
+                                <td>Male</td>
+                                <td>O+</td>
+                                <td>123 Main St, Anytown USA</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Jane Doe</td>
+                                <td>jane.doe@example.com</td>
+                                <td>(555) 555-1313</td>
+                                <td>1985-07-15</td>
+                                <td>Female</td>
+                                <td>A-</td>
+                                <td>456 Oak St, Anycity USA</td>
+                            </tr>
+                            <!-- add more rows as needed -->
+                        </tbody>
+                    </table>
+                </center>
+
             </div>
         </section>
     </div>
