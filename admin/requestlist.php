@@ -41,7 +41,7 @@ include('adminsession.php');
                         <i class="fa-solid fa-layer-group"></i>
                         <span class="nav-item">blood stock</span>
                     </a></li>
-                <li><a href="requestlist.php">
+                <li><a href="#">
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Blood Request</span>
                     </a></li>
@@ -66,7 +66,7 @@ include('adminsession.php');
 
         <section class="main">
             <div class="main-top">
-                <h1>Blood Donor list</h1>
+                <h1>Blood Request list</h1>
                 <i class="fas fa-user-cog"></i>
             </div>
             <div class="donor_table">
@@ -82,6 +82,7 @@ include('adminsession.php');
                                 <th>Gender</th>
                                 <th>Blood Group</th>
                                 <th>Address</th>
+                                <th>Action </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -94,6 +95,16 @@ include('adminsession.php');
                                 <td>Male</td>
                                 <td>O+</td>
                                 <td>123 Main St, Anytown USA</td>
+                                <td>
+                                    <button class="btn btn-edit btn-for-row" title="Accept request">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+
+                                    <!-- passing current period of the row from the table to the 'delete_row.php' file -->
+                                    <button class="btn btn-del btn-for-row" title="Reject the request">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>2</td>
@@ -104,17 +115,18 @@ include('adminsession.php');
                                 <td>Female</td>
                                 <td>A-</td>
                                 <td>456 Oak St, Anycity USA</td>
+                                <td>
+                                    <button class="btn btn-edit btn-for-row" title="Accept request">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+
+                                    <!-- passing current period of the row from the table to the 'delete_row.php' file -->
+                                    <button class="btn btn-del btn-for-row" title="Reject the request">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
                             </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Jane Doe</td>
-                                <td>jane.doe@example.com</td>
-                                <td>(555) 555-1313</td>
-                                <td>1985-07-15</td>
-                                <td>Female</td>
-                                <td>A-</td>
-                                <td>456 Oak St, Anycity USA</td>
-                            </tr>
+
                             <!-- add more rows as needed -->
                         </tbody>
                     </table>
