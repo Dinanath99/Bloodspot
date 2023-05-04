@@ -52,7 +52,7 @@ if (isset($_REQUEST['logout'])) {
                         <i class="fa-solid fa-layer-group"></i>
                         <span class="nav-item">Request Blood</span>
                     </a></li>
-                <li><a href="#">
+                <li><a href="bloodstock.php">
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Blood stock</span>
                     </a></li>

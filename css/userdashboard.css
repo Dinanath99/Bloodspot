@@ -223,19 +223,31 @@ input {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    align-items: center;
     flex-wrap: wrap;
-    margin-top: 20px;
+    align-items: center;
+    margin: 40px;
+    width: auto;
 }
 
 .blood_type .card {
+
     width: 25%;
-    margin: 10px;
+    margin: 8px;
     background: #fff;
     text-align: center;
     border-radius: 20px;
-    padding: 10px;
-    box-shadow: 0 20px 35px rgba(95, 2, 2, 0.1);
+    padding: 20px;
+    transition: ease.50s;
+    cursor: pointer;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.blood_type .card:hover {
+    background: #ffffff;
+    box-shadow: 18px 0px 87px 0px rgba(118, 22, 22, 0.7);
+
+    border-radius: 12px;
+    transform: scale(1.1);
 }
 
 .blood_type .card h3 {
