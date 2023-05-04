@@ -70,7 +70,7 @@
                     <img src="img/drop.png" alt="image">
                 </div>
                 <h3>
-                    Blood Availability Search</h3>
+                    Blood unit collected</h3>
                 <p></p>
             </div>
             <div class="sub-box">
@@ -212,20 +212,20 @@
 
     <!-- link to javascript -->
     <script>
-    const header = document.querySelector("header");
-    window.addEventListener("scroll", function() {
-        header.classList.toggle("sticky", window.scrollY > 0);
-    });
-    let menu = document.querySelector('#menu-icon');
-    let navlist = document.querySelector('.navlist');
-    menu.onclick = () => {
-        menu.classList.toggle('bx-x');
-        navlist.classList.toggle('active');
-    };
-    window.onscroll = () => {
-        menu.classList.remove('bx-x');
-        navlist.classList.remove('active');
-    };
+        const header = document.querySelector("header");
+        window.addEventListener("scroll", function () {
+            header.classList.toggle("sticky", window.scrollY > 0);
+        });
+        let menu = document.querySelector('#menu-icon');
+        let navlist = document.querySelector('.navlist');
+        menu.onclick = () => {
+            menu.classList.toggle('bx-x');
+            navlist.classList.toggle('active');
+        };
+        window.onscroll = () => {
+            menu.classList.remove('bx-x');
+            navlist.classList.remove('active');
+        };
     </script>
 </body>
 
