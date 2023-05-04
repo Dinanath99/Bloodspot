@@ -156,6 +156,25 @@ td {
     padding: 10px;
 }
 
+th {
+    background-color: var(--main-color);
+    color: #d0d0d0;
+    padding: 7.5px 20px;
+    font-size: 1rem;
+}
+
+tr {
+    transition: all 300ms ease-out;
+}
+
+tr:nth-child(even) {
+    background-color: #e0e0e0;
+}
+
+table tr:hover {
+    background-color: hsl(203, 92%, 93%);
+}
+
 center {
     margin: 50px;
 }

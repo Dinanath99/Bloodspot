@@ -105,6 +105,16 @@ include('adminsession.php');
                                 <td>A-</td>
                                 <td>456 Oak St, Anycity USA</td>
                             </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Jane Doe</td>
+                                <td>jane.doe@example.com</td>
+                                <td>(555) 555-1313</td>
+                                <td>1985-07-15</td>
+                                <td>Female</td>
+                                <td>A-</td>
+                                <td>456 Oak St, Anycity USA</td>
+                            </tr>
                             <!-- add more rows as needed -->
                         </tbody>
                     </table>
