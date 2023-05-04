@@ -43,7 +43,7 @@ include('adminsession.php');
                     </a></li>
                 <li><a href="#">
                         <i class="fas fa-user"></i>
-                        <span class="nav-item">Blood Request</span>
+                        <span class="nav-item">Blood Requester</span>
                     </a></li>
                 <!-- <li><a href="#">
                         <i class="fas fa-tasks"></i>
@@ -53,10 +53,10 @@ include('adminsession.php');
                         <i class="fas fa-cog"></i>
                         <span class="nav-item">Setting</span>
                     </a></li> -->
-                <li><a href="#">
+                <!-- <li><a href="#">
                         <i class="fas fa-question-circle"></i>
                         <span class="nav-item">Help</span>
-                    </a></li>
+                    </a></li> -->
                 <li><a href="logoutadmin.php" class="logout">
                         <i class="fas fa-sign-out-alt"></i>
                         <span class="nav-item">Logout</span>
