@@ -28,7 +28,7 @@ include('adminsession.php');
             <ul>
                 <li><a href="admin.php" class="logo">
                         <img src="logo.png" alt="">
-                        <span class="nav-item">Admin Panel</span>
+                        <span class="nav-item">Blood donorlist</span>
                     </a></li>
                 <!-- <li><a href="#">
                         <i class="fas fa-home"></i>

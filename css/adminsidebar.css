@@ -98,3 +98,40 @@ a:hover {
     position: absolute;
     bottom: 10px;
 }
+
+
+
+/* main section started */
+
+
+.main {
+    position: relative;
+    margin-left: 0;
+    width: 100%;
+
+
+}
+
+.main-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: var(--main-color);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+    height: 75px;
+    color: white;
+
+}
+
+.main-top h1 {
+    text-align: right;
+}
+
+.main-top i {
+    position: absolute;
+    right: 0;
+    margin: 10px 30px;
+    color: white;
+    cursor: pointer;
+}
