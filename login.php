@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('dbconn.php');
-if($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
@@ -18,9 +18,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['id'] = $item['id'];
             header("Location:userdashboard.php");
             exit;
-        } 
+        }
     }
-     
+
     if (!isset($_SESSION['id'])) {
         $invalid = "Invalid Credentials!";
     }
@@ -45,7 +45,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <section id="login-form">
         <div class="container">
             <h1>Login</h1>
-            <div class="message"><?php echo isset($invalid) ? $invalid : ''; ?></div>
+            <div class="message">
+                <?php echo isset($invalid) ? $invalid : ''; ?>
+            </div>
             <form action="#" method="post">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email" />
@@ -58,8 +60,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <i id="hideclose" class="fa-solid fa-eye-slash" style="color: #849a9a;"></i>
                     </span>
                 </div>
-                <input type="submit" name="sub" class="btn"  value="Login" />
+                <input type="submit" name="sub" class="btn" value="Login" />
             </form>
+
             <script>
             function togglePassword() {
                 const x = document.getElementById('password');
@@ -78,7 +81,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             </script>
             <p>Don't have an account? <a href="signup.php">Sign up</a></p>
             <!-- Add a link to the signup page if needed -->
+            <div class="home_btn">
+                <a href="index.php"> <button>Back to home</button></a>
+            </div>
         </div>
     </section>
 </body>
+
 </html>
