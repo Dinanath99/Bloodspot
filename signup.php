@@ -10,10 +10,10 @@
 </head>
 
 <body>
-    <?php include '.\navbar\navbar.php'; ?>
+
     <div class="container">
-        <h1>Donor Signup</h1>
-        <form id="form" action="signup_user.php" method="post"  >
+        <h1>Signup</h1>
+        <form id="form" action="signup_user.php" method="POST">
 
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" placeholder="Full Name" />
@@ -22,8 +22,8 @@
             <input type="email" id="email" name="email" placeholder="Email Address" />
             <div id="email-error" class="error-message"></div>
             <span class="toggle-password" id="toggle-pass">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Password" />
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Password" />
                 <span class="eye" onclick="togglePassword()">
                     <i id="hideopen" class="fa-solid fa-eye" style="color: #849a9a;"></i>
                     <i id="hideclose" class="fa-solid fa-eye-slash" style="color: #849a9a;"></i>
@@ -31,23 +31,23 @@
             </span>
             <div id="password-error" class="error-message"></div>
             <span class="toggle-password" id="toggle-cpass">
-            <label for="confirm-password">Confirm Password</label>
-            <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm Password" />
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm Password" />
                 <span class="eye" onclick="toggleCPassword()">
                     <i id="Chideopen" class="fa-solid fa-eye" style="color: #849a9a;"></i>
                     <i id="Chideclose" class="fa-solid fa-eye-slash" style="color: #849a9a;"></i>
                 </span>
             </span>
             <div id="confirm-password-error" class="error-message"></div>
-            <button type="submit" class="btn">Sign up</button>
+            <input type="submit" class="btn" value="signup" />
         </form>
         <!-- <script src="sweetalert.js"></script> -->
         <script src="validate_signup.js"></script>
         <p>Already have an account? <a href="login.php">Login</a></p>
     </div>
-    <div class="footer-container">
-        <p class="footer-bottom">© 2023 Bloodspot. All Rights Reserved.</p>
-    </div>
+    <!-- including footer section -->
+
+
 </body>
 
 

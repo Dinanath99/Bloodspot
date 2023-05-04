@@ -78,55 +78,8 @@ if (isset($_REQUEST['logout'])) {
 
         <section class="main">
             <div class="main-top">
-                <h1>Request Blood</h1>
+                <h1>Bood stock</h1>
                 <i class="fas fa-user-cog"></i>
-            </div>
-            <div class="wrapper">
-                <h2>Blood Request Form <br>
-                    रगत चाहियो?</h2>
-                <form id="form" action="#" method="POST">
-
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" placeholder="Full Name" />
-                    <div id="name-error" class="error-message"></div>
-
-
-                    <label for=" email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="Email Address" />
-                    <div id="email-error" class="error-message"></div>
-
-                    <label for="phone">Contact Number </label>
-                    <input type="number" id="contact" name="contact" placeholder="Contact Number" />
-
-                    <label for="dob">Date of Birth:</label>
-                    <input type="date" id="dob" name="dob">
-                    <div class="gender">
-                        <label for="gender">Gender:</label>
-                        <select id="gender" name="gender">
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
-                        </select>
-
-                        <label for="blood-group">Blood Group:</label>
-                        <select id="blood-group" name="blood-group">
-                            <option value="A+">A+</option>
-                            <option value="A-">A-</option>
-                            <option value="B+">B+</option>
-                            <option value="B-">B-</option>
-                            <option value="AB+">AB+</option>
-                            <option value="AB-">AB-</option>
-                            <option value="O+">O+</option>
-                            <option value="O-">O-</option>
-                        </select>
-                    </div>
-
-                    <label for="address">Address:</label>
-                    <input type="text" id="address" name="address" placeholder="Adress" />
-
-                    <input type="submit" class="btn" value="submit" />
-                </form>
-
             </div>
         </section>
     </div>

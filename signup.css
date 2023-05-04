@@ -10,6 +10,7 @@ html {
 /* Container for the signup form */
 .container {
     max-width: 400px;
+    max-height: 600px;
     margin: 50px auto;
     padding: 20px;
     background-color: #f9f9f9;
@@ -42,14 +43,16 @@ input {
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
-.toggle-password{
-    position:relative;
+.toggle-password {
+    position: relative;
 }
-.toggle-password i{
-    position:absolute;
-    right:10px;
-    top:29px;
+
+.toggle-password i {
+    position: absolute;
+    right: 10px;
+    top: 29px;
 }
+
 /* to set position for eye icon in pass field in login
 #toggle-Lpass {
     position: absolute;

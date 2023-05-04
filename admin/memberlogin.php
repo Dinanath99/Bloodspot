@@ -5,11 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Donate Now - Login</title>
-    <link rel="stylesheet" href="login.css" /> <!-- Include your CSS file here -->
+    <link rel="stylesheet" href="../css/login.css" /> <!-- Include your CSS file here -->
 </head>
 
 <body>
-    <?php include '.\navbar\navbar.php'; ?>
 
     <!-- Add the content for the "Donate Now" login page here -->
     <section id="login-form">

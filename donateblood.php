@@ -52,7 +52,7 @@ if (isset($_REQUEST['logout'])) {
                         <i class="fa-solid fa-layer-group"></i>
                         <span class="nav-item">Request Blood</span>
                     </a></li>
-                <li><a href="bloodstock.php">
+                <li><a href="#">
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Blood stock</span>
                     </a></li>
@@ -74,16 +74,16 @@ if (isset($_REQUEST['logout'])) {
                     </a></li>
             </ul>
         </nav>
-        <!-- container section started for request blood -->
+
+        <!-- container section started for donate -->
 
         <section class="main">
             <div class="main-top">
-                <h1>Request Blood</h1>
+                <h1>Donate Blood</h1>
                 <i class="fas fa-user-cog"></i>
             </div>
             <div class="wrapper">
-                <h2>Blood Request Form <br>
-                    रगत चाहियो?</h2>
+                <h2>Please send us your details</h2>
                 <form id="form" action="#" method="POST">
 
                     <label for="name">Full Name</label>
@@ -124,8 +124,41 @@ if (isset($_REQUEST['logout'])) {
                     <label for="address">Address:</label>
                     <input type="text" id="address" name="address" placeholder="Adress" />
 
-                    <input type="submit" class="btn" value="submit" />
+                    <input type="submit" name="sub" class="btn" value="submit" />
                 </form>
+
+                <!--  php code for database  -->
+
+                <?php
+                if (isset($_POST['sub'])) {
+                    $name = $_POST['name'];
+                    $fname = $_POST['fname'];
+                    $address = $_POST['address'];
+                    $city = $_POST['city'];
+                    $age = $_POST['age'];
+                    $bgroup = $_POST['bgroup'];
+                    $email = $_POST['email'];
+                    $mno = $_POST['mno'];
+                    /* echo "<script>alert('clicked')</script>"; */
+                    $q = $db->prepare("INSERT INTO donor_registration(name,fname,address,city,age,bgroup,email,mno)
+                    VALUES(:name,:fname,:address,:city,:age,:bgroup,:email,:mno)");
+                    $q->bindvalue('name', $name);
+                    $q->bindvalue('fname', $fname);
+                    $q->bindvalue('address', $address);
+                    $q->bindvalue('city', $city);
+                    $q->bindvalue('age', $age);
+                    $q->bindvalue('bgroup', $bgroup);
+                    $q->bindvalue('email', $email);
+                    $q->bindvalue('mno', $mno);
+                    if ($q->execute()) {
+                        echo "<script>alert('donore register successfull')</script>";
+                    } else {
+                        echo "<script>alert('donore register failed')</script>";
+                    }
+                }
+
+                ?>
+
 
             </div>
         </section>
