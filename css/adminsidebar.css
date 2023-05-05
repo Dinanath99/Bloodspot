@@ -220,3 +220,69 @@ center {
 .btn-for-row {
     padding: 7.5px 16px !important;
 }
+
+/* blood stock for admin panel  */
+
+/* blood stock section */
+
+.blood_type {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: auto;
+    height: auto;
+}
+
+.blood_type .card {
+    flex-direction: wrap;
+    width: 25%;
+    margin: 25px;
+    background: #fff;
+    text-align: center;
+    border-radius: 20px;
+    padding: 20px;
+    transition: ease.50s;
+    cursor: pointer;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.blood_type .card:hover {
+    background: #ffffff;
+    box-shadow: 18px 0px 87px 0px rgba(118, 22, 22, 0.7);
+
+    border-radius: 12px;
+    transform: scale(1.1);
+}
+
+.blood_type .card h3 {
+    width: auto;
+    margin: 10px;
+    text-transform: capitalize;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.blood_type p {
+    font-size: 20px;
+}
+
+.blood_type.card button {
+    background: orangered;
+    color: #fff;
+    padding: 7px 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.blood_type .card button:hover {
+    background-color: rgb(322, 145, 33, 355);
+}
+
+.blood_type.card i {
+    font-size: 32px;
+    padding: 10px;
+}

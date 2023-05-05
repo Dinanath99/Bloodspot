@@ -37,7 +37,7 @@ include('adminsession.php');
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Donor list</span>
                     </a></li>
-                <li><a href="#">
+                <li><a href="bloodstock.php">
                         <i class="fa-solid fa-layer-group"></i>
                         <span class="nav-item">blood stock</span>
                     </a></li>

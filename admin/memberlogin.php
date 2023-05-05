@@ -21,10 +21,13 @@
                 <input type="password" id="password" name="password" placeholder="Enter your password" required />
                 <input type="submit" name="sub" value="Login" class="btn" />
             </form>
+            <div class="home_btn">
+                <a href="../index.php"> <button>Back to home</button></a>
+            </div>
 
 
 
-            <p>forget password? <a href="#">forget password</a></p>
+
             <!-- Add a link to the signup page if needed -->
         </div>
     </section>
