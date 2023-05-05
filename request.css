@@ -38,13 +38,28 @@
 
    label,
    input,
-   select,
    textarea {
        display: block;
        margin-bottom: 10px;
        width: 100%;
    }
-
+   #my-dropdown {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    appearance: none; /* Remove default appearance */
+    -webkit-appearance: none; /* Remove default appearance for webkit browsers */
+    background: url("down-arrow.svg") no-repeat right center; /* Add custom arrow */
+    background-size: 20px; /* Set arrow size */
+    cursor: pointer;
+  }
+  
+  #my-dropdown option {
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+  }
    input[type="submit"] {
        background-color: #ff2d2d;
        color: #fff;

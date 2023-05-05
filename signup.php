@@ -22,6 +22,7 @@ else{
     $stmt -> bindParam(':confirm_password',$confirm_password);
     if($stmt ->execute()){
         $msg = 'Signup Successfully';
+        header("Refresh: 1; url=login.php");
     }
     }
    }
@@ -69,7 +70,7 @@ else{
                 </span>
             </span>
             <div id="confirm-password-error" class="error-message"></div>
-            <input type="submit" class="btn" value="signup" />
+            <input type="submit" class="btn" value="Signup" />
         </form>
         <!-- <script src="sweetalert.js"></script> -->
         <script src="validate_signup.js"></script>

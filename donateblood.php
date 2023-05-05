@@ -2,7 +2,7 @@
 include('dbconn.php');
 session_start();
 
-if (isset($_SESSION['fullname'])) {
+if (isset($_SESSION['id'])) {
     //if fullname is set then its redirect to userdashboard page 
 } else {
 
@@ -84,7 +84,7 @@ if (isset($_REQUEST['logout'])) {
             </div>
             <div class="wrapper">
                 <h2>Please send us your details</h2>
-                <form id="form" action="#" method="POST">
+                <form id="form" action="donatedb.php" method="POST">
 
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" placeholder="Full Name" />
@@ -100,6 +100,10 @@ if (isset($_REQUEST['logout'])) {
 
                     <label for="dob">Date of Birth:</label>
                     <input type="date" id="dob" name="dob">
+
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" placeholder="Adress" />
+
                     <div class="gender">
                         <label for="gender">Gender:</label>
                         <select id="gender" name="gender">
@@ -108,8 +112,8 @@ if (isset($_REQUEST['logout'])) {
                             <option value="other">Other</option>
                         </select>
 
-                        <label for="blood-group">Blood Group:</label>
-                        <select id="blood-group" name="blood-group">
+                        <label for="blood_group">Blood Group:</label>
+                        <select id="blood_group" name="blood_group">
                             <option value="A+">A+</option>
                             <option value="A-">A-</option>
                             <option value="B+">B+</option>
@@ -120,9 +124,6 @@ if (isset($_REQUEST['logout'])) {
                             <option value="O-">O-</option>
                         </select>
                     </div>
-
-                    <label for="address">Address:</label>
-                    <input type="text" id="address" name="address" placeholder="Adress" />
 
                     <input type="submit" name="sub" class="btn" value="submit" />
                 </form>
