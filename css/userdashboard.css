@@ -52,9 +52,9 @@ nav {
 }
 
 .logo img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
+    width: 100px;
+    height: 65px;
+    border-radius: 0;
 }
 
 .logo span {

@@ -38,12 +38,12 @@ if (isset($_REQUEST['logout'])) {
         <nav>
             <ul>
                 <li><a href="userdashboard.php" class="logo">
-                        <img src="logo.png" alt="">
-                        <span class="nav-item">User Dashboard</span>
+                        <img src="./img/bloodspot.png" alt="">
+                        <span class="nav-item">Welcome<span class="username"> User</span></span>
                     </a></li>
                 <li><a href="index.php">
                         <i class="fas fa-home"></i>
-                        <span class="nav-item">Home</span> </a></li>
+                        <span class="nav-item">Back to Home</span> </a></li>
                 <li><a href="donateblood.php">
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Donate Blood</span>
