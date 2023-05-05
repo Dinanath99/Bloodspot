@@ -10,6 +10,7 @@ if (isset($_SESSION['id'])) {
     echo "<script>location.href='login.php'</script>";
 
 }
+
 // if admin click on logout then its unset the session and destory the session
 //and redirect to member login page
 if (isset($_REQUEST['logout'])) {
@@ -31,6 +32,7 @@ if (isset($_REQUEST['logout'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -130,40 +132,33 @@ if (isset($_REQUEST['logout'])) {
 
                 <!--  php code for database  -->
 
-                <?php
-                if (isset($_POST['sub'])) {
-                    $name = $_POST['name'];
-                    $fname = $_POST['fname'];
-                    $address = $_POST['address'];
-                    $city = $_POST['city'];
-                    $age = $_POST['age'];
-                    $bgroup = $_POST['bgroup'];
-                    $email = $_POST['email'];
-                    $mno = $_POST['mno'];
-                    /* echo "<script>alert('clicked')</script>"; */
-                    $q = $db->prepare("INSERT INTO donor_registration(name,fname,address,city,age,bgroup,email,mno)
-                    VALUES(:name,:fname,:address,:city,:age,:bgroup,:email,:mno)");
-                    $q->bindvalue('name', $name);
-                    $q->bindvalue('fname', $fname);
-                    $q->bindvalue('address', $address);
-                    $q->bindvalue('city', $city);
-                    $q->bindvalue('age', $age);
-                    $q->bindvalue('bgroup', $bgroup);
-                    $q->bindvalue('email', $email);
-                    $q->bindvalue('mno', $mno);
-                    if ($q->execute()) {
-                        echo "<script>alert('donore register successfull')</script>";
-                    } else {
-                        echo "<script>alert('donore register failed')</script>";
-                    }
-                }
-
-                ?>
-
-
             </div>
         </section>
     </div>
+    <?php
+    if (isset($_GET['success']) && $_GET['success'] == 1){
+ ?>
+    <script>
+    const Toast = Swal.mixin({
+       toast: true,
+       position: "top-end",
+       showConfirmButton: false,
+       timer: 3000,
+       timerProgressBar: true,
+       didOpen: (toast) => {
+         toast.addEventListener("mouseenter", Swal.stopTimer)
+         toast.addEventListener("mouseleave", Swal.resumeTimer)
+       }
+     })
+     
+     Toast.fire({
+       icon: "success",
+       title: "Data Submitted Successfully"
+     });
+    </script>
+    <?php
+ }
+ ?>
 </body>
 
 </html>

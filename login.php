@@ -46,7 +46,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="container">
             <h1>Login</h1>
             <div class="message">
-                <?php echo isset($invalid) ? $invalid : ''; ?>
+                <?php echo isset($invalid) ? $invalid : ''; 
+                ?>
             </div>
             <form action="#" method="post">
                 <label for="email">Email</label>
@@ -54,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 <div class="toggle-password" id="toggle-pass"></span>
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required />
+                    <input type="password" id="password" name="password" placeholder="Enter your password" />
                     <span class="eye" onclick="togglePassword()">
                         <i id="hideopen" class="fa-solid fa-eye" style="color: #849a9a;"></i>
                         <i id="hideclose" class="fa-solid fa-eye-slash" style="color: #849a9a;"></i>
@@ -78,6 +79,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     hide.style.display = "block";
                 }
             }
+
+
             </script>
             <p>Don't have an account? <a href="signup.php">Sign up</a></p>
             <!-- Add a link to the signup page if needed -->
