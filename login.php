@@ -41,6 +41,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
+    <!-- header section-->
+
+
     <!-- Add the content for the "Donate Now" login page here -->
     <section id="login-form">
         <div class="container">
@@ -64,20 +67,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </form>
 
             <script>
-            function togglePassword() {
-                const x = document.getElementById('password');
-                const show = document.getElementById('hideopen');
-                const hide = document.getElementById('hideclose');
-                if (x.type === "password") {
-                    x.type = "text";
-                    show.style.display = "block";
-                    hide.style.display = "none";
-                } else {
-                    x.type = "password";
-                    show.style.display = "none";
-                    hide.style.display = "block";
+                function togglePassword() {
+                    const x = document.getElementById('password');
+                    const show = document.getElementById('hideopen');
+                    const hide = document.getElementById('hideclose');
+                    if (x.type === "password") {
+                        x.type = "text";
+                        show.style.display = "block";
+                        hide.style.display = "none";
+                    } else {
+                        x.type = "password";
+                        show.style.display = "none";
+                        hide.style.display = "block";
+                    }
                 }
-            }
             </script>
             <p>Don't have an account? <a href="signup.php">Sign up</a></p>
             <!-- Add a link to the signup page if needed -->
