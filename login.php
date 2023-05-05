@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <!-- Add the content for the "Donate Now" login page here -->
     <section id="login-form">
         <div class="logo">
-            <img src="bloodspot.png" />
+            <a href="index.php"><img src="bloodspot.png" /> </a>
         </div>
         <div class="wrapper">
             <div class="log_img">
@@ -94,9 +94,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </script>
                 <p>Don't have an account? <a href="signup.php">Sign up</a></p>
                 <!-- Add a link to the signup page if needed -->
-                <div class="home_btn">
+                <!-- <div class="home_btn">
                     <a href="index.php"> <button>Back to home</button></a>
-                </div>
+                </div> -->
             </div>
 
         </div>
