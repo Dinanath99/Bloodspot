@@ -289,16 +289,19 @@
       margin: 8px 100px 25px;
   }
 
+  .request .btn_a {
+      margin-left: 75px;
+  }
 
   .request button {
 
       padding: 15px;
       /* margin: 10px; */
       /* margin: 8px 10px 10px; */
-      margin-left: 25px;
+      margin-left: 35px;
       border-radius: 20px;
       text-decoration: none;
-      font-size: 20px;
+      font-size: 15px;
       font-weight: 600;
       background-color: var(--main-color);
       transition: background-color 0.5s ease;

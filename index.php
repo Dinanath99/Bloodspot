@@ -120,7 +120,7 @@
                 Someone will get back to you asap. If it’s an emergency,
                 call us @ +977 9801230045 or msg us at Facebook</p>
 
-            <button><a href="#">Donate bloood</a></button>
+            <button class="btn_a"><a href="#">Donate bloood</a></button>
             <button><a href="#">Request bloood</a></button>
         </div>
     </section>
@@ -159,7 +159,7 @@
     <footer>
         <div class="links">
             <div class="short_description">
-                <img src="" alt="LOGO" />
+                <img src="./img/bloodspot.png" width="100px" alt="" />
                 <p>
                     BookEx is an online book echanging platform. The platform aids
                     readers to exchange their books with others.
