@@ -31,7 +31,7 @@ if (isset($_REQUEST['logout'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <body>
     <div class="container">
@@ -42,8 +42,8 @@ if (isset($_REQUEST['logout'])) {
                         <span class="nav-item">Welcome<span class="username"> User</span></span>
                     </a></li>
                 <li><a href="#">
-                        <i class="fas fa-home"></i>
-                        <span class="nav-item">Back to Home</span> </a></li>
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <span class="nav-item">History</span> </a></li>
                 <li><a href="donateblood.php">
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Donate Blood</span>
@@ -56,10 +56,10 @@ if (isset($_REQUEST['logout'])) {
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Blood stock</span>
                     </a></li>
-                <li><a href="#">
+                <!-- <li><a href="#">
                         <i class="fas fa-tasks"></i>
                         <span class="nav-item">Blood center</span>
-                    </a></li>
+                    </a></li> -->
                 <li><a href="#">
                         <i class="fas fa-cog"></i>
                         <span class="nav-item">Setting</span>

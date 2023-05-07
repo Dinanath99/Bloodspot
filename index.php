@@ -118,7 +118,7 @@
             <h2>रगत चाहियो?</h2>
             <p>Fill in the form and send us your details.
                 Someone will get back to you asap. If it’s an emergency,
-                call us @ +977 9801230045 or msg us at Facebook</p>
+                call us @ +977 123456789 or msg us at Facebook</p>
 
             <button class="btn_a"><a href="#">Donate bloood</a></button>
             <button><a href="#">Request bloood</a></button>
@@ -161,8 +161,8 @@
             <div class="short_description">
                 <img src="./img/bloodspot.png" width="100px" alt="" />
                 <p>
-                    BookEx is an online book echanging platform. The platform aids
-                    readers to exchange their books with others.
+                    BloodSpot is an online blood donation web app where people can donate and request blood.
+
                 </p>
             </div>
             <div class="quick_links">
@@ -179,11 +179,11 @@
             <div class="about_us">
                 <p class="sub_heading">About us</p>
                 <ul class="about_footer">
-                    <li><a href="#">My Account</a></li>
-                    <li><a href="#">Orders</a></li>
-                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">About Bloodspot</a></li>
+                    <li><a href="#">Donor login</a></li>
+                    <li><a href="#"> </a></li>
                     <li><a href="#">Privacy policy</a></li>
-                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#"> </a></li>
                 </ul>
             </div>
             <div class="social_media">
@@ -200,7 +200,7 @@
                         <a href="#" class="social-media-icon"><i class="fab fa-dribbble"></i></a>
                     </li>
                     <li>
-                        <a href="#" class="social-media-icon"><i class="fab fa-tiktok"></i></a>
+                        <!-- <a href="#" class="social-media-icon"><i class="fab fa-tiktok"></i></a> -->
                     </li>
                 </ul>
             </div>
@@ -212,20 +212,20 @@
 
     <!-- link to javascript -->
     <script>
-        const header = document.querySelector("header");
-        window.addEventListener("scroll", function () {
-            header.classList.toggle("sticky", window.scrollY > 0);
-        });
-        let menu = document.querySelector('#menu-icon');
-        let navlist = document.querySelector('.navlist');
-        menu.onclick = () => {
-            menu.classList.toggle('bx-x');
-            navlist.classList.toggle('active');
-        };
-        window.onscroll = () => {
-            menu.classList.remove('bx-x');
-            navlist.classList.remove('active');
-        };
+    const header = document.querySelector("header");
+    window.addEventListener("scroll", function() {
+        header.classList.toggle("sticky", window.scrollY > 0);
+    });
+    let menu = document.querySelector('#menu-icon');
+    let navlist = document.querySelector('.navlist');
+    menu.onclick = () => {
+        menu.classList.toggle('bx-x');
+        navlist.classList.toggle('active');
+    };
+    window.onscroll = () => {
+        menu.classList.remove('bx-x');
+        navlist.classList.remove('active');
+    };
     </script>
 </body>
 

@@ -42,8 +42,8 @@ if (isset($_REQUEST['logout'])) {
                         <span class="nav-item">Welcome<span class="username"> User</span></span>
                     </a></li>
                 <li><a href="index.php">
-                        <i class="fas fa-home"></i>
-                        <span class="nav-item">Back to Home</span> </a></li>
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <span class="nav-item">History</span> </a></li>
                 <li><a href="donateblood.php">
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Donate Blood</span>
@@ -56,10 +56,10 @@ if (isset($_REQUEST['logout'])) {
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Blood stock</span>
                     </a></li>
-                <li><a href="#">
+                <!-- <li><a href="#">
                         <i class="fas fa-tasks"></i>
                         <span class="nav-item">Blood center</span>
-                    </a></li>
+                    </a></li> -->
                 <li><a href="#">
                         <i class="fas fa-cog"></i>
                         <span class="nav-item">Setting</span>
