@@ -1,6 +1,3 @@
-@import url(index.css);
-/* login.css */
-
 /* Reset some default styles */
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
@@ -13,10 +10,50 @@ html {
     text-decoration: none;
 }
 
+/* wrapper section */
+#login-form {
+    position: relative;
+    margin: auto;
+
+}
+
+.logo img {
+    position: absolute;
+    top: 35px;
+    left: 50px;
+    height: 60px;
+    width: 95px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+}
+
+.log_img {
+    padding: 50px;
+}
+
+.log_img img {
+    max-width: 400px;
+    max-height: 600px;
+    /* background-color: #f9f9f9; */
+    /* border: 1px solid #ccc; */
+    /* border-radius: 5px; */
+    /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); */
+    background: white;
+}
+
 /* Container for the login form */
 .container {
-    max-width: 400px;
-    margin: 50px auto;
+    width: 500px;
+    max-height: 500px;
+    /* margin: 50px auto;  */
     padding: 20px;
     background-color: #f9f9f9;
     border: 1px solid #ccc;

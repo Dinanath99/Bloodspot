@@ -5,31 +5,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Donate Now - Login</title>
-    <link rel="stylesheet" href="../css/login.css" /> <!-- Include your CSS file here -->
+    <link rel="stylesheet" href="../css/adminlogin.css" /> <!-- Include your CSS file here -->
 </head>
 
 <body>
 
     <!-- Add the content for the "Donate Now" login page here -->
     <section id="login-form">
-        <div class="container">
-            <h1>admin member login</h1>
-            <form action="logindb.php" method="post">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="Enter your username" required />
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required />
-                <input type="submit" name="sub" value="Login" class="btn" />
-            </form>
-            <div class="home_btn">
-                <a href="../index.php"> <button>Back to home</button></a>
+        <!--  adding bakcground image -->
+        <div class="logo">
+            <a href="../index.php"><img src="../img/bloodspot.png" /> </a>
+        </div>
+        <div class="wrapper">
+            <div class="log_img">
+                <img src="../img/admincover.png" />
             </div>
 
+            <div class="container">
+                <h1>admin member login</h1>
+                <form action="logindb.php" method="post">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required />
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required />
+                    <input type="submit" name="sub" value="Login" class="btn" />
+                </form>
+                <div class="home_btn">
+                    <a href="../index.php"> <button>Back to home</button></a>
+                </div>
 
 
 
-            <!-- Add a link to the signup page if needed -->
-        </div>
+
+                <!-- Add a link to the signup page if needed -->
+            </div>
     </section>
 
 </body>
