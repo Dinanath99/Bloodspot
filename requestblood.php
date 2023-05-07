@@ -31,6 +31,7 @@ if (isset($_REQUEST['logout'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -84,12 +85,11 @@ if (isset($_REQUEST['logout'])) {
             <div class="wrapper">
                 <h2>Blood Request Form <br>
                     रगत चाहियो?</h2>
-                <form id="form" action="#" method="POST">
+                <form id="form" action="requestdb.php" method="POST">
 
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" placeholder="Full Name" />
+                    <label for="Pname">Patient Name</label>
+                    <input type="text" id="Pname" name="Pname" placeholder="Patient Name" />
                     <div id="name-error" class="error-message"></div>
-
 
                     <label for=" email">Email Address</label>
                     <input type="email" id="email" name="email" placeholder="Email Address" />
@@ -101,15 +101,15 @@ if (isset($_REQUEST['logout'])) {
                     <label for="dob">Date of Birth:</label>
                     <input type="date" id="dob" name="dob">
                     <div class="gender">
-                        <label for="gender">Gender:</label>
+                        <label for="gender">Gender</label>
                         <select id="gender" name="gender">
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                             <option value="other">Other</option>
                         </select>
 
-                        <label for="blood-group">Blood Group:</label>
-                        <select id="blood-group" name="blood-group">
+                        <label for="blood_group">Blood Group</label>
+                        <select id="blood_group" name="blood_group">
                             <option value="A+">A+</option>
                             <option value="A-">A-</option>
                             <option value="B+">B+</option>
@@ -120,9 +120,13 @@ if (isset($_REQUEST['logout'])) {
                             <option value="O-">O-</option>
                         </select>
                     </div>
+                    <label for="qty">Quantity</label>
+                    <input type="number" id="qty" name="qty" placeholder="Quantity">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" placeholder="Address" />
+                    <label for="message">Message</label>
+                    <input type="textarea" id="message" name="message"  />
 
-                    <label for="address">Address:</label>
-                    <input type="text" id="address" name="address" placeholder="Adress" />
 
                     <input type="submit" class="btn" value="submit" />
                 </form>
@@ -130,6 +134,30 @@ if (isset($_REQUEST['logout'])) {
             </div>
         </section>
     </div>
+    <?php
+     if (isset($_GET['success']) && $_GET['success'] == 1){
+ ?>
+    <script>
+    const Toast = Swal.mixin({
+       toast: true,
+       position: "top-end",
+       showConfirmButton: false,
+       timer: 2000,
+       timerProgressBar: true,
+       didOpen: (toast) => {
+         toast.addEventListener("mouseenter", Swal.stopTimer)
+         toast.addEventListener("mouseleave", Swal.resumeTimer)
+       }
+     })
+     
+     Toast.fire({
+       icon: "success",
+       title: "Data Submitted Successfully"
+     });
+    </script>
+    <?php
+ }
+ ?>
 </body>
 
 </html>

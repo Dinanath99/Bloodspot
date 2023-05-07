@@ -1,6 +1,17 @@
 <?php
 include('dbconn.php');
 include('adminsession.php');
+if(isset($_POST['update_status'])){
+    $donor_id=$_POST['donor_id'];
+    $status=$_POST['status'];
+     
+    $stmt= $pdo->prepare("UPDATE donatelist SET status= :status WHERE id= :donor_id");
+    $stmt->bindParam(':status',$status);
+    $stmt->bindParam(':donor_id',$donor_id);
+    $stmt->execute();
+}
+$stmt = $pdo->query('SELECT * FROM donatelist');
+$value = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -13,15 +24,14 @@ include('adminsession.php');
 
 
 
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
     <link rel="stylesheet" href="../css/adminsidebar.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+       
 </head>
-
 <body>
     <div class="container">
         <nav>
@@ -82,40 +92,47 @@ include('adminsession.php');
                                 <th>Gender</th>
                                 <th>Blood Group</th>
                                 <th>Address</th>
+                                <th>Time Stamp</th>
+                                <th>Status</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>John Smith</td>
-                                <td>john.smith@example.com</td>
-                                <td>(555) 555-1212</td>
-                                <td>1980-05-01</td>
-                                <td>Male</td>
-                                <td>O+</td>
-                                <td>123 Main St, Anytown USA</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Jane Doe</td>
-                                <td>jane.doe@example.com</td>
-                                <td>(555) 555-1313</td>
-                                <td>1985-07-15</td>
-                                <td>Female</td>
-                                <td>A-</td>
-                                <td>456 Oak St, Anycity USA</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Jane Doe</td>
-                                <td>jane.doe@example.com</td>
-                                <td>(555) 555-1313</td>
-                                <td>1985-07-15</td>
-                                <td>Female</td>
-                                <td>A-</td>
-                                <td>456 Oak St, Anycity USA</td>
-                            </tr>
-                            <!-- add more rows as needed -->
+            <?php foreach ($value as $item) { ?>
+            <tr>
+                <td><?php echo $item['id']?></td>
+                <td><?php echo $item['name']?></td>
+                <td><?php echo $item['email']?></td>
+                <td><?php echo $item['contact']?></td>
+                <td><?php echo $item['dob']?></td>
+                <td><?php echo $item['gender']?></td>
+                <td><?php echo $item['blood_group']?></td>
+                <td><?php echo $item['address']?></td>
+                <td><?php echo $item['timestamp']?></td>
+                <td>
+                <?php
+                  $status = $item['status'];
+                  if ($status == 'Accepted' || $status == "Rejected") {
+                      echo $status;
+                  }
+                 else {
+                    echo 'Pending';
+                  }
+                  ?>
+                </td>
+                <td>
+                    <form action = "" method = "POST" id="statusForm">
+                        <input type="hidden" name = "donor_id" value = "<?php echo $item['id'];?>">
+                        <select name="status" id="statusSelect">
+                            <option value="" disabled selected>Update</option>
+                            <option value="Accepted">Accept</option>
+                            <option value="Rejected">Reject</option>
+                            </select>
+                        <input type="submit" name="update_status" value="submit"/>
+            </form>       
+               </td>
+            </tr>
+            <?php } ?>
                         </tbody>
                     </table>
                 </center>
@@ -123,6 +140,30 @@ include('adminsession.php');
             </div>
         </section>
     </div>
+    <!-- <script>
+    function updateStatus(selectElement) {
+        var form = selectElement.parentNode;
+        form.submit();
+    }
+</script> -->
+<script>
+    // Get the select element
+    var statusSelect = document.getElementById('statusSelect');
+    
+    const statusForm = document.getElementById('statusForm');
+    statusForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+    })
+    // Attach an event listener to detect changes in the select element
+    statusSelect.addEventListener('change', function(e) {
+        e.preventDefault();
+        console.log(statusSelect.value);
+        // Submit the form when the selection changes
+console.log('changed');
+        document.getElementById('statusForm').submit();
+    });
+
+    </script>
 </body>
 
 </html>

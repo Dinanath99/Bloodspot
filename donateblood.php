@@ -127,7 +127,7 @@ if (isset($_REQUEST['logout'])) {
                         </select>
                     </div>
 
-                    <input type="submit" name="sub" class="btn" value="submit" />
+                    <input type="submit" name="sub" class="btn" value="Submit" />
                 </form>
 
                 <!--  php code for database  -->
