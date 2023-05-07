@@ -1,13 +1,13 @@
 <?php
 include('dbconn.php');
 include('adminsession.php');
-if(isset($_POST['update_status'])){
-    $donor_id=$_POST['donor_id'];
-    $status=$_POST['status'];
-     
-    $stmt= $pdo->prepare("UPDATE donatelist SET status= :status WHERE id= :donor_id");
-    $stmt->bindParam(':status',$status);
-    $stmt->bindParam(':donor_id',$donor_id);
+if (isset($_POST['update_status'])) {
+    $donor_id = $_POST['donor_id'];
+    $status = $_POST['status'];
+
+    $stmt = $pdo->prepare("UPDATE donatelist SET status= :status WHERE id= :donor_id");
+    $stmt->bindParam(':status', $status);
+    $stmt->bindParam(':donor_id', $donor_id);
     $stmt->execute();
 }
 $stmt = $pdo->query('SELECT * FROM donatelist');
@@ -30,19 +30,21 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-       
+
 </head>
+
 <body>
     <div class="container">
         <nav>
             <ul>
                 <li><a href="admin.php" class="logo">
-                        <img src="logo.png" alt="">
+                        <img src="../img/bloodspot.png" alt="">
                         <span class="nav-item">Admin Panel</span>
                     </a></li>
-                <!-- <li><a href="#">
-                        <i class="fas fa-home"></i>
-                        <span class="nav-item">Home</span> </a></li> -->
+                <li><a href="#">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <span class="nav-item">History</span>
+                    </a></li>
                 <li><a href="donorlist.php">
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Donor list</span>
@@ -63,10 +65,10 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <i class="fas fa-cog"></i>
                         <span class="nav-item">Setting</span>
                     </a></li> -->
-                <li><a href="#">
+                <!-- <li><a href="#">
                         <i class="fas fa-question-circle"></i>
                         <span class="nav-item">Help</span>
-                    </a></li>
+                    </a></li> -->
                 <li><a href="logoutadmin.php" class="logout">
                         <i class="fas fa-sign-out-alt"></i>
                         <span class="nav-item">Logout</span>
@@ -98,41 +100,58 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             </tr>
                         </thead>
                         <tbody>
-            <?php foreach ($value as $item) { ?>
-            <tr>
-                <td><?php echo $item['id']?></td>
-                <td><?php echo $item['name']?></td>
-                <td><?php echo $item['email']?></td>
-                <td><?php echo $item['contact']?></td>
-                <td><?php echo $item['dob']?></td>
-                <td><?php echo $item['gender']?></td>
-                <td><?php echo $item['blood_group']?></td>
-                <td><?php echo $item['address']?></td>
-                <td><?php echo $item['timestamp']?></td>
-                <td>
-                <?php
-                  $status = $item['status'];
-                  if ($status == 'Accepted' || $status == "Rejected") {
-                      echo $status;
-                  }
-                 else {
-                    echo 'Pending';
-                  }
-                  ?>
-                </td>
-                <td>
-                    <form action = "" method = "POST" id="statusForm">
-                        <input type="hidden" name = "donor_id" value = "<?php echo $item['id'];?>">
-                        <select name="status" id="statusSelect">
-                            <option value="" disabled selected>Update</option>
-                            <option value="Accepted">Accept</option>
-                            <option value="Rejected">Reject</option>
-                            </select>
-                        <input type="submit" name="update_status" value="submit"/>
-            </form>       
-               </td>
-            </tr>
-            <?php } ?>
+                            <?php foreach ($value as $item) { ?>
+                            <tr>
+                                <td>
+                                    <?php echo $item['id'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['name'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['email'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['contact'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['dob'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['gender'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['blood_group'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['address'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['timestamp'] ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        $status = $item['status'];
+                                        if ($status == 'Accepted' || $status == "Rejected") {
+                                            echo $status;
+                                        } else {
+                                            echo 'Pending';
+                                        }
+                                        ?>
+                                </td>
+                                <td>
+                                    <form action="" method="POST" id="statusForm">
+                                        <input type="hidden" name="donor_id" value="<?php echo $item['id']; ?>">
+                                        <select name="status" id="statusSelect">
+                                            <option value="" disabled selected>Update</option>
+                                            <option value="Accepted">Accept</option>
+                                            <option value="Rejected">Reject</option>
+                                        </select>
+                                        <input type="submit" name="update_status" value="submit" />
+                                    </form>
+                                </td>
+                            </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </center>
@@ -146,10 +165,10 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
         form.submit();
     }
 </script> -->
-<script>
+    <script>
     // Get the select element
     var statusSelect = document.getElementById('statusSelect');
-    
+
     const statusForm = document.getElementById('statusForm');
     statusForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -159,10 +178,9 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
         e.preventDefault();
         console.log(statusSelect.value);
         // Submit the form when the selection changes
-console.log('changed');
+        console.log('changed');
         document.getElementById('statusForm').submit();
     });
-
     </script>
 </body>
 
