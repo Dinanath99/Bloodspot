@@ -153,12 +153,13 @@ th,
 td {
     border: 1.25px solid hsl(0, 0%, 30%);
     border-collapse: collapse;
-    padding: 10px;
+    padding: 5px;
+    text-align: center;
 }
 
 th {
     background-color: var(--main-color);
-    color: #d0d0d0;
+    color: var(--bg-color);
     padding: 7.5px 20px;
     font-size: 1rem;
 }
