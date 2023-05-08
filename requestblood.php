@@ -44,7 +44,8 @@ if (isset($_REQUEST['logout'])) {
                     </a></li>
                 <li><a href="#">
                         <i class="fa-solid fa-clock-rotate-left"></i>
-                        <span class="nav-item">History</span> </a></li>
+                        <span class="nav-item">History</span>
+                    </a></li>
                 <li><a href="donateblood.php">
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Donate Blood</span>
@@ -137,25 +138,25 @@ if (isset($_REQUEST['logout'])) {
     <?php
     if (isset($_GET['success']) && $_GET['success'] == 1) {
         ?>
-    <script>
-    const Toast = Swal.mixin({
-        toast: true,
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 2000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-            toast.addEventListener("mouseenter", Swal.stopTimer)
-            toast.addEventListener("mouseleave", Swal.resumeTimer)
-        }
-    })
+        <script>
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener("mouseenter", Swal.stopTimer)
+                    toast.addEventListener("mouseleave", Swal.resumeTimer)
+                }
+            })
 
-    Toast.fire({
-        icon: "success",
-        title: "Data Submitted Successfully"
-    });
-    </script>
-    <?php
+            Toast.fire({
+                icon: "success",
+                title: "Data Submitted Successfully"
+            });
+        </script>
+        <?php
     }
     ?>
 </body>
