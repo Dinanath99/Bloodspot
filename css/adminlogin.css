@@ -60,7 +60,15 @@ html {
     border-radius: 5px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
-
+/*invalid credential*/
+.message {
+    margin-top: 15px;
+    padding: 10px;
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
 /* Form title */
 h1 {
     font-size: 24px;

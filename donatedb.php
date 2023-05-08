@@ -8,6 +8,8 @@ $gender = $_POST['gender'];
 $blood_group = $_POST['blood_group'];
 $address = $_POST['address'];
 $status = 'Pending';
+//  time zone to Asia/Kathmandu
+date_default_timezone_set('Asia/Kathmandu');
 $timestamp = date('Y-m-d H:i:s');
 
 $stmt = $pdo->prepare("INSERT INTO donatelist(name,email,contact,dob,gender,blood_group,address,status,timestamp)

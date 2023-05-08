@@ -102,33 +102,15 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <tbody>
                             <?php foreach ($value as $item) { ?>
                             <tr>
-                                <td>
-                                    <?php echo $item['id'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['name'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['email'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['contact'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['dob'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['gender'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['blood_group'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['address'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['timestamp'] ?>
-                                </td>
+                                <td><?php echo $item['id'] ?></td>
+                                <td><?php echo $item['name'] ?></td>
+                                <td><?php echo $item['email'] ?></td>
+                                <td><?php echo $item['contact'] ?></td>
+                                <td><?php echo $item['dob'] ?></td>
+                                <td><?php echo $item['gender'] ?></td>
+                                <td><?php echo $item['blood_group'] ?></td>
+                                <td><?php echo $item['address'] ?></td>
+                                <td><?php echo $item['timestamp'] ?></td>
                                 <td>
                                     <?php
                                         $status = $item['status'];
@@ -165,7 +147,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
         form.submit();
     }
 </script> -->
-    <script>
+    <!-- <script>
     // Get the select element
     var statusSelect = document.getElementById('statusSelect');
 
@@ -181,7 +163,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
         console.log('changed');
         document.getElementById('statusForm').submit();
     });
-    </script>
+    </script> -->
 </body>
 
 </html>

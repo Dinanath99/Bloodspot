@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bindParam(':email', $email);
     $stmt->execute();
     $emailCount = $stmt->fetchColumn();
-    if ($emailCount > 0) {
+   if ($emailCount > 0) {
         $msg = 'Email already exit.';
     } else {
         $stmt = $pdo->prepare('INSERT INTO signup(name,email,password,confirm_password) VALUES (:name,:email,:password,:confirm_password)');
@@ -20,7 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(':password', $password);
         $stmt->bindParam(':confirm_password', $confirm_password);
         if ($stmt->execute()) {
-            $msg = 'Signup Successfully';
+            $success = 1;
+            header("Refresh: 3; url=/Bloodspot/login.php");
         }
     }
 }
@@ -35,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -49,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <div class="container">
                 <h1>Donor Signup</h1>
-                <div class="message">
+                <div class="message" style="color:red;">
                     <?php echo isset($msg) ? $msg : ''; ?>
                 </div>
                 <form id="form" action="#" method="post">
@@ -89,7 +91,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         </div>
     </section>
+    <?php
+    if (isset($success) == 1 ){
+        ?>
+    <script>
+    const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 2500,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener("mouseenter", Swal.stopTimer)
+            toast.addEventListener("mouseleave", Swal.resumeTimer)
+        }
+    })
 
+    Toast.fire({
+        icon: "success",
+        title: "Signup Successfully"
+    });
+    </script>
+    <?php
+    }
+    ?>
 </body>
 
 </html>

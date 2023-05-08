@@ -1,3 +1,8 @@
+<?php
+    include('dbconn.php');
+   
+    @$invalid = $_GET['invalid'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,6 +28,9 @@
 
             <div class="container">
                 <h1>admin member login</h1>
+                <div class="message">
+                    <?php echo isset($invalid) ? $invalid : ''; ?>
+                </div>
                 <form action="logindb.php" method="post">
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username" placeholder="Enter your username" required />
