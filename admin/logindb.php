@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('dbconn.php');
+ @$invalid = $_GET['invalid'];
 
 $username = $_POST['username'];
 $password = $_POST['password'];

@@ -1,7 +1,7 @@
 <?php
 include('dbconn.php');
 include('adminsession.php');
-if (isset($_POST['update_status'])) {
+if (isset($_POST['donor_id']) && isset($_POST['status'])) {
     $donor_id = $_POST['donor_id'];
     $status = $_POST['status'];
 
@@ -9,6 +9,9 @@ if (isset($_POST['update_status'])) {
     $stmt->bindParam(':status', $status);
     $stmt->bindParam(':donor_id', $donor_id);
     $stmt->execute();
+
+    echo $status;
+    exit;
 }
 $stmt = $pdo->query('SELECT * FROM donatelist');
 $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -111,7 +114,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?php echo $item['blood_group'] ?></td>
                                 <td><?php echo $item['address'] ?></td>
                                 <td><?php echo $item['timestamp'] ?></td>
-                                <td>
+                                <td id="status-<?php echo $item['id']; ?>">
                                     <?php
                                         $status = $item['status'];
                                         if ($status == 'Accepted' || $status == "Rejected") {
@@ -122,15 +125,15 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         ?>
                                 </td>
                                 <td>
-                                    <form action="" method="POST" id="statusForm">
-                                        <input type="hidden" name="donor_id" value="<?php echo $item['id']; ?>">
-                                        <select name="status" id="statusSelect">
+                                    <!-- <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" id="statusForm"> -->
+                                        
+                                        <select name="status" onchange="updateStatus(this,<?php echo $item['id'];?>)">
                                             <option value="" disabled selected>Update</option>
                                             <option value="Accepted">Accept</option>
                                             <option value="Rejected">Reject</option>
                                         </select>
-                                        <input type="submit" name="update_status" value="submit" />
-                                    </form>
+                                        <!-- <input type="submit" name="update_status" value="submit" /> -->
+                                    <!-- </form> -->
                                 </td>
                             </tr>
                             <?php } ?>
@@ -141,29 +144,28 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </section>
     </div>
-    <!-- <script>
-    function updateStatus(selectElement) {
-        var form = selectElement.parentNode;
-        form.submit();
-    }
-</script> -->
-    <!-- <script>
-    // Get the select element
-    var statusSelect = document.getElementById('statusSelect');
+    <script>
+       function updateStatus(selectElement, donorId) {
+  var status = selectElement.value;
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', '<?php echo $_SERVER["PHP_SELF"]; ?>', true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+      // 
+      console.log(xhr.responseText);
 
-    const statusForm = document.getElementById('statusForm');
-    statusForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-    })
-    // Attach an event listener to detect changes in the select element
-    statusSelect.addEventListener('change', function(e) {
-        e.preventDefault();
-        console.log(statusSelect.value);
-        // Submit the form when the selection changes
-        console.log('changed');
-        document.getElementById('statusForm').submit();
-    });
-    </script> -->
+      // This will dynamically update the data in status cell 
+      var statusCell = document.getElementById('status-' + donorId);
+      statusCell.textContent = status;
+    }
+  };
+  xhr.send('donor_id=' + donorId + '&status=' + status);
+}
+
+
+    </script>
+   
 </body>
 
 </html>
