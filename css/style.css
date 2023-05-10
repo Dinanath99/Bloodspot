@@ -322,7 +322,7 @@
   /* footer section */
   footer .links {
       display: grid;
-      grid-template-columns: repeat(5, 2fr);
+      grid-template-columns: repeat(4, 2fr);
       align-items: center;
       column-gap: 8rem;
 
