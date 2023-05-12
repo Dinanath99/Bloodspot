@@ -4,21 +4,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $confirm_password = $_POST['confirm_password'];
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Check if the email already exists in the database
     $stmt = $pdo->prepare('SELECT COUNT(*) FROM signup WHERE email = :email');
     $stmt->bindParam(':email', $email);
     $stmt->execute();
     $emailCount = $stmt->fetchColumn();
-   if ($emailCount > 0) {
+    if ($emailCount > 0) {
         $msg = 'Email already exit.';
     } else {
-        $stmt = $pdo->prepare('INSERT INTO signup(name,email,password,confirm_password) VALUES (:name,:email,:password,:confirm_password)');
+        $stmt = $pdo->prepare('INSERT INTO signup(name,email,password) VALUES (:name,:email,:password)');
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':password', $password);
-        $stmt->bindParam(':confirm_password', $confirm_password);
+        $stmt->bindParam(':password', $hashed_password);
         if ($stmt->execute()) {
             $success = 1;
             header("Refresh: 3; url=/Bloodspot/login.php");

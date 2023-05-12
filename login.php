@@ -2,29 +2,27 @@
 session_start();
 include('dbconn.php');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
     $email = $_POST['email'];
     $password = $_POST['password'];
-
-    $query = "SELECT id, email, password FROM signup WHERE email = :email AND password = :password";
-    $stmt = $pdo->prepare($query);
+    if($email == '' || $password == ''){
+        $invalid = 'Fill all the field';
+    }else{
+    
+    $stmt = $pdo->prepare("SELECT * FROM signup WHERE email = :email");
     $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':password', $password);
     $stmt->execute();
-
-    $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    foreach ($value as $item) {
-        if ($email === $item['email'] && $password === $item['password']) {
-            $_SESSION['id'] = $item['id'];
-            header("Location:userdashboard.php");
-            exit;
-        }
-    }
-
-    if (!isset($_SESSION['id'])) {
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['id'] = $user['id'];
+        header("Location: userdashboard.php");
+        exit;
+    } else {
         $invalid = "Invalid Credentials!";
-    }
+    }}
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -66,8 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     <div class="toggle-password" id="toggle-pass"></span>
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="Enter your password"
-                            required />
+                        <input type="password" id="password" name="password" placeholder="Enter your password" />
                         <span class="eye" onclick="togglePassword()">
                             <i id="hideopen" class="fa-solid fa-eye" style="color: #849a9a;"></i>
                             <i id="hideclose" class="fa-solid fa-eye-slash" style="color: #849a9a;"></i>

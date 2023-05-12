@@ -114,6 +114,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?php echo $item['blood_group'] ?></td>
                                 <td><?php echo $item['address'] ?></td>
                                 <td><?php echo $item['timestamp'] ?></td>
+                            <!-- this code helps to update specific cell e.g status-2  -->
                                 <td id="status-<?php echo $item['id']; ?>">
                                     <?php
                                         $status = $item['status'];
@@ -152,7 +153,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-      // 
+      // yesley  databasema k aayo bhanera dekhaucha hai
       console.log(xhr.responseText);
 
       // This will dynamically update the data in status cell 
