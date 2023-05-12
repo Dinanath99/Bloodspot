@@ -99,13 +99,13 @@ if (isset($_REQUEST['logout'])) {
 
                     <label for="phone">Contact Number </label>
                     <input type="number" id="contact" name="contact" placeholder="Contact Number" />
+                    <div id="contact-error" class="error-message"></div>
 
                     <label for="dob">Date of Birth:</label>
                     <input type="date" id="dob" name="dob">
+                    <div id="dob-error" class="error-message"></div>
 
-                    <label for="address">Address:</label>
-                    <input type="text" id="address" name="address" placeholder="Adress" />
-
+                    
                     <div class="gender">
                         <label for="gender">Gender:</label>
                         <select id="gender" name="gender">
@@ -113,7 +113,7 @@ if (isset($_REQUEST['logout'])) {
                             <option value="female">Female</option>
                             <option value="other">Other</option>
                         </select>
-
+                        
                         <label for="blood_group">Blood Group:</label>
                         <select id="blood_group" name="blood_group">
                             <option value="A+">A+</option>
@@ -126,12 +126,15 @@ if (isset($_REQUEST['logout'])) {
                             <option value="O-">O-</option>
                         </select>
                     </div>
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" placeholder="Address" />
+                    <div id="addr-error" class="error-message"></div>
 
                     <input type="submit" name="sub" class="btn" value="Submit" />
                 </form>
 
                 <!--  php code for database  -->
-
+                <script src="donateblood.js"></script>
             </div>
         </section>
     </div>

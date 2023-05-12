@@ -3,10 +3,6 @@ const nameInput = document.getElementById('name');
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
 const confirmPasswordInput = document.getElementById('confirm-password');
-const nameError = document.getElementById('name-error');
-const emailError = document.getElementById('email-error');
-const passwordError = document.getElementById('password-error');
-const confirmPasswordError = document.getElementById('confirm-password-error');
 
 form.addEventListener('submit',function(event) {
     event.preventDefault();

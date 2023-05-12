@@ -96,11 +96,13 @@ if (isset($_REQUEST['logout'])) {
                     <input type="email" id="email" name="email" placeholder="Email Address" />
                     <div id="email-error" class="error-message"></div>
 
-                    <label for="phone">Contact Number </label>
+                    <label for="contact">Contact Number </label>
                     <input type="number" id="contact" name="contact" placeholder="Contact Number" />
+                    <div id="contact-error" class="error-message"></div>
 
                     <label for="dob">Date of Birth:</label>
                     <input type="date" id="dob" name="dob">
+                    <div id="dob-error" class="error-message"></div>
                     <div class="gender">
                         <label for="gender">Gender</label>
                         <select id="gender" name="gender">
@@ -123,15 +125,19 @@ if (isset($_REQUEST['logout'])) {
                     </div>
                     <label for="qty">Quantity</label>
                     <input type="number" id="qty" name="qty" placeholder="Quantity">
+                    <div id="qty-error" class="error-message"></div>
+
                     <label for="address">Address</label>
                     <input type="text" id="address" name="address" placeholder="Address" />
+                    <div id="addr-error" class="error-message"></div>
+
                     <label for="message">Message</label>
                     <input type="textarea" id="message" name="message" />
 
 
                     <input type="submit" class="btn" value="submit" />
                 </form>
-
+              <script src="reqblood.js"></script>
             </div>
         </section>
     </div>
