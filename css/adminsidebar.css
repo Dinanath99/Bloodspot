@@ -26,6 +26,7 @@
 
 body {
     background: var(--bg-color);
+    min-height: 100vh;
 }
 
 .container {
@@ -36,12 +37,13 @@ nav {
     position: relative;
     top: 0;
     bottom: 0;
-    height: 100vh;
+    min-height: 100vh;
     left: 0;
     background-color: #f9f9f9;
-    width: 280px;
+    width: auto;
     overflow: hidden;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    min-height: 100vh;
 }
 
 .logo {
@@ -138,14 +140,31 @@ a:hover {
 
 /* donor list table */
 .donor_table {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin: auto;
     width: auto;
-    height: auto;
+    height: auto; */
+
+
+    /* width: 82wh;
+    height: 90vh;
+    background-color: #fff5;
+    backdrop-filter: blur(45px);
+    box-shadow: 0 .4rem .8rem #005;
+    border-radius: 1rem;
+    overflow: auto; */
+
+
+    width: 100wh;
+    height: 90vh;
+    background-color: #fffb;
+    margin: .8rem auto;
+    border-radius: 6px;
+    overflow: auto;
 }
 
 table,
@@ -155,6 +174,8 @@ td {
     border-collapse: collapse;
     padding: 5px;
     text-align: center;
+    border-collapse: collapse;
+    width: 100%;
 }
 
 th {
@@ -162,6 +183,9 @@ th {
     color: var(--bg-color);
     padding: 7.5px 20px;
     font-size: 1rem;
+    position: sticky;
+    top: 0;
+    left: 0;
 }
 
 tr {
