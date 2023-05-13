@@ -78,8 +78,10 @@ a {
 
 a:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(27, 27, 27, .5);
+    box-shadow: 10px 2px 66px 0px rgba(219, 6, 6, 0.7);
     border-radius: 25px;
+    font-weight: bold;
+    color: var(--main-color);
 }
 
 a:visited {
