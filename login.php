@@ -5,22 +5,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $email = $_POST['email'];
     $password = $_POST['password'];
-    if($email == '' || $password == ''){
+    if ($email == '' || $password == '') {
         $invalid = 'Fill all the field';
-    }else{
-    
-    $stmt = $pdo->prepare("SELECT * FROM signup WHERE email = :email");
-    $stmt->bindParam(':email', $email);
-    $stmt->execute();
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-    if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['id'] = $user['id'];
-        header("Location: userdashboard.php");
-        exit;
     } else {
-        $invalid = "Invalid Credentials!";
-    }}
+
+        $stmt = $pdo->prepare("SELECT * FROM signup WHERE email = :email");
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user && password_verify($password, $user['password'])) {
+            $_SESSION['id'] = $user['id'];
+            header("Location: userdashboard.php");
+            exit;
+        } else {
+            $invalid = "Invalid Credentials!";
+        }
+    }
 }
 
 ?>
