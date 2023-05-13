@@ -114,7 +114,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?php echo $item['blood_group'] ?></td>
                                 <td><?php echo $item['address'] ?></td>
                                 <td><?php echo $item['timestamp'] ?></td>
-                            <!-- this code helps to update specific cell e.g status-2  -->
+                                <!-- this code helps to update specific cell e.g status-2  -->
                                 <td id="status-<?php echo $item['id']; ?>">
                                     <?php
                                         $status = $item['status'];
@@ -127,13 +127,13 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 </td>
                                 <td>
                                     <!-- <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" id="statusForm"> -->
-                                        
-                                        <select name="status" onchange="updateStatus(this,<?php echo $item['id'];?>)">
-                                            <option value="" disabled selected>Update</option>
-                                            <option value="Accepted">Accept</option>
-                                            <option value="Rejected">Reject</option>
-                                        </select>
-                                        <!-- <input type="submit" name="update_status" value="submit" /> -->
+
+                                    <select name="status" onchange="updateStatus(this,<?php echo $item['id'];?>)">
+                                        <option value="" disabled selected>Update</option>
+                                        <option class="accept" value="Accepted">Accept</option>
+                                        <option class="reject" value="Rejected">Reject</option>
+                                    </select>
+                                    <!-- <input type="submit" name="update_status" value="submit" /> -->
                                     <!-- </form> -->
                                 </td>
                             </tr>
@@ -146,27 +146,25 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </section>
     </div>
     <script>
-       function updateStatus(selectElement, donorId) {
-  var status = selectElement.value;
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', '<?php echo $_SERVER["PHP_SELF"]; ?>', true);
-  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-      // yesley  databasema k aayo bhanera dekhaucha hai
-      console.log(xhr.responseText);
+    function updateStatus(selectElement, donorId) {
+        var status = selectElement.value;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '<?php echo $_SERVER["PHP_SELF"]; ?>', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                // yesley  databasema k aayo bhanera dekhaucha hai
+                console.log(xhr.responseText);
 
-      // This will dynamically update the data in status cell 
-      var statusCell = document.getElementById('status-' + donorId);
-      statusCell.textContent = status;
+                // This will dynamically update the data in status cell 
+                var statusCell = document.getElementById('status-' + donorId);
+                statusCell.textContent = status;
+            }
+        };
+        xhr.send('donor_id=' + donorId + '&status=' + status);
     }
-  };
-  xhr.send('donor_id=' + donorId + '&status=' + status);
-}
-
-
     </script>
-   
+
 </body>
 
 </html>
