@@ -10,6 +10,7 @@ if (isset($_SESSION['id'])) {
     echo "<script>location.href='login.php'</script>";
 
 }
+
 // if admin click on logout then its unset the session and destory the session
 //and redirect to member login page
 if (isset($_REQUEST['logout'])) {
@@ -31,6 +32,7 @@ if (isset($_REQUEST['logout'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -74,69 +76,100 @@ if (isset($_REQUEST['logout'])) {
                     </a></li>
             </ul>
         </nav>
-        <!-- container section started for blood stock -->
+
+        <!-- container section started for donate -->
 
         <section class="main">
             <div class="main-top">
-                <h1>Bood stock</h1>
+                <h1>User History</h1>
                 <i class="fas fa-user-cog"></i>
             </div>
-            <div class="blood_type">
-                <div class="card">
-                    <i class="fa-solid fa-droplet"></i>
-                    <h3>A +</h3>
-                    <p>24 units</p>
-                    <button>Request</button>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-droplet"></i>
-                    <h3>A -</h3>
-                    <p>35 units</p>
-                    <button>Request</button>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-droplet"></i>
-                    <h3>B+</h3>
-                    <p>25 Units</p>
-                    <button>Request</button>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-droplet"></i>
-                    <h3>B-</h3>
-                    <p>100 units</p>
-                    <button>Request</button>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-droplet"></i>
-                    <h3>AB+</h3>
-                    <p>100 units</p>
-                    <button>Request</button>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-droplet"></i>
-                    <h3>AB-</h3>
-                    <p>100 units</p>
-                    <button>Request</button>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-droplet"></i>
-                    <h3>O+</h3>
-                    <p>100 units</p>
-                    <button>Request</button>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-droplet"></i>
-                    <h3>O-</h3>
-                    <p>100 units</p>
-                    <button>Request</button>
-                </div>
+            <div class="user-history">
+                <div class="donate-history">
+                    <h3>Donation History </h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th>Units Donated</th>
+                                <th>Total Donated</th>
+                                <th>Blood Group</th>
+                                <th>Lastly Donated</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dinanath</td>
+                                <td>pending</td>
+                                <td>5</td>
+                                <td>20</td>
+                                <td>A+</td>
+                                <td>2023-04-25</td>
+                            </tr>
+
+                            <!-- Add more rows for additional donors -->
+                        </tbody>
+                    </table>
 
 
+                </div>
+                <div class="request-history">
+                    <h3>Request History</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th>Unit</th>
+                                <th>Total Request</th>
+                                <th>Blood Group</th>
+                                <th>Request date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>John Doe</td>
+                                <td>pending</td>
+                                <td>5</td>
+                                <td>5</td>
+                                <td>A+</td>
+                                <td>2023-04-25</td>
+                            </tr>
+
+                            <!-- Add more rows for additional donors -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
-
 
         </section>
     </div>
+    <?php
+    if (isset($_GET['success']) && $_GET['success'] == 1) {
+        ?>
+    <script>
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener("mouseenter", Swal.stopTimer)
+                toast.addEventListener("mouseleave", Swal.resumeTimer)
+            }
+        })
+
+        Toast.fire({
+            icon: "success",
+            title: "Data Submitted Successfully"
+        });
+    </script>
+    <?php
+    }
+    ?>
 </body>
 
 </html>

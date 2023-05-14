@@ -308,3 +308,86 @@ input {
     margin-bottom: 5px;
     color: rgb(182, 35, 35);
 }
+
+/* history for donar and requester */
+
+/* donor list table */
+.user-history {
+    background-color: #fffb;
+    border-radius: 6px;
+    overflow: auto;
+    margin: 15px;
+    text-align: center;
+}
+
+.donate-history {
+    background: var(--bg-color);
+    margin: 50px;
+}
+
+.request-history {
+    background: var(--bg-color);
+    margin: 50px;
+}
+
+
+
+table,
+th,
+td {
+    padding: .5rem;
+    border-collapse: collapse;
+    border: 2px solid red;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+
+main.table {
+    width: auto;
+    height: auto;
+
+    backdrop-filter: blur(45px);
+    box-shadow: 0 .4rem .8rem rgb(95, 23, 23);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.table_header {
+    width: 100%;
+    height: 5%;
+    background-color: var(--bg-color);
+    padding: .8rem 1rem;
+    text-align: center;
+}
+
+.table_body {
+    width: 95%;
+    max-height: 89%;
+    background-color: #fffb;
+    margin: .8rem auto;
+    border-radius: 6px;
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: red;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #0000000b;
+}
+
+tbody tr:hover {
+    background-color: #fff6;
+}

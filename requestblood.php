@@ -42,7 +42,7 @@ if (isset($_REQUEST['logout'])) {
                         <img src="./img/bloodspot.png" alt="">
                         <span class="nav-item">Welcome<span class="username"> User</span></span>
                     </a></li>
-                <li><a href="#">
+                <li><a href="history.php">
                         <i class="fa-solid fa-clock-rotate-left"></i>
                         <span class="nav-item">History</span>
                     </a></li>
@@ -137,7 +137,7 @@ if (isset($_REQUEST['logout'])) {
 
                     <input type="submit" class="btn" value="submit" />
                 </form>
-              <script src="reqblood.js"></script>
+                <script src="reqblood.js"></script>
             </div>
         </section>
     </div>
