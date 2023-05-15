@@ -100,7 +100,7 @@ if (isset($_REQUEST['logout'])) {
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Dinanath</td>
+                                <td><img src="user.jpg" class="user-img"> Dinanath</td>
                                 <td>pending</td>
                                 <td>5</td>
                                 <td>20</td>
@@ -130,7 +130,7 @@ if (isset($_REQUEST['logout'])) {
                         </thead>
                         <tbody>
                             <tr>
-                                <td>John Doe</td>
+                                <td><img src="user.jpg" class="user-img"> John Doe</td>
                                 <td>pending</td>
                                 <td>5</td>
                                 <td>5</td>

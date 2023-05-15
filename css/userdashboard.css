@@ -376,6 +376,19 @@ table {
 
 }
 
+/* 
+.user-img {
+    margin: 5px;
+} */
+td img {
+    width: 45px;
+    height: 45px;
+    margin-right: .5rem;
+    border-radius: 50%;
+
+    vertical-align: middle;
+}
+
 thead th {
     position: sticky;
     top: 0;
