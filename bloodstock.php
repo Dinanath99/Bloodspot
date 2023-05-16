@@ -2,14 +2,14 @@
 include('dbconn.php');
 session_start();
 
-if (isset($_SESSION['user_id'])) {
-    //if fullname is set then its redirect to userdashboard page 
-} else {
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit();
+} 
+$stmt = $pdo->prepare('SELECT bloodGroup,qty FROM viewstock ');
+$stmt->execute();
+$bloodGroups = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    //else its redirect to user login page
-    echo "<script>location.href='login.php'</script>";
-
-}
 // if admin click on logout then its unset the session and destory the session
 //and redirect to member login page
 if (isset($_REQUEST['logout'])) {
@@ -82,59 +82,15 @@ if (isset($_REQUEST['logout'])) {
                 <i class="fas fa-user-cog"></i>
             </div>
             <div class="blood_type">
-                <div class="card">
-                    <i class="fa-solid fa-droplet"></i>
-                    <h3>A +</h3>
-                    <p>24 units</p>
-                    <button>Request</button>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-droplet"></i>
-                    <h3>A -</h3>
-                    <p>35 units</p>
-                    <button>Request</button>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-droplet"></i>
-                    <h3>B+</h3>
-                    <p>25 Units</p>
-                    <button>Request</button>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-droplet"></i>
-                    <h3>B-</h3>
-                    <p>100 units</p>
-                    <button>Request</button>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-droplet"></i>
-                    <h3>AB+</h3>
-                    <p>100 units</p>
-                    <button>Request</button>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-droplet"></i>
-                    <h3>AB-</h3>
-                    <p>100 units</p>
-                    <button>Request</button>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-droplet"></i>
-                    <h3>O+</h3>
-                    <p>100 units</p>
-                    <button>Request</button>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-droplet"></i>
-                    <h3>O-</h3>
-                    <p>100 units</p>
-                    <button>Request</button>
-                </div>
-
-
+            <?php foreach ($bloodGroups as $item){ ?>
+                    <div class="card">
+                        <i class="fa-solid fa-droplet"></i>
+                        <h3><?php echo $item['bloodGroup'] ?></h3>
+                        <p><?php echo $item['qty'] ?> units</p>
+                        <button>Request</button>
+                    </div>
+                <?php } ?>
             </div>
-
-
         </section>
     </div>
 </body>

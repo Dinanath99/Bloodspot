@@ -33,9 +33,9 @@
                 </div>
                 <form action="logindb.php" method="post">
                     <label for="username">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Enter your username" required />
+                    <input type="text" id="username" name="username" placeholder="Enter your username"  />
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required />
+                    <input type="password" id="password" name="password" placeholder="Enter your password"  />
                     <input type="submit" name="sub" value="Login" class="btn" />
                 </form>
                 <!-- <div class="home_btn">
