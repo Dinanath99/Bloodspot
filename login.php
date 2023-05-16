@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user && password_verify($password, $user['password'])) {
-            $_SESSION['id'] = $user['id'];
+            $_SESSION['user_id'] = $user['user_id'];
             header("Location: userdashboard.php");
             exit;
         } else {

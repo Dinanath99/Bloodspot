@@ -1,7 +1,7 @@
 <?php
 include('dbconn.php');
 include('adminsession.php');
-if (isset($_POST['donor_id']) && isset($_POST['status'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $donor_id = $_POST['donor_id'];
     $status = $_POST['status'];
 
@@ -9,8 +9,6 @@ if (isset($_POST['donor_id']) && isset($_POST['status'])) {
     $stmt->bindParam(':status', $status);
     $stmt->bindParam(':donor_id', $donor_id);
     $stmt->execute();
-
-    echo $status;
     exit;
 }
 $stmt = $pdo->query('SELECT * FROM donatelist');
@@ -103,9 +101,10 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($value as $item) { ?>
+                            <?php $count = 1;
+                            foreach ($value as $item) { ?>
                             <tr>
-                                <td><?php echo $item['id'] ?></td>
+                                <td><?php echo $count ?></td>
                                 <td><?php echo $item['name'] ?></td>
                                 <td><?php echo $item['email'] ?></td>
                                 <td><?php echo $item['contact'] ?></td>
@@ -137,7 +136,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <!-- </form> -->
                                 </td>
                             </tr>
-                            <?php } ?>
+                            <?php $count++;} ?>
                         </tbody>
                     </table>
                 </center>

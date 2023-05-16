@@ -1,6 +1,18 @@
 <?php
 include('dbconn.php');
 include('adminsession.php');
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $donor_id = $_POST['donor_id'];
+    $status = $_POST['status'];
+
+    $stmt = $pdo->prepare("UPDATE requestlist SET status= :status WHERE id= :donor_id");
+    $stmt->bindParam(':status', $status);
+    $stmt->bindParam(':donor_id', $donor_id);
+    $stmt->execute();
+    exit;
+}
+$stmt = $pdo->query('SELECT * FROM requestlist');
+$value = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -74,7 +86,7 @@ include('adminsession.php');
                 <center>
                     <table border="3">
                         <thead>
-                            <tr>
+                        <tr>
                                 <th>ID</th>
                                 <th>Full Name</th>
                                 <th>Email</th>
@@ -82,53 +94,50 @@ include('adminsession.php');
                                 <th>Date of Birth</th>
                                 <th>Gender</th>
                                 <th>Blood Group</th>
+                                <th>Quantity</th>
                                 <th>Address</th>
-                                <th>Action </th>
+                                <th>Time Stamp</th>
+                                <th>Message</th>
+                                <th>Status</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php 
+                            $count = 1;
+                            foreach ($value as $item) { ?>
                             <tr>
-                                <td>1</td>
-                                <td>John Smith</td>
-                                <td>john.smith@example.com</td>
-                                <td>(555) 555-1212</td>
-                                <td>1980-05-01</td>
-                                <td>Male</td>
-                                <td>O+</td>
-                                <td>123 Main St, Anytown USA</td>
+                                <td><?php echo $count ?></td>
+                                <td><?php echo $item['Pname'] ?></td>
+                                <td><?php echo $item['email'] ?></td>
+                                <td><?php echo $item['contact'] ?></td>
+                                <td><?php echo $item['dob'] ?></td>
+                                <td><?php echo $item['gender'] ?></td>
+                                <td><?php echo $item['blood_group'] ?></td>
+                                <td><?php echo $item['qty'] ?></td>
+                                <td><?php echo $item['address'] ?></td>
+                                <td><?php echo $item['timestamp'] ?></td>
+                                <td><?php echo $item['message'] ?></td>
+                                <!-- this code helps to update specific cell e.g status-2  -->
+                                <td id="status-<?php echo $item['id']; ?>">
+                                    <?php
+                                        $status = $item['status'];
+                                        if ($status == 'Accepted' || $status == "Rejected") {
+                                            echo $status;
+                                        } else {
+                                            echo 'Pending';
+                                        }
+                                        ?>
+                                </td>
                                 <td>
-                                    <button class="btn btn-edit btn-for-row" title="Accept request">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-
-                                    <!-- passing current period of the row from the table to the 'delete_row.php' file -->
-                                    <button class="btn btn-del btn-for-row" title="Reject the request">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
+                                    <select name="status" onchange="updateStatus(this,<?php echo $item['id'];?>)">
+                                        <option value="" disabled selected>Update</option>
+                                        <option class="accept" value="Accepted">Accept</option>
+                                        <option class="reject" value="Rejected">Reject</option>
+                                    </select>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Jane Doe</td>
-                                <td>jane.doe@example.com</td>
-                                <td>(555) 555-1313</td>
-                                <td>1985-07-15</td>
-                                <td>Female</td>
-                                <td>A-</td>
-                                <td>456 Oak St, Anycity USA</td>
-                                <td>
-                                    <button class="btn btn-edit btn-for-row" title="Accept request">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-
-                                    <!-- passing current period of the row from the table to the 'delete_row.php' file -->
-                                    <button class="btn btn-del btn-for-row" title="Reject the request">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
-
-                            <!-- add more rows as needed -->
+                            <?php $count++;} ?>
                         </tbody>
                     </table>
                 </center>
@@ -136,6 +145,26 @@ include('adminsession.php');
             </div>
         </section>
     </div>
+    <script>
+    function updateStatus(selectElement, donorId) {
+        var status = selectElement.value;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '<?php echo $_SERVER["PHP_SELF"]; ?>', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                // yesley  databasema k aayo bhanera dekhaucha hai
+                console.log(xhr.responseText);
+
+                // This will dynamically update the data in status cell 
+                var statusCell = document.getElementById('status-' + donorId);
+                statusCell.textContent = status;
+            }
+        };
+        xhr.send('donor_id=' + donorId + '&status=' + status);
+    }
+    </script>
+
 </body>
 
 </html>

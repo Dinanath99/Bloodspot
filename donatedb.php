@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'dbconn.php';
 $name = $_POST['name'];
 $email = $_POST['email'];
@@ -11,9 +12,10 @@ $status = 'Pending';
 //  time zone to Asia/Kathmandu
 date_default_timezone_set('Asia/Kathmandu');
 $timestamp = date('Y-m-d H:i:s');
+$u_id= $_SESSION['user_id'];
 
-$stmt = $pdo->prepare("INSERT INTO donatelist(name,email,contact,dob,gender,blood_group,address,status,timestamp)
-                    VALUES(:name,:email,:contact,:dob,:gender,:blood_group,:address,:status,:timestamp)");
+$stmt = $pdo->prepare("INSERT INTO donatelist(name,email,contact,dob,gender,blood_group,address,status,timestamp,u_id)
+                    VALUES(:name,:email,:contact,:dob,:gender,:blood_group,:address,:status,:timestamp,:u_id)");
 $stmt->bindParam(':name', $name);
 $stmt->bindParam(':email', $email);
 $stmt->bindParam(':contact', $contact);
@@ -23,9 +25,12 @@ $stmt->bindParam(':blood_group', $blood_group);
 $stmt->bindParam(':address', $address);
 $stmt->bindParam(':status', $status);
 $stmt->bindParam(':timestamp', $timestamp);
+$stmt->bindParam(':u_id', $u_id);
 if ($stmt->execute()) {
    // Redirect to form.php with success parameter
-   header('Location: donateblood.php?success=1');
+   // header('Location: donateblood.php?success=1');
+   header("Location: userdonatelist.php?user_id= $u_id");
+ 
    exit;
 } else {
    echo "<script>alert('donore register failed')</script>";
