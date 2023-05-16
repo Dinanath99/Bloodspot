@@ -41,7 +41,7 @@ if (isset($_REQUEST['logout'])) {
                         <img src="./img/bloodspot.png" alt="">
                         <span class="nav-item">Welcome<span class="username"> User</span></span>
                     </a></li>
-                <li><a href="#">
+                <li><a href="history.php">
                         <i class="fa-solid fa-clock-rotate-left"></i>
                         <span class="nav-item">History</span> </a></li>
                 <li><a href="donateblood.php">
