@@ -2,14 +2,10 @@
 include('dbconn.php');
 session_start();
 
-if (isset($_SESSION['user_id'])) {
-    //if fullname is set then its redirect to userdashboard page 
-} else {
-
-    //else its redirect to user login page
-    echo "<script>location.href='login.php'</script>";
-
-}
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit();
+} 
 // if admin click on logout then its unset the session and destory the session
 //and redirect to member login page
 if (isset($_REQUEST['logout'])) {

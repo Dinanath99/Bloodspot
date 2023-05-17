@@ -25,11 +25,17 @@ $stmt->bindParam(':address', $address);
 $stmt->bindParam(':message', $message);
 $stmt->bindParam(':status', $status);
 $stmt->bindParam(':timestamp', $timestamp);
-if ($stmt->execute()) {
+$stmt->execute();
+
+
+// Update the quantity in the blood stock table
+$StockStmt = $pdo->prepare("UPDATE viewstock SET qty = qty - $qty WHERE bloodGroup = :blood_group");
+$StockStmt->bindParam(':blood_group', $blood_group);
+// $StockStmt->execute();
+if ($StockStmt->execute()) {
    // Redirect to form.php with success parameter
-   header('Location: requestblood.php?success=1');
+   // header('Location: donateblood.php?success=1');
+   header("Location: user_requestlist.php?user_id= $u_id");
    exit;
-} else {
-   echo "<script>alert('donore register failed')</script>";
-}
+} 
 ?>

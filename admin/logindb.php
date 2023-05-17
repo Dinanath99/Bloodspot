@@ -1,31 +1,31 @@
 <?php
 session_start();
 include('dbconn.php');
- @$invalid = $_GET['invalid'];
 
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$query = ('SELECT *FROM admin');
-$stmt = $pdo->prepare($query);
-$stmt->execute();
-
-$value = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-// $org_username = $value[0]['username'];
-// $org_password = $value[0]['password'];
-
-foreach ($value as $item) {
-    if ($username === $item['username'] && $password === $item['password']) {
-        $_SESSION['username'] = $username;
-        header("Location:admin.php");
-    }
-
-}
-
-if (!isset($_SESSION['username'])) {
-    $invalid = "Invalid Credentials!";
+if($username == '' || $password == ''){
+    $invalid = "Fill all the field";
     header("Location:memberlogin.php?invalid= $invalid");
-    echo $invalid;
+} else{
+    $stmt = $pdo->prepare('SELECT *FROM admin');
+    $stmt->execute();
+    $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    foreach ($value as $item) {
+        if ($username === $item['username'] && $password === $item['password']) {
+            $_SESSION['username'] = $username;
+            header("Location:admin.php");
+            exit;
+        }
+    
+    }
+    
+    if (!isset($_SESSION['username'])) {
+        $invalid = "Invalid Credentials!";
+        header("Location:memberlogin.php?invalid= $invalid");
+    }
 }
+
 ?>
