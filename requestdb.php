@@ -34,8 +34,8 @@ $StockStmt->bindParam(':blood_group', $blood_group);
 // $StockStmt->execute();
 if ($StockStmt->execute()) {
    // Redirect to form.php with success parameter
-   // header('Location: donateblood.php?success=1');
-   header("Location: user_requestlist.php?user_id= $u_id");
+   header('Location: donateblood.php?success=1');
+   // header("Location: user_requestlist.php?user_id= $u_id");
    exit;
-} 
+}
 ?>
