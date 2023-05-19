@@ -153,10 +153,24 @@ if (isset($_REQUEST['logout'])) {
     Toast.fire({
         icon: "success",
         title: "Data Submitted Successfully"
+        //  title: "Data Not Submitted Successfully"
+
     });
     </script>
-    <?php
-    }
+    <!-- <?php
+    } elseif (isset($_GET['success']) && $_GET['success'] == 0) {?>
+        <script>
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "You cannot donate more than once a month",
+                buttonsStyling: false,
+                customClass: {
+            confirmButton: "swal-btn-red" // Custom CSS class for confirm button
+        }
+            });
+        </script> -->
+   <?php }
     ?>
 </body>
 
