@@ -3,14 +3,30 @@ include('dbconn.php');
 include('adminsession.php');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $donor_id = $_POST['donor_id'];
-    $status = $_POST['status'];
 
-    $stmt = $pdo->prepare("UPDATE donatelist SET status= :status WHERE id= :donor_id");
-    $stmt->bindParam(':status', $status);
-    $stmt->bindParam(':donor_id', $donor_id);
-    $stmt->execute();
-    exit;
+    if(isset($_POST['status'])){
+        $status = $_POST['status'];
+        $stmt = $pdo->prepare("UPDATE donatelist SET status = :status WHERE id = :donor_id");
+        $stmt->bindParam(':status', $status);
+        $stmt->bindParam(':donor_id', $donor_id);
+        $stmt->execute();
+    }
+    
+    if(isset($_POST['bank'])){
+        $bloodbank = $_POST['bank'];
+        // Increase quantity by 1 if the donor visited
+        if ($bloodbank == 'Visited') {
+            $stmt = $pdo->prepare("UPDATE viewstock SET qty = qty + 1 WHERE bloodGroup = :blood_group");
+            $stmt->bindParam(':blood_group', $item['blood_group']);
+            $stmt->execute();
+        }
+        $stmt = $pdo->prepare("UPDATE donatelist SET bloodbank = :bloodbank WHERE id = :donor_id");
+        $stmt->bindParam(':bloodbank', $bloodbank);
+        $stmt->bindParam(':donor_id', $donor_id);
+        $stmt->execute();
+    }
 }
+
 $stmt = $pdo->query('SELECT * FROM donatelist');
 $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -98,6 +114,8 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <th>Time Stamp</th>
                                 <th>Status</th>
                                 <th>Action</th>
+                                <th>Visit Status</th>
+                                <th>BloodBank</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -135,6 +153,24 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <!-- <input type="submit" name="update_status" value="submit" /> -->
                                     <!-- </form> -->
                                 </td>
+                                <td id="bank-<?php echo $item['id']; ?>">
+                                    <?php
+                                        $status = $item['bloodbank'];
+                                        if ($status == 'Visited') {
+                                            echo $status;
+                                        } else {
+                                            echo 'Not Visited';
+                                        }
+                                        ?>
+                                </td>
+                                <td>
+                                <select name="bank" onchange="updatebank(this,<?php echo $item['id'];?>)">
+                                        <!-- <option value="" disabled selected>Not Visited</option> -->
+                                        <option  value="Not Visited">Not Visited</option>
+                                        <option value="Visited">Visit</option>
+                                    </select>
+                                    </td>
+                                 
                             </tr>
                             <?php $count++;} ?>
                         </tbody>
@@ -162,7 +198,28 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
         };
         xhr.send('donor_id=' + donorId + '&status=' + status);
     }
+
+    function updatebank(selectElement, donorId) {
+        var bank = selectElement.value;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '<?php echo $_SERVER["PHP_SELF"]; ?>', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                // yesley  databasema k aayo bhanera dekhaucha hai
+                console.log(xhr.responseText);
+
+                // This will dynamically update the data in bank cell 
+                var statusCell = document.getElementById('bank-' + donorId);
+                statusCell.textContent = bank;
+            }
+        };
+        xhr.send('donor_id=' + donorId + '&bank=' + bank);
+    }
     </script>
+    
+   
+
 
 </body>
 

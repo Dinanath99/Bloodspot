@@ -8,13 +8,6 @@ const address=document.getElementById('address');
 
 form.addEventListener('submit',function(e){
     e.preventDefault();
-    
-    // const nameError = document.getElementById('name-error');
-    // const emailError = document.getElementById('email-error');
-    // const phoneError = document.getElementById('contact-error');
-    // const dobError = document.getElementById('dob-error');
-    // const qtyError = document.getElementById('qty-error');
-    // const addressError = document.getElementById('addr-error');
     if(validateName() && validateEmail() && validatePhone() && validateDOB() && validateQty() && validateAddress()){
     form.submit();
   }

@@ -404,3 +404,16 @@ tbody tr:nth-child(even) {
 tbody tr:hover {
     background-color: #fff6;
 }
+/*swal error button*/
+.swal-btn-red {
+    background-color: red; /* Set the background color to red */
+    color: white; /* Set the text color to white */
+    padding: 10px 20px; /* Adjust the padding to increase button size */
+    font-size: 18px; /* Adjust the font size to increase button size */
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(255, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+}
+.swal-btn-red:hover {
+    background-color: rgba(219, 33, 33, 0.877) !important;
+}
