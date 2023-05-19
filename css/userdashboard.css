@@ -44,6 +44,7 @@ nav {
     overflow: auto;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     min-height: 100vh;
+    line-height: 2rem;
 
     /* making sticky */
 }
@@ -75,24 +76,21 @@ a {
     display: table;
     width: 280px;
     padding: 10px;
-    margin-left: 20px;
+    margin: 10px 20px;
     transition: all .3s;
+
 }
 
-a:hover {
+.container nav a:hover,
+a.active {
     transform: translateY(-5px);
-    box-shadow: 10px 2px 66px 0px rgba(219, 6, 6, 0.7);
+    box-shadow: 0.5px 0.5px 7.5px 0px rgba(219, 6, 6, 0.7);
     border-radius: 25px;
     font-weight: bold;
     color: var(--main-color);
 }
 
-a:visited {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(27, 27, 27, .5);
-    border-radius: 25px;
 
-}
 
 nav.fas {
     position: relative;
@@ -148,13 +146,74 @@ nav.fas {
     text-align: right;
 }
 
-.main-top i {
+/* .main-top i {
     position: absolute;
     right: 0;
     margin: 10px 30px;
     color: white;
     cursor: pointer;
+} */
+.dropdown {
+    /* position: relative;
+    display: inline-block; */
+    position: absolute;
+    right: 0;
+    margin: 10px 10px;
+    color: white;
+    cursor: pointer;
 }
+
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 40px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+    background: transparent;
+    border-radius: 20px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 8px;
+    text-decoration: none;
+    display: block;
+    width: 100px;
+    text-align: center;
+    margin: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.dropdown-content a:hover {
+    /* background-color: #f1f1f1; */
+    color: #f00;
+
+
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* 
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+} */
+
+
+
 
 /* donate blood form css */
 
@@ -266,7 +325,9 @@ input {
 
 .blood_type .card:hover {
     background: #ffffff;
-    box-shadow: 18px 0px 87px 0px rgba(118, 22, 22, 0.7);
+    /* box-shadow: 18px 0px 87px 0px rgba(118, 22, 22, 0.7); */
+
+    box-shadow: 0.5px 0.5px 7.5px 0px rgba(219, 6, 6, 0.7);
 
     border-radius: 12px;
     transform: scale(1.1);
@@ -404,16 +465,22 @@ tbody tr:nth-child(even) {
 tbody tr:hover {
     background-color: #fff6;
 }
+
 /*swal error button*/
 .swal-btn-red {
-    background-color: red; /* Set the background color to red */
-    color: white; /* Set the text color to white */
-    padding: 10px 20px; /* Adjust the padding to increase button size */
-    font-size: 18px; /* Adjust the font size to increase button size */
+    background-color: red;
+    /* Set the background color to red */
+    color: white;
+    /* Set the text color to white */
+    padding: 10px 20px;
+    /* Adjust the padding to increase button size */
+    font-size: 18px;
+    /* Adjust the font size to increase button size */
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(255, 0, 0, 0.5);
     transition: background-color 0.3s ease;
 }
+
 .swal-btn-red:hover {
     background-color: rgba(219, 33, 33, 0.877) !important;
 }

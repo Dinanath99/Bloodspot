@@ -5,7 +5,7 @@ session_start();
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
-} 
+}
 // if admin click on logout then its unset the session and destory the session
 //and redirect to member login page
 if (isset($_REQUEST['logout'])) {
@@ -33,9 +33,9 @@ if (isset($_REQUEST['logout'])) {
     <div class="container">
         <nav>
             <ul>
-                <li><a href="#" class="logo">
+                <li><a href="#" class="logo" class="active">
                         <img src="./img/bloodspot.png" alt="">
-                        <span class="nav-item">Welcome<span class="username"> User</span></span>
+                        <!-- <span class="nav-item">Welcome<span class="username"> User</span></span> -->
                     </a></li>
                 <li><a href="history.php">
                         <i class="fa-solid fa-clock-rotate-left"></i>
@@ -64,13 +64,15 @@ if (isset($_REQUEST['logout'])) {
                         <i class="fas fa-question-circle"></i>
                         <span class="nav-item">Help</span>
                     </a></li>
-                <li><a href="userlogout.php" class="logout">
+                <!-- <li><a href="userlogout.php" class="logout">
                         <i class="fas fa-sign-out-alt"></i>
                         <span class="nav-item">Logout</span>
-                    </a></li>
+                    </a></li> -->
             </ul>
         </nav>
     </div>
 </body>
+<script>
 
-</html>
+</script>
+< /html>
