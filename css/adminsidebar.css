@@ -560,3 +560,14 @@ nav.fas {
     outline: 2px solid transparent;
     outline-offset: 2px;
 }
+
+
+/* recent donor section */
+.recent-donor {
+    margin-top: 30px;
+    color: red;
+}
+
+.title {
+    color: red;
+}
