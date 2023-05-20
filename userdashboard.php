@@ -70,6 +70,22 @@ if (isset($_REQUEST['logout'])) {
                     </a></li> -->
             </ul>
         </nav>
+
+        <section class="main">
+            <div class="main-top">
+                <h1>Welcome</h1>
+
+                <!-- addding dropdown -->
+                <div class="dropdown">
+                    <button class="dropbtn"><i class="fas fa-user-cog"></i></button>
+                    <div class="dropdown-content">
+                        <a href="#">Edit Profile</a>
+                        <a href="userlogout.php">Logout</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
     </div>
 </body>
 <script>

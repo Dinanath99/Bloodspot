@@ -77,6 +77,66 @@ include('adminsession.php');
                     </div>
                 </div>
             </div>
+            <!--  hero section -->
+            <div class="admin-panel">
+
+                <div class="cookie-card">
+                    <span class="title">Total Donors</span>
+                    <p class="description">60+ </p>
+                    <div class="actions">
+                        <button class="pref">
+                            Manage your preferences
+                        </button>
+                        <button class="accept">
+                            View
+                        </button>
+                    </div>
+
+
+                </div>
+                <div class="cookie-card">
+                    <span class="title">Request</span>
+                    <p class="description">60+ </p>
+                    <div class="actions">
+                        <button class="pref">
+                            Manage your preferences
+                        </button>
+                        <button class="accept">
+                            View
+                        </button>
+                    </div>
+
+
+                </div>
+                <div class="cookie-card">
+                    <span class="title">Approved Request</span>
+                    <p class="description">60+ </p>
+                    <div class="actions">
+                        <button class="pref">
+                            Manage your preferences
+                        </button>
+                        <button class="accept">
+                            View
+                        </button>
+                    </div>
+
+
+                </div>
+                <div class="cookie-card">
+                    <span class="title">Total Blood unit</span>
+                    <p class="description">20 </p>
+                    <div class="actions">
+                        <button class="pref">
+                            Manage your preferences
+                        </button>
+                        <button class="accept">
+                            View
+                        </button>
+                    </div>
+
+
+                </div>
+            </div>
         </section>
     </div>
 </body>
