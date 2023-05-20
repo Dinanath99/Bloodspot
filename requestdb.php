@@ -25,9 +25,9 @@ $stmt->bindParam(':qty', $qty);
 $stmt->bindParam(':address', $address);
 $stmt->bindParam(':message', $message);
 $stmt->bindParam(':status', $status);
-$stmt->bindParam(':bloodbank',$bloodbank);
+$stmt->bindParam(':bloodbank', $bloodbank);
 $stmt->bindParam(':timestamp', $timestamp);
-if($stmt->execute()){
+if ($stmt->execute()) {
    header("Location: requestblood.php?success=1");
 }
 

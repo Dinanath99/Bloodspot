@@ -5,7 +5,7 @@ session_start();
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
-} 
+}
 // if admin click on logout then its unset the session and destory the session
 //and redirect to member login page
 if (isset($_REQUEST['logout'])) {
@@ -36,7 +36,7 @@ if (isset($_REQUEST['logout'])) {
             <ul>
                 <li><a href="userdashboard.php" class="logo">
                         <img src="./img/bloodspot.png" alt="">
-                        <span class="nav-item">Welcome<span class="username"> User</span></span>
+                        <!-- <span class="nav-item">Welcome<span class="username"> User</span></span> -->
                     </a></li>
                 <li><a href="history.php">
                         <i class="fa-solid fa-clock-rotate-left"></i>
@@ -46,7 +46,7 @@ if (isset($_REQUEST['logout'])) {
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Donate Blood</span>
                     </a></li>
-                <li><a href="requestblood.php">
+                <li><a class="active" href="requestblood.php">
                         <i class="fa-solid fa-layer-group"></i>
                         <span class="nav-item">Request Blood</span>
                     </a></li>
@@ -66,10 +66,10 @@ if (isset($_REQUEST['logout'])) {
                         <i class="fas fa-question-circle"></i>
                         <span class="nav-item">Help</span>
                     </a></li>
-                <li><a href="userlogout.php" class="logout">
+                <!-- <li><a href="userlogout.php" class="logout">
                         <i class="fas fa-sign-out-alt"></i>
                         <span class="nav-item">Logout</span>
-                    </a></li>
+                    </a></li> -->
             </ul>
         </nav>
         <!-- container section started for request blood -->
@@ -77,7 +77,14 @@ if (isset($_REQUEST['logout'])) {
         <section class="main">
             <div class="main-top">
                 <h1>Request Blood</h1>
-                <i class="fas fa-user-cog"></i>
+                <!-- addding dropdown -->
+                <div class="dropdown">
+                    <button class="dropbtn"><i class="fas fa-user-cog"></i></button>
+                    <div class="dropdown-content">
+                        <a href="#">Edit Profile</a>
+                        <a href="userlogout.php">Logout</a>
+                    </div>
+                </div>
             </div>
             <div class="wrapper">
                 <h2>Blood Request Form <br>

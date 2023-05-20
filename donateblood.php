@@ -5,7 +5,7 @@ session_start();
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
-} 
+}
 
 // if admin click on logout then its unset the session and destory the session
 //and redirect to member login page
@@ -37,12 +37,12 @@ if (isset($_REQUEST['logout'])) {
             <ul>
                 <li><a href="userdashboard.php" class="logo">
                         <img src="./img/bloodspot.png" alt="">
-                        <span class="nav-item">Welcome<span class="username"> User</span></span>
+                        <!-- <span class="nav-item">Welcome<span class="username"> User</span></span> -->
                     </a></li>
                 <li><a href="history.php">
                         <i class="fa-solid fa-clock-rotate-left"></i>
                         <span class="nav-item">History</span> </a></li>
-                <li><a href="donateblood.php">
+                <li><a class="active" href="donateblood.php">
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Donate Blood</span>
                     </a></li>
@@ -66,10 +66,10 @@ if (isset($_REQUEST['logout'])) {
                         <i class="fas fa-question-circle"></i>
                         <span class="nav-item">Help</span>
                     </a></li>
-                <li><a href="userlogout.php" class="logout">
+                <!-- <li><a href="userlogout.php" class="logout">
                         <i class="fas fa-sign-out-alt"></i>
                         <span class="nav-item">Logout</span>
-                    </a></li>
+                    </a></li> -->
             </ul>
         </nav>
 
@@ -78,7 +78,16 @@ if (isset($_REQUEST['logout'])) {
         <section class="main">
             <div class="main-top">
                 <h1>Donate Blood</h1>
-                <i class="fas fa-user-cog"></i>
+
+                <!-- addding dropdown -->
+                <div class="dropdown">
+                    <button class="dropbtn"><i class="fas fa-user-cog"></i></button>
+                    <div class="dropdown-content">
+                        <a href="#">Edit Profile</a>
+                        <a href="userlogout.php">Logout</a>
+                    </div>
+                </div>
+
             </div>
             <div class="wrapper">
                 <h2>Please send us your details</h2>
@@ -137,28 +146,28 @@ if (isset($_REQUEST['logout'])) {
     <?php
     if (isset($_GET['success']) && $_GET['success'] == 1) {
         ?>
-    <script>
-    const Toast = Swal.mixin({
-        toast: true,
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-            toast.addEventListener("mouseenter", Swal.stopTimer)
-            toast.addEventListener("mouseleave", Swal.resumeTimer)
-        }
-    })
+        <script>
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener("mouseenter", Swal.stopTimer)
+                    toast.addEventListener("mouseleave", Swal.resumeTimer)
+                }
+            })
 
-    Toast.fire({
-        icon: "success",
-        title: "Data Submitted Successfully"
-        //  title: "Data Not Submitted Successfully"
+            Toast.fire({
+                icon: "success",
+                title: "Data Submitted Successfully"
+                //  title: "Data Not Submitted Successfully"
 
-    });
-    </script>
-    <!-- <?php
-    } elseif (isset($_GET['success']) && $_GET['success'] == 0) {?>
+            });
+        </script>
+        <!-- <?php
+    } elseif (isset($_GET['success']) && $_GET['success'] == 0) { ?>
         <script>
             Swal.fire({
                 icon: "error",
@@ -170,7 +179,7 @@ if (isset($_REQUEST['logout'])) {
         }
             });
         </script> -->
-   <?php }
+    <?php }
     ?>
 </body>
 
