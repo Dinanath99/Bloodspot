@@ -7,6 +7,9 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
+$stmt = $pdo->prepare("SELECT * FROM donatelist WHERE status = 'Pending' ORDER BY timestamp DESC LIMIT 1");
+$stmt->execute();
+$item = $stmt->fetch(PDO::FETCH_ASSOC);
 // if admin click on logout then its unset the session and destory the session
 //and redirect to member login page
 if (isset($_REQUEST['logout'])) {
@@ -82,31 +85,37 @@ if (isset($_REQUEST['logout'])) {
             </div>
             <div class="user-history">
                 <div class="donate-history">
-                    <h3>Donation History </h3>
+                    <!-- <h3>Recently Donated Forms </h3> -->
+                    <?php if($item) {?>
                     <table>
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Status</th>
-                                <th>Units Donated</th>
-                                <th>Total Donated</th>
-                                <th>Blood Group</th>
-                                <th>Lastly Donated</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Contact</th>
+                            <th>Date of Birth</th>
+                            <th>Gender</th>
+                            <th>Blood Group</th>
+                            <th>Address</th>
+                            <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><img src="user.jpg" class="user-img"> Dinanath</td>
-                                <td>pending</td>
-                                <td>5</td>
-                                <td>20</td>
-                                <td>A+</td>
-                                <td>2023-04-25</td>
+                                <td><?php echo $item['name']?></td>
+                                <td><?php echo $item['email']?></td>
+                                <td><?php echo $item['contact']?></td>
+                                <td><?php echo $item['dob']?></td>
+                                <td><?php echo $item['gender']?></td>
+                                <td><?php echo $item['blood_group']?></td>
+                                <td><?php echo $item['address']?></td>
+                                <td><?php echo $item['status']?></td>
                             </tr>
-
-                            <!-- Add more rows for additional donors -->
                         </tbody>
                     </table>
+                    <?php } else {?>
+                    <p> No recently Donated Forms.</p>
+                    <?php } ?>
 
 
                 </div>
@@ -142,30 +151,7 @@ if (isset($_REQUEST['logout'])) {
 
         </section>
     </div>
-    <?php
-    if (isset($_GET['success']) && $_GET['success'] == 1) {
-        ?>
-        <script>
-            const Toast = Swal.mixin({
-                toast: true,
-                position: "top-end",
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                    toast.addEventListener("mouseenter", Swal.stopTimer)
-                    toast.addEventListener("mouseleave", Swal.resumeTimer)
-                }
-            })
-
-            Toast.fire({
-                icon: "success",
-                title: "Data Submitted Successfully"
-            });
-        </script>
-        <?php
-    }
-    ?>
+    
 </body>
 
 </html>
