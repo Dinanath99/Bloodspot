@@ -104,104 +104,103 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                 </div>
             </div>
-            <div class="donor_table">
-                <center>
-                    <table border="3">
-                        <thead>
+
+            <div class="table-wrapper">
+                <table class="fl-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Contact</th>
+                            <th>Date of Birth</th>
+                            <th>Gender</th>
+                            <th>Blood Group</th>
+                            <th>Address</th>
+                            <th>Time Stamp</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                            <th>Visit Status</th>
+                            <th>BloodBank</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php $count = 1;
+                        foreach ($value as $item) { ?>
                             <tr>
-                                <th>ID</th>
-                                <th>Full Name</th>
-                                <th>Email</th>
-                                <th>Contact</th>
-                                <th>Date of Birth</th>
-                                <th>Gender</th>
-                                <th>Blood Group</th>
-                                <th>Address</th>
-                                <th>Time Stamp</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                                <th>Visit Status</th>
-                                <th>BloodBank</th>
+                                <td>
+                                    <?php echo $count ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['name'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['email'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['contact'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['dob'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['gender'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['blood_group'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['address'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['timestamp'] ?>
+                                </td>
+                                <!-- this code helps to update specific cell e.g status-2  -->
+                                <td id="status-<?php echo $item['id']; ?>">
+                                    <?php
+                                    $status = $item['status'];
+                                    if ($status == 'Accepted' || $status == "Rejected") {
+                                        echo $status;
+                                    } else {
+                                        echo 'Pending';
+                                    }
+                                    ?>
+                                </td>
+                                <td>
+                                    <!-- <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" id="statusForm"> -->
+
+                                    <select name="status" onchange="updateStatus(this,<?php echo $item['id']; ?>)">
+                                        <option value="" disabled selected>Update</option>
+                                        <option class="accept" value="Accepted">Accept</option>
+                                        <option class="reject" value="Rejected">Reject</option>
+                                    </select>
+                                    <!-- <input type="submit" name="update_status" value="submit" /> -->
+                                    <!-- </form> -->
+                                </td>
+                                <td id="bank-<?php echo $item['id']; ?>">
+                                    <?php
+                                    $status = $item['bloodbank'];
+                                    if ($status == 'Visited') {
+                                        echo $status;
+                                    } else {
+                                        echo 'Not Visited';
+                                    }
+                                    ?>
+                                </td>
+                                <td>
+                                    <select name="bank" onchange="updatebank(this,<?php echo $item['id']; ?>)">
+                                        <!-- <option value="" disabled selected>Not Visited</option> -->
+                                        <option value="Not Visited">Not Visited</option>
+                                        <option value="Visited">Visit</option>
+                                    </select>
+                                </td>
+
                             </tr>
-                        </thead>
-                        <tbody>
-                            <?php $count = 1;
-                            foreach ($value as $item) { ?>
-                                <tr>
-                                    <td>
-                                        <?php echo $count ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $item['name'] ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $item['email'] ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $item['contact'] ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $item['dob'] ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $item['gender'] ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $item['blood_group'] ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $item['address'] ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $item['timestamp'] ?>
-                                    </td>
-                                    <!-- this code helps to update specific cell e.g status-2  -->
-                                    <td id="status-<?php echo $item['id']; ?>">
-                                        <?php
-                                        $status = $item['status'];
-                                        if ($status == 'Accepted' || $status == "Rejected") {
-                                            echo $status;
-                                        } else {
-                                            echo 'Pending';
-                                        }
-                                        ?>
-                                    </td>
-                                    <td>
-                                        <!-- <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" id="statusForm"> -->
+                            <?php $count++;
+                        } ?>
 
-                                        <select name="status" onchange="updateStatus(this,<?php echo $item['id']; ?>)">
-                                            <option value="" disabled selected>Update</option>
-                                            <option class="accept" value="Accepted">Accept</option>
-                                            <option class="reject" value="Rejected">Reject</option>
-                                        </select>
-                                        <!-- <input type="submit" name="update_status" value="submit" /> -->
-                                        <!-- </form> -->
-                                    </td>
-                                    <td id="bank-<?php echo $item['id']; ?>">
-                                        <?php
-                                        $status = $item['bloodbank'];
-                                        if ($status == 'Visited') {
-                                            echo $status;
-                                        } else {
-                                            echo 'Not Visited';
-                                        }
-                                        ?>
-                                    </td>
-                                    <td>
-                                        <select name="bank" onchange="updatebank(this,<?php echo $item['id']; ?>)">
-                                            <!-- <option value="" disabled selected>Not Visited</option> -->
-                                            <option value="Not Visited">Not Visited</option>
-                                            <option value="Visited">Visit</option>
-                                        </select>
-                                    </td>
-
-                                </tr>
-                                <?php $count++;
-                            } ?>
-                        </tbody>
-                    </table>
-                </center>
-
+                    <tbody>
+                </table>
             </div>
         </section>
     </div>

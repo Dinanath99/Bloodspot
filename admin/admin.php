@@ -54,10 +54,10 @@ include('adminsession.php');
                         <i class="fas fa-cog"></i>
                         <span class="nav-item">Setting</span>
                     </a></li> -->
-                <!-- <li><a href="#">
+                <li><a href="testtable.php">
                         <i class="fas fa-question-circle"></i>
-                        <span class="nav-item">Help</span>
-                    </a></li> -->
+                        <span class="nav-item">Testtable</span>
+                    </a></li>
                 <!-- <li><a href="logoutadmin.php" class="logout">
                         <i class="fas fa-sign-out-alt"></i>
                         <span class="nav-item">Logout</span>
