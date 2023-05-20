@@ -28,7 +28,7 @@ include('adminsession.php');
             <ul>
                 <li><a href="admin.php" class="logo">
                         <img src="../img/bloodspot.png" alt="">
-                        <span class="nav-item">Admin Panel</span>
+                        <!-- <span class="nav-item">Admin Panel</span> -->
                     </a></li>
                 <li><a href="#">
                         <i class="fa-solid fa-clock-rotate-left"></i>
@@ -58,10 +58,10 @@ include('adminsession.php');
                         <i class="fas fa-question-circle"></i>
                         <span class="nav-item">Help</span>
                     </a></li> -->
-                <li><a href="logoutadmin.php" class="logout">
+                <!-- <li><a href="logoutadmin.php" class="logout">
                         <i class="fas fa-sign-out-alt"></i>
                         <span class="nav-item">Logout</span>
-                    </a></li>
+                    </a></li> -->
             </ul>
         </nav>
 

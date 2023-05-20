@@ -120,8 +120,8 @@
                 Someone will get back to you asap. If it’s an emergency,
                 call us @ +977 123456789 or msg us at Facebook</p>
 
-            <button class="btn_a"><a href="#">Donate bloood</a></button>
-            <button><a href="#">Request bloood</a></button>
+            <button class="btn_a"><a href="login.php">Donate bloood</a></button>
+            <button><a href="login.php">Request bloood</a></button>
         </div>
     </section>
 

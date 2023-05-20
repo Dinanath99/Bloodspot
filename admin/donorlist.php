@@ -56,13 +56,13 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <ul>
                 <li><a href="admin.php" class="logo">
                         <img src="../img/bloodspot.png" alt="">
-                        <span class="nav-item">Admin Panel</span>
+                        <!-- <span class="nav-item">Admin Panel</span> -->
                     </a></li>
                 <li><a href="#">
                         <i class="fa-solid fa-clock-rotate-left"></i>
                         <span class="nav-item">History</span>
                     </a></li>
-                <li><a href="donorlist.php">
+                <li><a class="active href=" donorlist.php">
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Donor list</span>
                     </a></li>

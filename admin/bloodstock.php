@@ -28,7 +28,7 @@ include('adminsession.php');
             <ul>
                 <li><a href="admin.php" class="logo">
                         <img src="../img/bloodspot.png" alt="">
-                        <span class="nav-item">Admin Panel</span>
+                        <!-- <span class="nav-item">Admin Panel</span> -->
                     </a></li>
                 <li><a href="#">
                         <i class="fa-solid fa-clock-rotate-left"></i>
@@ -38,7 +38,7 @@ include('adminsession.php');
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Donor list</span>
                     </a></li>
-                <li><a href="bloodstock.php">
+                <li><a class="active" href="bloodstock.php">
                         <i class="fa-solid fa-layer-group"></i>
                         <span class="nav-item">blood stock</span>
                     </a></li>
