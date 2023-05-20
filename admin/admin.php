@@ -68,7 +68,14 @@ include('adminsession.php');
         <section class="main">
             <div class="main-top">
                 <h1>Bloodspot Admin Area</h1>
-                <i class="fas fa-user-cog"></i>
+                <!-- addding dropdown -->
+                <div class="dropdown">
+                    <button class="dropbtn"><i class="fas fa-user-cog"></i></button>
+                    <div class="dropdown-content">
+                        <a href="#">Edit Profile</a>
+                        <a href="logoutadmin.php">Logout</a>
+                    </div>
+                </div>
             </div>
         </section>
     </div>

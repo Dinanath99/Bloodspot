@@ -84,12 +84,6 @@ a:hover {
     color: var(--main-color);
 }
 
-a:visited {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(27, 27, 27, .5);
-    border-radius: 25px;
-
-}
 
 nav.fas {
     position: relative;
@@ -143,13 +137,68 @@ nav.fas {
     text-align: right;
 }
 
-.main-top i {
+.dropdown {
+    /* position: relative;
+    display: inline-block; */
+    position: absolute;
+    right: 0;
+    margin: 10px 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 40px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+    background: transparent;
+    border-radius: 20px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 8px;
+    text-decoration: none;
+    display: block;
+    width: 100px;
+    text-align: center;
+    margin: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.dropdown-content a:hover {
+    /* background-color: #f1f1f1; */
+    color: #f00;
+
+
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* .main-top i {
     position: absolute;
     right: 0;
     margin: 10px 30px;
     color: white;
     cursor: pointer;
-}
+} */
 
 /* donor list table */
 .donor_table {

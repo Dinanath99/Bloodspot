@@ -90,16 +90,16 @@ if (isset($_REQUEST['logout'])) {
             </div>
             <div class="blood_type">
                 <?php foreach ($bloodGroups as $item) { ?>
-                    <div class="card">
-                        <i class="fa-solid fa-droplet"></i>
-                        <h3>
-                            <?php echo $item['bloodGroup'] ?>
-                        </h3>
-                        <p>
-                            <?php echo $item['qty'] ?> units
-                        </p>
-                        <button>Request</button>
-                    </div>
+                <div class="card">
+                    <i class="fa-solid fa-droplet"></i>
+                    <h3>
+                        <?php echo $item['bloodGroup'] ?>
+                    </h3>
+                    <p>
+                        <?php echo $item['qty'] ?> units
+                    </p>
+                    <!-- <button>Request</button> -->
+                </div>
                 <?php } ?>
             </div>
         </section>
