@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(':password', $hashed_password);
         if ($stmt->execute()) {
             $success = 1;
-            header("Refresh: 3; url=/Bloodspot/login.php");
+            header("Refresh: 2; url=/Bloodspot/login.php");
         }
     }
 }
@@ -98,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         toast: true,
         position: "top-end",
         showConfirmButton: false,
-        timer: 2500,
+        timer: 1500,
         timerProgressBar: true,
         didOpen: (toast) => {
             toast.addEventListener("mouseenter", Swal.stopTimer)

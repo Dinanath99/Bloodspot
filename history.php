@@ -6,10 +6,18 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
 }
-
-$stmt = $pdo->prepare("SELECT * FROM donatelist WHERE status = 'Pending' ORDER BY timestamp DESC LIMIT 1");
+$u_id = $_SESSION['user_id'];
+//only recent 
+$stmt = $pdo->prepare("SELECT * FROM donatelist WHERE status = 'Pending' AND u_id = :u_id");
+$stmt->bindParam(':u_id', $u_id);
 $stmt->execute();
 $item = $stmt->fetch(PDO::FETCH_ASSOC);
+
+//all donate history
+$stmt = $pdo->prepare("SELECT * FROM donatelist WHERE status != 'Pending' AND u_id = :u_id");
+$stmt->bindParam(':u_id', $u_id);
+$stmt->execute();
+$donate = $stmt->fetchALL(PDO::FETCH_ASSOC);
 // if admin click on logout then its unset the session and destory the session
 //and redirect to member login page
 if (isset($_REQUEST['logout'])) {
@@ -92,7 +100,7 @@ if (isset($_REQUEST['logout'])) {
             </div>
             <div class="user-history">
                 <div class="donate-history">
-                    <!-- <h3>Recently Donated Forms </h3> -->
+                    <h3>Recently Donated Forms </h3>
                     <?php if($item) {?>
                     <table>
                         <thead>
@@ -126,31 +134,40 @@ if (isset($_REQUEST['logout'])) {
 
 
                 </div>
-                <div class="request-history">
-                    <h3>Request History</h3>
+                <div class="donate-history">
+                    <h3>Donate History</h3>
 
-                    <table>
+                    <table border="3">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Status</th>
-                                <th>Unit</th>
-                                <th>Total Request</th>
+                                <th>ID</th>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Contact</th>
+                                <th>Date of Birth</th>
+                                <th>Gender</th>
                                 <th>Blood Group</th>
-                                <th>Request date</th>
+                                <th>Address</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php 
+                            $count = 1;
+                            foreach ($donate as $item) { ?>
                             <tr>
-                                <td><img src="user.jpg" class="user-img"> John Doe</td>
-                                <td>pending</td>
-                                <td>5</td>
-                                <td>5</td>
-                                <td>A+</td>
-                                <td>2023-04-25</td>
-                            </tr>
-
-                            <!-- Add more rows for additional donors -->
+                                <td><?php echo $count ?></td>
+                                <td><?php echo $item['name'] ?></td>
+                                <td><?php echo $item['email'] ?></td>
+                                <td><?php echo $item['contact'] ?></td>
+                                <td><?php echo $item['dob'] ?></td>
+                                <td><?php echo $item['gender'] ?></td>
+                                <td><?php echo $item['blood_group'] ?></td>
+                                <td><?php echo $item['address'] ?></td>
+                                <td><?php echo $item['status'] ?></td>
+                                
+                            <?php $count++;
+                        } ?>
                         </tbody>
                     </table>
                 </div>

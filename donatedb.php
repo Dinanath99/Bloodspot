@@ -24,9 +24,9 @@ $stmt->bindParam(':u_id', $u_id);
 $stmt->execute();
 $date = $stmt->fetch(PDO::FETCH_ASSOC);
 $lastdonate = $date['timestamp'];
-$oneMonthAgo = date('Y-m-d', strtotime('-1 month'));
+$oneMonthAgo = date('Y-m-d H:i:s', strtotime('-1 minute'));
 if ($lastdonate > $oneMonthAgo) {
-   header('Location: donateblood.php?success=0');
+header('Location: donateblood.php?success=0');
 } else {
 
    $stmt = $pdo->prepare("INSERT INTO donatelist(name,email,contact,dob,gender,blood_group,address,status,timestamp,bloodbank,u_id)
@@ -42,16 +42,17 @@ if ($lastdonate > $oneMonthAgo) {
    $stmt->bindParam(':timestamp', $timestamp);
    $stmt->bindParam(':bloodbank', $bloodbank);
    $stmt->bindParam(':u_id', $u_id);
-   $stmt->execute();
+   if($stmt->execute()){
+      header('Location: donateblood.php?success=1');
+   }
 
    // Update the quantity in the blood stock table
-   $StockStmt = $pdo->prepare("UPDATE viewstock SET qty = qty + 1 WHERE bloodGroup = :blood_group");
-   $StockStmt->bindParam(':blood_group', $blood_group);
-   if ($StockStmt->execute()) {
-      // Redirect to form.php with success parameter
-      // header('Location: donateblood.php?success=1');
-      header("Location: userdonatelist.php?user_id= $u_id");
-      exit;
-   }
+   // $StockStmt = $pdo->prepare("UPDATE viewstock SET qty = qty + 1 WHERE bloodGroup = :blood_group");
+   // $StockStmt->bindParam(':blood_group', $blood_group);
+   // if ($StockStmt->execute()) {
+   //    // Redirect to form.php with success parameter
+   //    header("Location: userdonatelist.php?user_id= $u_id");
+   //    exit;
+   // }
 }
 ?>

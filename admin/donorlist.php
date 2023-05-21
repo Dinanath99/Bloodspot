@@ -14,10 +14,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (isset($_POST['bank'])) {
         $bloodbank = $_POST['bank'];
+        // Fetch the blood group of the donor
+        $stmt = $pdo->prepare("SELECT blood_group FROM donatelist WHERE id = :donor_id");
+        $stmt->bindParam(':donor_id', $donor_id);
+        $stmt->execute();
+        $donorBloodGroup = $stmt->fetchColumn();
         // Increase quantity by 1 if the donor visited
-        if ($bloodbank == 'Visited') {
+        if ($bloodbank == 'Visited' ) {
             $stmt = $pdo->prepare("UPDATE viewstock SET qty = qty + 1 WHERE bloodGroup = :blood_group");
-            $stmt->bindParam(':blood_group', $item['blood_group']);
+            $stmt->bindParam(':blood_group',$donorBloodGroup);
             $stmt->execute();
         }
         $stmt = $pdo->prepare("UPDATE donatelist SET bloodbank = :bloodbank WHERE id = :donor_id");
@@ -128,33 +133,15 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <?php $count = 1;
                         foreach ($value as $item) { ?>
                             <tr>
-                                <td>
-                                    <?php echo $count ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['name'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['email'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['contact'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['dob'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['gender'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['blood_group'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['address'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['timestamp'] ?>
-                                </td>
+                                <td><?php echo $count ?> </td>
+                                <td><?php echo $item['name'] ?></td>
+                                <td><?php echo $item['email'] ?> </td>
+                                <td><?php echo $item['contact'] ?></td>
+                                <td><?php echo $item['dob'] ?></td>
+                                <td><?php echo $item['gender'] ?></td>
+                                <td><?php echo $item['blood_group'] ?></td>
+                                <td><?php echo $item['address'] ?></td>
+                                <td><?php echo $item['timestamp'] ?></td>
                                 <!-- this code helps to update specific cell e.g status-2  -->
                                 <td id="status-<?php echo $item['id']; ?>">
                                     <?php
