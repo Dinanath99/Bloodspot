@@ -69,7 +69,7 @@ if (isset($_REQUEST['logout'])) {
                         <i class="fas fa-tasks"></i>
                         <span class="nav-item">Blood center</span>
                     </a></li> -->
-                <li><a href="#">
+                <li><a href="setting.php">
                         <i class="fas fa-cog"></i>
                         <span class="nav-item">Setting</span>
                     </a></li>
@@ -93,7 +93,7 @@ if (isset($_REQUEST['logout'])) {
                 <div class="dropdown">
                     <button class="dropbtn"><i class="fas fa-user-cog"></i></button>
                     <div class="dropdown-content">
-                        <a href="#">Edit Profile</a>
+                        <a href="setting.php">Edit Profile</a>
                         <a href="userlogout.php">Logout</a>
                     </div>
                 </div>
@@ -101,34 +101,50 @@ if (isset($_REQUEST['logout'])) {
             <div class="user-history">
                 <div class="donate-history">
                     <h3>Recently Donated Forms </h3>
-                    <?php if($item) {?>
+                    <?php if ($item) { ?>
                     <table>
                         <thead>
                             <tr>
-                            <th>Full Name</th>
-                            <th>Email</th>
-                            <th>Contact</th>
-                            <th>Date of Birth</th>
-                            <th>Gender</th>
-                            <th>Blood Group</th>
-                            <th>Address</th>
-                            <th>Status</th>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Contact</th>
+                                <th>Date of Birth</th>
+                                <th>Gender</th>
+                                <th>Blood Group</th>
+                                <th>Address</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><?php echo $item['name']?></td>
-                                <td><?php echo $item['email']?></td>
-                                <td><?php echo $item['contact']?></td>
-                                <td><?php echo $item['dob']?></td>
-                                <td><?php echo $item['gender']?></td>
-                                <td><?php echo $item['blood_group']?></td>
-                                <td><?php echo $item['address']?></td>
-                                <td><?php echo $item['status']?></td>
+                                <td>
+                                    <?php echo $item['name'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['email'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['contact'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['dob'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['gender'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['blood_group'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['address'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['status'] ?>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
-                    <?php } else {?>
+                    <?php } else { ?>
                     <p> No recently Donated Forms.</p>
                     <?php } ?>
 
@@ -152,22 +168,40 @@ if (isset($_REQUEST['logout'])) {
                             </tr>
                         </thead>
                         <tbody>
-                            <?php 
+                            <?php
                             $count = 1;
                             foreach ($donate as $item) { ?>
                             <tr>
-                                <td><?php echo $count ?></td>
-                                <td><?php echo $item['name'] ?></td>
-                                <td><?php echo $item['email'] ?></td>
-                                <td><?php echo $item['contact'] ?></td>
-                                <td><?php echo $item['dob'] ?></td>
-                                <td><?php echo $item['gender'] ?></td>
-                                <td><?php echo $item['blood_group'] ?></td>
-                                <td><?php echo $item['address'] ?></td>
-                                <td><?php echo $item['status'] ?></td>
-                                
-                            <?php $count++;
-                        } ?>
+                                <td>
+                                    <?php echo $count ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['name'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['email'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['contact'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['dob'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['gender'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['blood_group'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['address'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['status'] ?>
+                                </td>
+
+                                <?php $count++;
+                            } ?>
                         </tbody>
                     </table>
                 </div>
@@ -175,7 +209,7 @@ if (isset($_REQUEST['logout'])) {
 
         </section>
     </div>
-    
+
 </body>
 
 </html>

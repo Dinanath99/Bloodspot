@@ -60,7 +60,7 @@ if (isset($_REQUEST['logout'])) {
                         <i class="fas fa-tasks"></i>
                         <span class="nav-item">Blood center</span>
                     </a></li> -->
-                <li><a href="#">
+                <li><a href="setting.php">
                         <i class="fas fa-cog"></i>
                         <span class="nav-item">Setting</span>
                     </a></li>
@@ -83,7 +83,7 @@ if (isset($_REQUEST['logout'])) {
                 <div class="dropdown">
                     <button class="dropbtn"><i class="fas fa-user-cog"></i></button>
                     <div class="dropdown-content">
-                        <a href="#">Edit Profile</a>
+                        <a href="setting.php">Edit Profile</a>
                         <a href="userlogout.php">Logout</a>
                     </div>
                 </div>

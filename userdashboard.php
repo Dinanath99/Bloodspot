@@ -79,7 +79,7 @@ if (isset($_REQUEST['logout'])) {
                 <div class="dropdown">
                     <button class="dropbtn"><i class="fas fa-user-cog"></i></button>
                     <div class="dropdown-content">
-                        <a href="#">Edit Profile</a>
+                        <a href="setting.php">Edit Profile</a>
                         <a href="userlogout.php">Logout</a>
                     </div>
                 </div>

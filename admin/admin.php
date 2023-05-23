@@ -139,7 +139,7 @@ include('adminsession.php');
             </div>
             <div class="recent-donor">
                 <div class="title">
-                    <h1>Recent donors </h1>
+                    <h1>Recent donors</h1>
                 </div>
             </div>
         </section>

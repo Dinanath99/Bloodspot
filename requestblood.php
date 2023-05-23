@@ -58,7 +58,7 @@ if (isset($_REQUEST['logout'])) {
                         <i class="fas fa-tasks"></i>
                         <span class="nav-item">Blood center</span>
                     </a></li> -->
-                <li><a href="#">
+                <li><a href="setting.php">
                         <i class="fas fa-cog"></i>
                         <span class="nav-item">Setting</span>
                     </a></li>
@@ -81,7 +81,7 @@ if (isset($_REQUEST['logout'])) {
                 <div class="dropdown">
                     <button class="dropbtn"><i class="fas fa-user-cog"></i></button>
                     <div class="dropdown-content">
-                        <a href="#">Edit Profile</a>
+                        <a href="setting.php">Edit Profile</a>
                         <a href="userlogout.php">Logout</a>
                     </div>
                 </div>
@@ -147,25 +147,25 @@ if (isset($_REQUEST['logout'])) {
     <?php
     if (isset($_GET['success']) && $_GET['success'] == 1) {
         ?>
-        <script>
-            const Toast = Swal.mixin({
-                toast: true,
-                position: "top-end",
-                showConfirmButton: false,
-                timer: 2000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                    toast.addEventListener("mouseenter", Swal.stopTimer)
-                    toast.addEventListener("mouseleave", Swal.resumeTimer)
-                }
-            })
+    <script>
+    const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener("mouseenter", Swal.stopTimer)
+            toast.addEventListener("mouseleave", Swal.resumeTimer)
+        }
+    })
 
-            Toast.fire({
-                icon: "success",
-                title: "Data Submitted Successfully"
-            });
-        </script>
-        <?php
+    Toast.fire({
+        icon: "success",
+        title: "Data Submitted Successfully"
+    });
+    </script>
+    <?php
     }
     ?>
 </body>
