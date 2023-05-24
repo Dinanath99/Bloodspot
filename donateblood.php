@@ -7,14 +7,6 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-// if admin click on logout then its unset the session and destory the session
-//and redirect to member login page
-if (isset($_REQUEST['logout'])) {
-    session_unset();
-    session_destroy();
-    echo "<script>location.href = 'login.php'</script>";
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -146,27 +138,27 @@ if (isset($_REQUEST['logout'])) {
     <?php
     if (isset($_GET['success']) && $_GET['success'] == 1) {
         ?>
-    <script>
-    const Toast = Swal.mixin({
-        toast: true,
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-            toast.addEventListener("mouseenter", Swal.stopTimer)
-            toast.addEventListener("mouseleave", Swal.resumeTimer)
-        }
-    })
+        <script>
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener("mouseenter", Swal.stopTimer)
+                    toast.addEventListener("mouseleave", Swal.resumeTimer)
+                }
+            })
 
-    Toast.fire({
-        icon: "success",
-        title: "Data Submitted Successfully"
-        //  title: "Data Not Submitted Successfully"
+            Toast.fire({
+                icon: "success",
+                title: "Data Submitted Successfully"
+                //  title: "Data Not Submitted Successfully"
 
-    });
-    </script>
-    <!-- <?php
+            });
+        </script>
+        <!-- <?php
     } elseif (isset($_GET['success']) && $_GET['success'] == 0) { ?>
         <script>
             Swal.fire({

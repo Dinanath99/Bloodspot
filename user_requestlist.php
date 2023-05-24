@@ -1,10 +1,10 @@
 <?php
 include 'dbconn.php';
- session_start();
+session_start();
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
-} 
+}
 @$userId = $_GET['user_id'];
 
 // Retrieve donations specific to the user from the database
@@ -12,14 +12,6 @@ $stmt = $pdo->prepare('SELECT * FROM requestlist WHERE u_id = :userId');
 $stmt->bindParam(':userId', $userId);
 $stmt->execute();
 $request = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-// if admin click on logout then its unset the session and destory the session
-//and redirect to member login page
-if (isset($_REQUEST['logout'])) {
-    session_unset();
-    session_destroy();
-    echo "<script>location.href = 'login.php'</script>";
-}
 
 
 ?>
@@ -70,25 +62,49 @@ if (isset($_REQUEST['logout'])) {
                             </tr>
                         </thead>
                         <tbody>
-                            <?php 
+                            <?php
                             $count = 1;
                             foreach ($request as $item) { ?>
-                            <tr>
-                                <td><?php echo $count ?></td>
-                                <td><?php echo $item['Pname'] ?></td>
-                                <td><?php echo $item['email'] ?></td>
-                                <td><?php echo $item['contact'] ?></td>
-                                <td><?php echo $item['dob'] ?></td>
-                                <td><?php echo $item['gender'] ?></td>
-                                <td><?php echo $item['blood_group'] ?></td>
-                                <td><?php echo $item['qty'] ?></td>
-                                <td><?php echo $item['address'] ?></td>
-                                <td><?php echo $item['timestamp'] ?></td>
-                                <td><?php echo $item['message'] ?></td>
-                                <td><?php echo $item['status'] ?></td>
-                                
-                            <?php $count++;
-                        } ?>
+                                <tr>
+                                    <td>
+                                        <?php echo $count ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['Pname'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['email'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['contact'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['dob'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['gender'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['blood_group'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['qty'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['address'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['timestamp'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['message'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['status'] ?>
+                                    </td>
+
+                                    <?php $count++;
+                            } ?>
                         </tbody>
                     </table>
                 </center>

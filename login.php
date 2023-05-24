@@ -1,6 +1,12 @@
 <?php
 session_start();
 include('dbconn.php');
+
+if (isset($_SESSION['user_id'])) {
+    header('location: userdashboard.php');
+    exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $email = $_POST['email'];

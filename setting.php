@@ -56,10 +56,10 @@ if (isset($_REQUEST['logout'])) {
                         <i class="fas fa-tasks"></i>
                         <span class="nav-item">Blood center</span>
                     </a></li> -->
-                <li><a href="setting.php">
+                <!-- <li><a href="setting.php">
                         <i class="fas fa-cog"></i>
                         <span class="nav-item">Setting</span>
-                    </a></li>
+                    </a></li> -->
                 <li><a href="#">
                         <i class="fas fa-question-circle"></i>
                         <span class="nav-item">Help</span>
@@ -97,71 +97,71 @@ if (isset($_REQUEST['logout'])) {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>Edit Profile</title>
                 <style>
-                .setting {
-                    display: flex;
-                    justify-content: column;
-                    align-items: center;
-                    margin: 30px;
-                    /* background-color: orange; */
-                }
+                    .setting {
+                        display: flex;
+                        justify-content: column;
+                        align-items: center;
+                        margin: 30px;
+                        /* background-color: orange; */
+                    }
 
-                form {
-                    max-width: 450px;
-                    margin: 0 auto;
-                    /* background: rebeccapurple; */
-                    border-radius: 20px;
-                    padding: 10px;
-                    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
-                }
+                    form {
+                        max-width: 450px;
+                        margin: 0 auto;
+                        /* background: rebeccapurple; */
+                        border-radius: 20px;
+                        padding: 10px;
+                        box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+                    }
 
-                .form-group {
-                    margin-bottom: 15px;
-                }
+                    .form-group {
+                        margin-bottom: 0px;
+                    }
 
-                .form-group label {
-                    display: block;
-                    font-weight: 700;
-                    margin-bottom: 0.5em;
-                }
+                    .form-group label {
+                        display: block;
+                        font-weight: 700;
+                        margin-bottom: 0.5em;
+                    }
 
-                .form-group input[type="text"],
-                .form-group input[type="email"],
-                .form-group input[type="number"],
-                .form-group input[type="password"] {
-                    width: 100%;
-                    padding: 6px;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
+                    .form-group input[type="text"],
+                    .form-group input[type="email"],
+                    .form-group input[type="number"],
+                    .form-group input[type="password"] {
+                        width: 100%;
+                        padding: 6px;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
 
-                }
+                    }
 
-                .btn-group {
-                    margin-top: 20px;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                }
+                    .btn-group {
+                        margin: 5px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
 
-                .btn-group button {
-                    padding: 8px 16px;
-                    color: white;
-                    border: none;
-                    border-radius: 4px;
-                    cursor: pointer;
-                    font-weight: 700;
-                }
+                    .btn-group button {
+                        padding: 8px 16px;
+                        color: white;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        font-weight: 700;
+                    }
 
-                #saveBtn {
-                    background-color: green;
-                }
+                    #saveBtn {
+                        background-color: green;
+                    }
 
-                #deleteBtn {
-                    background-color: red;
-                }
+                    #deleteBtn {
+                        background-color: red;
+                    }
 
-                .btn-group button:hover {
-                    opacity: 0.8;
-                }
+                    .btn-group button:hover {
+                        opacity: 0.8;
+                    }
                 </style>
             </head>
 

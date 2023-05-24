@@ -2,10 +2,7 @@
 include('dbconn.php');
 include('adminsession.php');
 
-if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
-    exit();
-} 
+
 $stmt = $pdo->prepare('SELECT bloodGroup,qty FROM viewstock ');
 $stmt->execute();
 $bloodGroups = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -94,11 +91,15 @@ if (isset($_REQUEST['logout'])) {
             </div>
             <!-- blood group section -->
             <div class="blood_type">
-            <?php foreach ($bloodGroups as $item){ ?>
+                <?php foreach ($bloodGroups as $item) { ?>
                     <div class="card">
                         <i class="fa-solid fa-droplet"></i>
-                        <h3><?php echo $item['bloodGroup'] ?></h3>
-                        <p><?php echo $item['qty'] ?> units</p>
+                        <h3>
+                            <?php echo $item['bloodGroup'] ?>
+                        </h3>
+                        <p>
+                            <?php echo $item['qty'] ?> units
+                        </p>
                         <button>Request</button>
                     </div>
                 <?php } ?>

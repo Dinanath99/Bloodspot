@@ -18,13 +18,7 @@ $stmt = $pdo->prepare("SELECT * FROM donatelist WHERE status != 'Pending' AND u_
 $stmt->bindParam(':u_id', $u_id);
 $stmt->execute();
 $donate = $stmt->fetchALL(PDO::FETCH_ASSOC);
-// if admin click on logout then its unset the session and destory the session
-//and redirect to member login page
-if (isset($_REQUEST['logout'])) {
-    session_unset();
-    session_destroy();
-    echo "<script>location.href = 'login.php'</script>";
-}
+
 
 ?>
 <!DOCTYPE html>
@@ -69,10 +63,10 @@ if (isset($_REQUEST['logout'])) {
                         <i class="fas fa-tasks"></i>
                         <span class="nav-item">Blood center</span>
                     </a></li> -->
-                <li><a href="setting.php">
+                <!-- <li><a href="setting.php">
                         <i class="fas fa-cog"></i>
                         <span class="nav-item">Setting</span>
-                    </a></li>
+                    </a></li> -->
                 <li><a href="#">
                         <i class="fas fa-question-circle"></i>
                         <span class="nav-item">Help</span>

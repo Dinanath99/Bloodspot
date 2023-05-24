@@ -448,6 +448,48 @@
   }
 
 
+  /* go to top section */
+  .go-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: #ff2d2d;
+      color: #fff;
+      border-radius: 50%;
+      text-decoration: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .go-to-top:hover {
+      background-color: #ff5555;
+  }
+
+  .go-to-top.show {
+      opacity: 1;
+      visibility: visible;
+  }
+
+  .go-to-top i {
+      font-size: 20px;
+  }
+
+  .go-to-top .button-text {
+      display: none;
+      margin-left: 5px;
+  }
+
+  .go-to-top:hover .button-text {
+      display: inline-block;
+  }
+
+
 
   /* media query section for landing page*/
   @media(max-width:1425px) {

@@ -6,14 +6,6 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
 }
-// if admin click on logout then its unset the session and destory the session
-//and redirect to member login page
-if (isset($_REQUEST['logout'])) {
-    session_unset();
-    session_destroy();
-    echo "<script>location.href='login.php'</script>";
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,10 +48,10 @@ if (isset($_REQUEST['logout'])) {
                         <i class="fas fa-tasks"></i>
                         <span class="nav-item">Blood center</span>
                     </a></li> -->
-                <li><a href="#">
+                <!-- <li><a href="#">
                         <i class="fas fa-cog"></i>
                         <span class="nav-item">Setting</span>
-                    </a></li>
+                    </a></li> -->
                 <li><a href="#">
                         <i class="fas fa-question-circle"></i>
                         <span class="nav-item">Help</span>

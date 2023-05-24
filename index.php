@@ -28,8 +28,8 @@
         <ul class="navlist">
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">BloodBank information</a></li>
-            <li><a href="#">service</a></li>
+            <li><a href="info.php">BloodBank information</a></li>
+            <li><a href="#request">service</a></li>
             <li><a href="login.php">Login</a></li>
         </ul>
         <a href="./admin/memberlogin.php" class="top-btn">Admin</a>
@@ -205,23 +205,28 @@
     </footer>
 
 
+    <!-- go to top -->
+    <a href="#" class="go-to-top" title="Go to Top">
+        <i class="fas fa-arrow-up"></i>
+        <span class="button-text">Go to Top</span>
+    </a>
 
     <!-- link to javascript -->
     <script>
-        const header = document.querySelector("header");
-        window.addEventListener("scroll", function () {
-            header.classList.toggle("sticky", window.scrollY > 0);
-        });
-        let menu = document.querySelector('#menu-icon');
-        let navlist = document.querySelector('.navlist');
-        menu.onclick = () => {
-            menu.classList.toggle('bx-x');
-            navlist.classList.toggle('active');
-        };
-        window.onscroll = () => {
-            menu.classList.remove('bx-x');
-            navlist.classList.remove('active');
-        };
+    const header = document.querySelector("header");
+    window.addEventListener("scroll", function() {
+        header.classList.toggle("sticky", window.scrollY > 0);
+    });
+    let menu = document.querySelector('#menu-icon');
+    let navlist = document.querySelector('.navlist');
+    menu.onclick = () => {
+        menu.classList.toggle('bx-x');
+        navlist.classList.toggle('active');
+    };
+    window.onscroll = () => {
+        menu.classList.remove('bx-x');
+        navlist.classList.remove('active');
+    };
     </script>
 </body>
 
