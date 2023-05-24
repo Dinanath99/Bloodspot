@@ -119,6 +119,10 @@ if (!isset($_SESSION['user_id'])) {
                             <option value="O-">O-</option>
                         </select>
                     </div>
+
+                    <label for="image">Image:</label>
+                    <input type="file" id="image" name="image">
+
                     <label for="qty">Quantity</label>
                     <input type="number" id="qty" name="qty" placeholder="Quantity">
                     <div id="qty-error" class="error-message"></div>
