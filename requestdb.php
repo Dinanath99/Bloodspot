@@ -8,13 +8,14 @@ $gender = $_POST['gender'];
 $blood_group = $_POST['blood_group'];
 $address = $_POST['address'];
 $qty = $_POST['qty'];
+$image = $_POST['image'];
 $message = $_POST['message'];
 $status = 'Pending';
 $bloodbank = 'Not visited';
 $timestamp = date('Y-m-d H:i:s');
 
-$stmt = $pdo->prepare("INSERT INTO requestlist(Pname,email,contact,dob,gender,blood_group,qty,address,message,status,bloodbank,timestamp)
-                    VALUES(:Pname,:email,:contact,:dob,:gender,:blood_group,:qty,:address,:message,:status,:bloodbank,:timestamp)");
+$stmt = $pdo->prepare("INSERT INTO requestlist(Pname,email,contact,dob,gender,blood_group,qty,address,message,status,image,bloodbank,timestamp)
+                    VALUES(:Pname,:email,:contact,:dob,:gender,:blood_group,:qty,:address,:message,:status,:image,:bloodbank,:timestamp)");
 $stmt->bindParam(':Pname', $Pname);
 $stmt->bindParam(':email', $email);
 $stmt->bindParam(':contact', $contact);
@@ -22,6 +23,7 @@ $stmt->bindParam(':dob', $dob);
 $stmt->bindParam(':gender', $gender);
 $stmt->bindParam(':blood_group', $blood_group);
 $stmt->bindParam(':qty', $qty);
+$stmt->bindParam(':image', $image);
 $stmt->bindParam(':address', $address);
 $stmt->bindParam(':message', $message);
 $stmt->bindParam(':status', $status);
@@ -30,16 +32,5 @@ $stmt->bindParam(':timestamp', $timestamp);
 if ($stmt->execute()) {
    header("Location: requestblood.php?success=1");
 }
-
-
-// // Update the quantity in the blood stock table
-// $StockStmt = $pdo->prepare("UPDATE viewstock SET qty = qty - $qty WHERE bloodGroup = :blood_group");
-// $StockStmt->bindParam(':blood_group', $blood_group);
-// // $StockStmt->execute();
-// if ($StockStmt->execute()) {
-//    // Redirect to form.php with success parameter
-//    // header('Location: donateblood.php?success=1');
-//    header("Location: user_requestlist.php?user_id= $u_id");
-//    exit;
-// } 
+ 
 ?>

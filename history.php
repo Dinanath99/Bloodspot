@@ -8,16 +8,22 @@ if (!isset($_SESSION['user_id'])) {
 }
 $u_id = $_SESSION['user_id'];
 //only recent 
-$stmt = $pdo->prepare("SELECT * FROM donatelist WHERE status = 'Pending' AND u_id = :u_id");
+$stmt = $pdo->prepare("SELECT * FROM requestlist WHERE status = 'Pending' AND u_id = :u_id");
 $stmt->bindParam(':u_id', $u_id);
 $stmt->execute();
 $item = $stmt->fetch(PDO::FETCH_ASSOC);
 
-//all donate history
-$stmt = $pdo->prepare("SELECT * FROM donatelist WHERE status != 'Pending' AND u_id = :u_id");
+// lastly donated
+$stmt = $pdo->prepare("SELECT * FROM donatelist WHERE u_id = :u_id AND bloodbank = 'Visited' ");
 $stmt->bindParam(':u_id', $u_id);
 $stmt->execute();
-$donate = $stmt->fetchALL(PDO::FETCH_ASSOC);
+$donate = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+//all request history
+$stmt = $pdo->prepare("SELECT * FROM requestlist WHERE status != 'Pending' AND u_id = :u_id");
+$stmt->bindParam(':u_id', $u_id);
+$stmt->execute();
+$request = $stmt->fetchALL(PDO::FETCH_ASSOC);
 
 
 ?>
@@ -94,7 +100,34 @@ $donate = $stmt->fetchALL(PDO::FETCH_ASSOC);
             </div>
             <div class="user-history">
                 <div class="donate-history">
-                    <h3>Recently Donated Forms </h3>
+                    <h3>Donate History</h3>
+                  <?php  if ($donate) {
+                    $totalDonated = count($donate);
+                    $lastDonated = date('Y-m-d', strtotime($donate[$totalDonated - 1]['timestamp']));?>
+                    <table border="3">
+                        <thead>
+                            <tr>
+                                <th>Full Name</th>
+                                <th>Total Donated</th>
+                                <th>Last Donated</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                        <td><?php echo $donate[$totalDonated - 1]['name']?></td>
+                        <td><?php echo $totalDonated ?></td>
+                        <td><?php echo $lastDonated ?></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <?php }
+                    else {
+                        echo '<p>No donation history available.</p>';
+                    } ?>
+                  </div>
+                  
+                <div class="donate-history">
+                    <h3>Recently Requested Forms </h3>
                     <?php if ($item) { ?>
                     <table>
                         <thead>
@@ -105,6 +138,7 @@ $donate = $stmt->fetchALL(PDO::FETCH_ASSOC);
                                 <th>Date of Birth</th>
                                 <th>Gender</th>
                                 <th>Blood Group</th>
+                                <th>Quantity</th>
                                 <th>Address</th>
                                 <th>Status</th>
                             </tr>
@@ -112,7 +146,7 @@ $donate = $stmt->fetchALL(PDO::FETCH_ASSOC);
                         <tbody>
                             <tr>
                                 <td>
-                                    <?php echo $item['name'] ?>
+                                    <?php echo $item['Pname'] ?>
                                 </td>
                                 <td>
                                     <?php echo $item['email'] ?>
@@ -128,6 +162,9 @@ $donate = $stmt->fetchALL(PDO::FETCH_ASSOC);
                                 </td>
                                 <td>
                                     <?php echo $item['blood_group'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['qty'] ?>
                                 </td>
                                 <td>
                                     <?php echo $item['address'] ?>
@@ -139,24 +176,25 @@ $donate = $stmt->fetchALL(PDO::FETCH_ASSOC);
                         </tbody>
                     </table>
                     <?php } else { ?>
-                    <p> No recently Donated Forms.</p>
+                    <p> No recently Requested Forms.</p>
                     <?php } ?>
 
 
                 </div>
                 <div class="donate-history">
-                    <h3>Donate History</h3>
+                    <h3>Request History</h3>
 
                     <table border="3">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>S.N</th>
                                 <th>Full Name</th>
                                 <th>Email</th>
                                 <th>Contact</th>
                                 <th>Date of Birth</th>
                                 <th>Gender</th>
                                 <th>Blood Group</th>
+                                <th>Quantity</th>
                                 <th>Address</th>
                                 <th>Status</th>
                             </tr>
@@ -164,13 +202,13 @@ $donate = $stmt->fetchALL(PDO::FETCH_ASSOC);
                         <tbody>
                             <?php
                             $count = 1;
-                            foreach ($donate as $item) { ?>
+                            foreach ($request as $item) { ?>
                             <tr>
                                 <td>
                                     <?php echo $count ?>
                                 </td>
                                 <td>
-                                    <?php echo $item['name'] ?>
+                                    <?php echo $item['Pname'] ?>
                                 </td>
                                 <td>
                                     <?php echo $item['email'] ?>
@@ -186,6 +224,9 @@ $donate = $stmt->fetchALL(PDO::FETCH_ASSOC);
                                 </td>
                                 <td>
                                     <?php echo $item['blood_group'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['qty'] ?>
                                 </td>
                                 <td>
                                     <?php echo $item['address'] ?>

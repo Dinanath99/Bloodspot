@@ -129,11 +129,8 @@ if (!isset($_SESSION['user_id'])) {
                         <input type="file" id="image" name="image">
                     </div>
 
-                    <div class="group quantity">
-                        <label for="qty">Quantity</label>
-                        <input type="number" id="qty" name="qty" placeholder="Quantity">
-                        <div id="qty-error" class="error-message"></div>
-                    </div>
+                    <label for="image">Image:</label>
+                    <input type="file" id="image" name="image" accept="image/*">
 
                     <div class="group address">
 
@@ -159,25 +156,25 @@ if (!isset($_SESSION['user_id'])) {
     <?php
     if (isset($_GET['success']) && $_GET['success'] == 1) {
         ?>
-    <script>
-    const Toast = Swal.mixin({
-        toast: true,
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 2000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-            toast.addEventListener("mouseenter", Swal.stopTimer)
-            toast.addEventListener("mouseleave", Swal.resumeTimer)
-        }
-    })
+        <script>
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener("mouseenter", Swal.stopTimer)
+                    toast.addEventListener("mouseleave", Swal.resumeTimer)
+                }
+            })
 
-    Toast.fire({
-        icon: "success",
-        title: "Data Submitted Successfully"
-    });
-    </script>
-    <?php
+            Toast.fire({
+                icon: "success",
+                title: "Data Submitted Successfully"
+            });
+        </script>
+        <?php
     }
     ?>
 </body>

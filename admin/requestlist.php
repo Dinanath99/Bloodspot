@@ -124,6 +124,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <th>Gender</th>
                             <th>Blood Group</th>
                             <th>Quantity</th>
+                            <th>Image</th>
                             <th>Address</th>
                             <th>Time Stamp</th>
                             <th>Message</th>
@@ -162,6 +163,14 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <td>
                                     <?php echo $item['qty'] ?>
                                 </td>
+                                <td>
+                                  <img src="../img/<?php echo $item['image'] ?>" alt="Image" class="thumbnail" width="25px" height="25px">
+                                </td>
+                                <div id="imageModal" class="modal">
+                                 <span class="close" onclick="closeImageModal()">&times;</span>
+                                 <img class="modal-content" id="largeImage">
+                                 <div id="caption"></div>
+                                 </div>
                                 <td>
                                     <?php echo $item['address'] ?>
                                 </td>
@@ -249,6 +258,9 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
             xhr.send('donor_id=' + donorId + '&bank=' + bank);
 
         }
+
+</script>
+
     </script>
 
 </body>
