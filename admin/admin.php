@@ -1,6 +1,28 @@
 <?php
 include('dbconn.php');
 include('adminsession.php');
+//total request
+$stmt = $pdo->prepare("SELECT COUNT(*) AS total_request FROM requestlist WHERE bloodbank = 'Visited'");
+$stmt->execute();
+$request = $stmt->fetch(PDO::FETCH_ASSOC);
+$totalRequest = $request['total_request'];
+
+//total donor
+$stmt = $pdo->prepare('SELECT COUNT(*) AS total_donate FROM donatelist');
+$stmt->execute();
+$donate = $stmt->fetch(PDO::FETCH_ASSOC);
+$totalDonate = $donate['total_donate'];
+
+//total qty
+$stmt = $pdo->prepare('SELECT SUM(qty) AS total_quantity FROM viewstock');
+$stmt->execute();
+$qty = $stmt->fetch(PDO::FETCH_ASSOC);
+$totalQuantity = $qty['total_quantity'];
+
+//recent donors
+$stmt = $pdo->prepare('SELECT * FROM donatelist ORDER BY id  DESC LIMIT 5');
+$stmt->execute();
+$donate = $stmt->fetchALL(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -85,57 +107,34 @@ include('adminsession.php');
                     <p class="description">Total </p>
                     <div class="actions">
                         <button class="pref">
-                            20
-                        </button>
-                        <button class="accept">
-                            View
-                        </button>
+                        <?php echo $totalRequest; ?>
+                        </button>                        
+                        <a href="requestlist.php" class="accept" >View</a>                 
                     </div>
-
-
                 </div>
+
                 <div class="cookie-card">
-                    <span class="title">Received</span>
+                    <span class="title">Donor</span>
                     <p class="description">Total</p>
                     <div class="actions">
                         <button class="pref">
-                            12
+                            <?php echo $totalDonate; ?>
                         </button>
-                        <button class="accept">
-                            View
-                        </button>
+                        <a href="donorlist.php" class="accept" >View</a>
                     </div>
-
-
                 </div>
+
                 <div class="cookie-card">
                     <span class="title">In stock</span>
                     <p class="description">Total</p>
                     <div class="actions">
                         <button class="pref">
-                            130
-                        </button>
-                        <button class="accept">
-                            View
-                        </button>
+                            <?php echo $totalQuantity; ?>
+                        </button>                       
+                        <a href="bloodstock.php" class="accept" >View</a>                        
                     </div>
-
-
                 </div>
-                <div class="cookie-card">
-                    <span class="title">Total Blood unit</span>
-                    <p class="description">Total</p>
-                    <div class="actions">
-                        <button class="pref">
-                            145
-                        </button>
-                        <button class="accept">
-                            View
-                        </button>
-                    </div>
-
-
-                </div>
+                
             </div>
             <div class="recent-donor">
                 <div class="title">
@@ -148,7 +147,6 @@ include('adminsession.php');
                     <table class="donor-table">
                         <thead>
                             <tr>
-                                <!-- <th>Image</th> -->
                                 <th>Name</th>
                                 <th>Blood Type</th>
                                 <th>Email</th>
@@ -156,34 +154,15 @@ include('adminsession.php');
                             </tr>
                         </thead>
                         <tbody>
+                            <?php foreach($donate as $item){?>
                             <tr>
                                 <!-- <td><img src="user1.jpg" alt="User 1" class="user-image"></td> -->
-                                <td>Dinanath</td>
-                                <td>O+</td>
-                                <td>dkmdkm26@gmail.com</td>
-                                <td>Imadol</td>
+                                <td><?php echo $item['name']?></td>
+                                <td><?php echo $item['blood_group']?></td>
+                                <td><?php echo $item['email']?></td>
+                                <td><?php echo $item['address']?></td>
                             </tr>
-                            <tr>
-                                <!-- <td><img src="user2.jpg" alt="User 2" class="user-image"></td> -->
-                                <td>Amit</td>
-                                <td>B+</td>
-                                <td>Amit@gmail.com</td>
-                                <td>Satodobato</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="user3.jpg" alt="User 3" class="user-image"></td> -->
-                                <td>Kanak</td>
-                                <td>O+</td>
-                                <td>kanak@gmail.com</td>
-                                <td>sundahara</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="user4.jpg" alt="User 4" class="user-image"></td> -->
-                                <td>Ayush</td>
-                                <td>C</td>
-                                <td>Aayush@gmail.com</td>
-                                <td>Imadol</td>
-                            </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>

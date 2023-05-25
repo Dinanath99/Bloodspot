@@ -55,10 +55,6 @@ $signup = $stmt->fetch(PDO::FETCH_ASSOC);
                         <span class="nav-item">Blood center</span>
                     </a></li> -->
                 <li><a href="#">
-                        <i class="fas fa-cog"></i>
-                        <span class="nav-item">Setting</span>
-                    </a></li>
-                <li><a href="#">
                         <i class="fas fa-question-circle"></i>
                         <span class="nav-item">Help</span>
                     </a></li>
@@ -135,8 +131,6 @@ $signup = $stmt->fetch(PDO::FETCH_ASSOC);
                         <input type="submit" name="sub" class="btn donate-btn" value="Submit" />
                     </div>
                 </form>
-
-                <!--  php code for database  -->
                 <script src="donateblood.js"></script>
             </div>
         </section>
@@ -168,7 +162,7 @@ $signup = $stmt->fetch(PDO::FETCH_ASSOC);
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "You cannot donate more than once a month",
+                text: "You can only donate if three months have passed since your last donation.",
                 buttonsStyling: false,
                 customClass: {
                     confirmButton: "swal-btn-red" // Custom CSS class for confirm button

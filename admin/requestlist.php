@@ -166,11 +166,6 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <td>
                                   <img src="../img/<?php echo $item['image'] ?>" alt="Image" class="thumbnail" width="25px" height="25px">
                                 </td>
-                                <div id="imageModal" class="modal">
-                                 <span class="close" onclick="closeImageModal()">&times;</span>
-                                 <img class="modal-content" id="largeImage">
-                                 <div id="caption"></div>
-                                 </div>
                                 <td>
                                     <?php echo $item['address'] ?>
                                 </td>

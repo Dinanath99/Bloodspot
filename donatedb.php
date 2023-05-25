@@ -46,13 +46,5 @@ header('Location: donateblood.php?success=0');
       header('Location: donateblood.php?success=1');
    }
 
-   // Update the quantity in the blood stock table
-   // $StockStmt = $pdo->prepare("UPDATE viewstock SET qty = qty + 1 WHERE bloodGroup = :blood_group");
-   // $StockStmt->bindParam(':blood_group', $blood_group);
-   // if ($StockStmt->execute()) {
-   //    // Redirect to form.php with success parameter
-   //    header("Location: userdonatelist.php?user_id= $u_id");
-   //    exit;
-   // }
 }
 ?>
