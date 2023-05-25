@@ -81,7 +81,7 @@ if (!isset($_SESSION['user_id'])) {
                 </div>
 
             </div>
-            <div class="wrapper">
+            <div class="donate-blood">
                 <h2>Please send us your details</h2>
                 <form id="form" action="donatedb.php" method="POST">
 
@@ -126,8 +126,10 @@ if (!isset($_SESSION['user_id'])) {
                     <label for="address">Address:</label>
                     <input type="text" id="address" name="address" placeholder="Address" />
                     <div id="addr-error" class="error-message"></div>
+                    <div class="btn-container">
 
-                    <input type="submit" name="sub" class="btn" value="Submit" />
+                        <input type="submit" name="sub" class="btn donate-btn" value="Submit" />
+                    </div>
                 </form>
 
                 <!--  php code for database  -->
@@ -138,27 +140,27 @@ if (!isset($_SESSION['user_id'])) {
     <?php
     if (isset($_GET['success']) && $_GET['success'] == 1) {
         ?>
-        <script>
-            const Toast = Swal.mixin({
-                toast: true,
-                position: "top-end",
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                    toast.addEventListener("mouseenter", Swal.stopTimer)
-                    toast.addEventListener("mouseleave", Swal.resumeTimer)
-                }
-            })
+    <script>
+    const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener("mouseenter", Swal.stopTimer)
+            toast.addEventListener("mouseleave", Swal.resumeTimer)
+        }
+    })
 
-            Toast.fire({
-                icon: "success",
-                title: "Data Submitted Successfully"
-                //  title: "Data Not Submitted Successfully"
+    Toast.fire({
+        icon: "success",
+        title: "Data Submitted Successfully"
+        //  title: "Data Not Submitted Successfully"
 
-            });
-        </script>
-        <!-- <?php
+    });
+    </script>
+    <!-- <?php
     } elseif (isset($_GET['success']) && $_GET['success'] == 0) { ?>
         <script>
             Swal.fire({

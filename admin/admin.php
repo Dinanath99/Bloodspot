@@ -72,20 +72,20 @@ include('adminsession.php');
                 <div class="dropdown">
                     <button class="dropbtn"><i class="fas fa-user-cog"></i></button>
                     <div class="dropdown-content">
-                        <a href="#">Edit Profile</a>
+                        <!-- <a href="#">Edit Profile</a> -->
                         <a href="logoutadmin.php">Logout</a>
                     </div>
                 </div>
             </div>
-            <!--  hero section -->
+
             <div class="admin-panel">
 
                 <div class="cookie-card">
-                    <span class="title">Total Donors</span>
-                    <p class="description">60+ </p>
+                    <span class="title">Requested</span>
+                    <p class="description">Total </p>
                     <div class="actions">
                         <button class="pref">
-                            Manage your preferences
+                            20
                         </button>
                         <button class="accept">
                             View
@@ -95,11 +95,11 @@ include('adminsession.php');
 
                 </div>
                 <div class="cookie-card">
-                    <span class="title">Request</span>
-                    <p class="description">60+ </p>
+                    <span class="title">Received</span>
+                    <p class="description">Total</p>
                     <div class="actions">
                         <button class="pref">
-                            Manage your preferences
+                            12
                         </button>
                         <button class="accept">
                             View
@@ -109,11 +109,11 @@ include('adminsession.php');
 
                 </div>
                 <div class="cookie-card">
-                    <span class="title">Approved Request</span>
-                    <p class="description">60+ </p>
+                    <span class="title">In stock</span>
+                    <p class="description">Total</p>
                     <div class="actions">
                         <button class="pref">
-                            Manage your preferences
+                            130
                         </button>
                         <button class="accept">
                             View
@@ -124,10 +124,10 @@ include('adminsession.php');
                 </div>
                 <div class="cookie-card">
                     <span class="title">Total Blood unit</span>
-                    <p class="description">20 </p>
+                    <p class="description">Total</p>
                     <div class="actions">
                         <button class="pref">
-                            Manage your preferences
+                            145
                         </button>
                         <button class="accept">
                             View
@@ -141,6 +141,53 @@ include('adminsession.php');
                 <div class="title">
                     <h1>Recent donors</h1>
                 </div>
+            </div>
+
+            <div class="recent-donor-table">
+                <div class="table-container">
+                    <table class="donor-table">
+                        <thead>
+                            <tr>
+                                <!-- <th>Image</th> -->
+                                <th>Name</th>
+                                <th>Blood Type</th>
+                                <th>Email</th>
+                                <th>Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <!-- <td><img src="user1.jpg" alt="User 1" class="user-image"></td> -->
+                                <td>Dinanath</td>
+                                <td>O+</td>
+                                <td>dkmdkm26@gmail.com</td>
+                                <td>Imadol</td>
+                            </tr>
+                            <tr>
+                                <!-- <td><img src="user2.jpg" alt="User 2" class="user-image"></td> -->
+                                <td>Amit</td>
+                                <td>B+</td>
+                                <td>Amit@gmail.com</td>
+                                <td>Satodobato</td>
+                            </tr>
+                            <tr>
+                                <!-- <td><img src="user3.jpg" alt="User 3" class="user-image"></td> -->
+                                <td>Kanak</td>
+                                <td>O+</td>
+                                <td>kanak@gmail.com</td>
+                                <td>sundahara</td>
+                            </tr>
+                            <tr>
+                                <!-- <td><img src="user4.jpg" alt="User 4" class="user-image"></td> -->
+                                <td>Ayush</td>
+                                <td>C</td>
+                                <td>Aayush@gmail.com</td>
+                                <td>Imadol</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
         </section>
     </div>

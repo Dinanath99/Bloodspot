@@ -82,24 +82,29 @@ if (!isset($_SESSION['user_id'])) {
             <div class="wrapper">
                 <h2>Blood Request Form <br>
                     रगत चाहियो?</h2>
-                <form id="form" action="requestdb.php" method="POST">
+                <form class="request-form" id="form" action="requestdb.php" method="POST">
+                    <div class="group name">
 
-                    <label for="Pname">Patient Name</label>
-                    <input type="text" id="Pname" name="Pname" placeholder="Patient Name" />
-                    <div id="name-error" class="error-message"></div>
-
-                    <label for=" email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="Email Address" />
-                    <div id="email-error" class="error-message"></div>
-
-                    <label for="contact">Contact Number </label>
-                    <input type="number" id="contact" name="contact" placeholder="Contact Number" />
-                    <div id="contact-error" class="error-message"></div>
-
-                    <label for="dob">Date of Birth:</label>
-                    <input type="date" id="dob" name="dob">
-                    <div id="dob-error" class="error-message"></div>
-                    <div class="gender">
+                        <label for="Pname">Patient Name</label>
+                        <input type="text" id="Pname" name="Pname" placeholder="Patient Name" /><br>
+                        <div id="name-error" class="error-message"></div>
+                    </div>
+                    <div class="group email">
+                        <label for=" email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Email Address" /> <br>
+                        <div id="email-error" class="error-message"></div>
+                    </div>
+                    <div class="group contact">
+                        <label for="contact">Contact Number </label>
+                        <input type="number" id="contact" name="contact" placeholder="Contact Number" />
+                        <div id="contact-error" class="error-message"></div>
+                    </div>
+                    <div class="group dob">
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob" name="dob">
+                        <div id="dob-error" class="error-message"></div>
+                    </div>
+                    <div class="group gender">
                         <label for="gender">Gender</label>
                         <select id="gender" name="gender">
                             <option value="male">Male</option>
@@ -119,23 +124,33 @@ if (!isset($_SESSION['user_id'])) {
                             <option value="O-">O-</option>
                         </select>
                     </div>
+                    <div class="group image">
+                        <label for="image">Image:</label>
+                        <input type="file" id="image" name="image">
+                    </div>
 
-                    <label for="image">Image:</label>
-                    <input type="file" id="image" name="image">
+                    <div class="group quantity">
+                        <label for="qty">Quantity</label>
+                        <input type="number" id="qty" name="qty" placeholder="Quantity">
+                        <div id="qty-error" class="error-message"></div>
+                    </div>
 
-                    <label for="qty">Quantity</label>
-                    <input type="number" id="qty" name="qty" placeholder="Quantity">
-                    <div id="qty-error" class="error-message"></div>
+                    <div class="group address">
 
-                    <label for="address">Address</label>
-                    <input type="text" id="address" name="address" placeholder="Address" />
-                    <div id="addr-error" class="error-message"></div>
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" placeholder="Address" />
+                        <div id="addr-error" class="error-message"></div>
+                    </div>
+                    <div class="group message">
 
-                    <label for="message">Message</label>
-                    <input type="textarea" id="message" name="message" />
+                        <label for="message">Message</label>
+                        <input type="textarea" id="message" name="message" />
+                    </div>
 
+                    <div class="group button-container">
+                        <input type="submit" class="btn" value="Submit" />
+                    </div>
 
-                    <input type="submit" class="btn" value="submit" />
                 </form>
                 <script src="reqblood.js"></script>
             </div>

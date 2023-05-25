@@ -464,7 +464,7 @@ nav.fas {
     padding: 10px;
 }
 
-/* admin hero section css */
+/* admin dashboard section*/
 .admin-panel {
     display: flex;
     flex-direction: row;
@@ -477,24 +477,25 @@ nav.fas {
 }
 
 .cookie-card {
-    max-width: 200px;
+    min-width: 200px;
     padding: 1rem;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 20px 20px 30px rgba(0, 0, 0, .05);
     margin: 20px;
-    height: 100px;
+    height: auto;
+    border: 1px solid red;
 }
 
 .title {
-    font-weight: 600;
+    font-weight: 800;
     color: rgb(31 41 55);
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .description {
     margin-top: 1rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
     line-height: 1.25rem;
     color: rgb(75 85 99);
 }
@@ -520,7 +521,7 @@ nav.fas {
 }
 
 .pref {
-    font-size: 0.75rem;
+    font-size: 2rem;
     line-height: 1rem;
     color: rgb(31 41 55);
     -webkit-text-decoration-line: underline;
@@ -540,9 +541,9 @@ nav.fas {
 }
 
 .accept {
-    font-size: 0.75rem;
+    font-size: 1rem;
     line-height: 1rem;
-    background-color: rgb(17 24 39);
+    background-color: var(--main-color);
     font-weight: 500;
     border-radius: 0.5rem;
     color: #fff;
@@ -555,7 +556,8 @@ nav.fas {
 }
 
 .accept:hover {
-    background-color: rgb(55 65 81);
+    background-color: var(--text-color);
+    cursor: pointer;
 }
 
 .accept:focus {
@@ -572,4 +574,46 @@ nav.fas {
 
 .title {
     color: red;
+}
+
+/* recent donor table  */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.donor-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.donor-table th,
+.donor-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.donor-table th {
+    background-color: #f2f2f2;
+}
+
+.donor-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.donor-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.donor-table th:first-child,
+.donor-table td:first-child {
+    padding-left: 20px;
+}
+
+.user-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
 }

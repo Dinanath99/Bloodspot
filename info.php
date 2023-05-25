@@ -18,78 +18,78 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,300&display=swap" rel="stylesheet">
 </head>
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,300&display=swap');
 
-    * {
-        font-family: 'Poppins', sans-serif;
-    }
+* {
+    font-family: 'Poppins', sans-serif;
+}
 
-    .blood_type {
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin: 100px;
-        width: auto;
-        height: auto;
-        border: 4px solid rgb(239, 60, 75);
+.blood_type {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+    width: auto;
+    height: auto;
+    border: 4px solid rgb(239, 60, 75);
 
-    }
+}
 
-    .blood_type .card {
-        flex-direction: wrap;
-        width: 25%;
-        margin: 25px;
-        background: #fff;
-        text-align: center;
-        border-radius: 20px;
-        padding: 20px;
-        transition: ease.50s;
-        cursor: pointer;
-        box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-    }
+.blood_type .card {
+    flex-direction: wrap;
+    width: 25%;
+    margin: 25px;
+    background: #fff;
+    text-align: center;
+    border-radius: 20px;
+    padding: 20px;
+    transition: ease.50s;
+    cursor: pointer;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
 
-    .blood_type .card:hover {
-        background: #ffffff;
-        /* box-shadow: 18px 0px 87px 0px rgba(118, 22, 22, 0.7); */
+.blood_type .card:hover {
+    background: #ffffff;
+    /* box-shadow: 18px 0px 87px 0px rgba(118, 22, 22, 0.7); */
 
-        box-shadow: 0.5px 0.5px 7.5px 0px rgba(219, 6, 6, 0.7);
+    /* box-shadow: 0.5px 0.5px 7.5px 0px rgba(219, 6, 6, 0.7); */
 
-        border-radius: 12px;
-        transform: scale(1.1);
-    }
+    border-radius: 12px;
+    transform: scale(1.1);
+}
 
-    .blood_type .card h3 {
-        width: auto;
-        margin: 10px;
-        text-transform: capitalize;
-        box-sizing: border-box;
-        overflow: auto;
-    }
+.blood_type .card h3 {
+    width: auto;
+    margin: 10px;
+    text-transform: capitalize;
+    box-sizing: border-box;
+    overflow: auto;
+}
 
-    .blood_type p {
-        font-size: 20px;
-    }
+.blood_type p {
+    font-size: 20px;
+}
 
-    .blood_type.card button {
-        background: orangered;
-        color: #fff;
-        padding: 7px 15px;
-        border-radius: 10px;
-        margin-top: 15px;
-        cursor: pointer;
-    }
+.blood_type.card button {
+    background: orangered;
+    color: #fff;
+    padding: 7px 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+}
 
-    .blood_type .card button:hover {
-        background-color: rgb(322, 145, 33, 355);
-    }
+.blood_type .card button:hover {
+    background-color: rgb(322, 145, 33, 355);
+}
 
-    .blood_type.card i {
-        font-size: 32px;
-        padding: 10px;
-    }
+.blood_type.card i {
+    font-size: 32px;
+    padding: 10px;
+}
 </style>
 
 <body>
@@ -263,20 +263,20 @@
 
     <!-- link to javascript -->
     <script>
-        const header = document.querySelector("header");
-        window.addEventListener("scroll", function () {
-            header.classList.toggle("sticky", window.scrollY > 0);
-        });
-        let menu = document.querySelector('#menu-icon');
-        let navlist = document.querySelector('.navlist');
-        menu.onclick = () => {
-            menu.classList.toggle('bx-x');
-            navlist.classList.toggle('active');
-        };
-        window.onscroll = () => {
-            menu.classList.remove('bx-x');
-            navlist.classList.remove('active');
-        };
+    const header = document.querySelector("header");
+    window.addEventListener("scroll", function() {
+        header.classList.toggle("sticky", window.scrollY > 0);
+    });
+    let menu = document.querySelector('#menu-icon');
+    let navlist = document.querySelector('.navlist');
+    menu.onclick = () => {
+        menu.classList.toggle('bx-x');
+        navlist.classList.toggle('active');
+    };
+    window.onscroll = () => {
+        menu.classList.remove('bx-x');
+        navlist.classList.remove('active');
+    };
     </script>
 </body>
 

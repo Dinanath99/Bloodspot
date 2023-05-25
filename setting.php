@@ -33,7 +33,7 @@ if (isset($_REQUEST['logout'])) {
     <div class="container">
         <nav>
             <ul>
-                <li><a href="#" class="logo" class="active">
+                <li><a href="userdashboard.php" class="logo" class="active">
                         <img src="./img/bloodspot.png" alt="">
                         <!-- <span class="nav-item">Welcome<span class="username"> User</span></span> -->
                     </a></li>
