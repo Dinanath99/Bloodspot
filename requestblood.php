@@ -129,9 +129,6 @@ if (!isset($_SESSION['user_id'])) {
                         <input type="file" id="image" name="image">
                     </div>
 
-                    <label for="image">Image:</label>
-                    <input type="file" id="image" name="image" accept="image/*">
-
                     <div class="group address">
 
                         <label for="address">Address</label>
