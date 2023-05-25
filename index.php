@@ -1,3 +1,17 @@
+<?php 
+include('dbconn.php');
+//total user
+$stmt = $pdo->prepare('SELECT COUNT(*) AS total_user FROM signup');
+$stmt->execute();
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+$totalUser = $user['total_user'];
+
+//total blood
+$stmt = $pdo->prepare('SELECT SUM(qty) AS total_quantity FROM viewstock');
+$stmt->execute();
+$qty = $stmt->fetch(PDO::FETCH_ASSOC);
+$totalQuantity = $qty['total_quantity'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,8 +76,8 @@
                 <div class="sub-img">
                     <img src="img/donate.png" alt="image">
                 </div>
-                <h3>Donor Registered</h3>
-                <p>123456</p>
+                <h3>User Registered</h3>
+                <p><?php echo $totalUser; ?></p>
             </div>
             <div class="sub-box">
                 <div class="sub-img">
@@ -71,14 +85,14 @@
                 </div>
                 <h3>
                     Blood unit collected</h3>
-                <p>56</p>
+                <?php echo $totalUser; ?>
             </div>
             <div class="sub-box">
                 <div class="sub-img">
                     <img src="img/request.png" alt="image">
                 </div>
                 <h3>Blood storage Unit</h3>
-                <p>200</p>
+                <p><?php echo $totalQuantity; ?></p>
             </div>
 
         </div>
