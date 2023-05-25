@@ -6,13 +6,11 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
 }
-// if admin click on logout then its unset the session and destory the session
-//and redirect to member login page
-if (isset($_REQUEST['logout'])) {
-    session_unset();
-    session_destroy();
-    echo "<script>location.href='login.php'</script>";
-}
+$id = $_SESSION['user_id'];
+$stmt = $pdo->prepare("SELECT * FROM signup WHERE user_id = :id");
+$stmt->bindParam(':id',$id);
+$stmt->execute();
+$item = $stmt->fetch(PDO::FETCH_ASSOC);
 
 ?>
 <!DOCTYPE html>
@@ -27,7 +25,9 @@ if (isset($_REQUEST['logout'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 
 <body>
     <div class="container">
@@ -64,10 +64,6 @@ if (isset($_REQUEST['logout'])) {
                         <i class="fas fa-question-circle"></i>
                         <span class="nav-item">Help</span>
                     </a></li>
-                <!-- <li><a href="userlogout.php" class="logout">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span class="nav-item">Logout</span>
-                    </a></li> -->
             </ul>
         </nav>
 
@@ -168,32 +164,32 @@ if (isset($_REQUEST['logout'])) {
             <body>
                 <div class="setting">
 
-                    <form>
+                    <form  method="post" action="setting_update.php">
                         <h2>Edit Profile</h2>
                         <div class="form-group">
+                            <input type="text" id="id" name="id"  value="<?php echo $item['user_id'] ?>"hidden>
+                        </div>
+
+                        <div class="form-group">
                             <label for="name">Name:</label>
-                            <input type="text" id="name" name="name" readonly>
+                            <input type="text" id="name" name="name"  value="<?php echo $item['name'] ?>"readonly>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email"  value="<?php echo $item['email'] ?>">
                         </div>
 
                         <div class="form-group">
-                            <label for="number">Contact:</label>
-                            <input type="number" id="number" name="number" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="password">Password:</label>
-                            <input type="password" id="password" name="password" required>
+                            <label for="password">New Password:</label>
+                            <input type="password" id="password" name="password"  >
                         </div>
 
                         <div class="btn-group">
-                            <a href="helo.php"> <button type="button" id="saveBtn">Save Changes</button> </a>
-                            <a href="helo.php"> <button type="button" id="deleteBtn">Delete</button> </a>
+                          <button type="submit" id="saveBtn" onclick="submitForm(event)">Save Changes</button>
+                          <button id="deleteBtn" onclick="confirmDelete(event,<?php echo $item['user_id']; ?>)">Delete</button>
                         </div>
+
                     </form>
                 </div>
             </body>
@@ -202,8 +198,63 @@ if (isset($_REQUEST['logout'])) {
 
         </section>
     </div>
-</body>
-<script>
+    <?php
+    if (isset($_GET['success']) && $_GET['success'] == 1) {
+        ?>
+        <script>
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 1500,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener("mouseenter", Swal.stopTimer)
+                    toast.addEventListener("mouseleave", Swal.resumeTimer)
+                }
+            })
 
+            Toast.fire({
+                    icon: "success",
+                    title: "Data Updated Successfully"
+                }).then(() => {
+                    // Remove the success flag from the URL
+                    window.history.replaceState(null, null, window.location.pathname);
+                });
+        </script>
+       <?php
+      } ?>
+
+<script>
+     function submitForm(event) {
+        event.preventDefault(); 
+        // Get the form element
+        var form = document.querySelector('form');
+        form.submit();
+    }
+
+    function confirmDelete(event, userId) {
+        event.preventDefault(); // Prevent form submission
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "This action cannot be undone.",
+            icon: "warning",
+            showCancelButton: true,
+            cancelButtonColor: "green",
+            confirmButtonColor: "red",
+            cancelButtonText: "Cancel",
+            confirmButtonText: "OK"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "setting_delete.php?id=" + userId;
+            }
+        });
+    }
 </script>
-< /html>
+
+
+
+</body>
+
+</html>

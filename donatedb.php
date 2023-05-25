@@ -24,7 +24,7 @@ $stmt->bindParam(':u_id', $u_id);
 $stmt->execute();
 $date = $stmt->fetch(PDO::FETCH_ASSOC);
 $lastdonate = $date['timestamp'];
-$oneMonthAgo = date('Y-m-d H:i:s', strtotime('-1 minute'));
+$oneMonthAgo = date('Y-m-d H:i:s', strtotime('-2 minute'));
 if ($lastdonate > $oneMonthAgo) {
 header('Location: donateblood.php?success=0');
 } else {

@@ -1,7 +1,32 @@
 <?php
-    include('dbconn.php');
-   
-    @$invalid = $_GET['invalid'];
+session_start();
+include('dbconn.php');
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+if($username == '' || $password == ''){
+    $invalid = "Fill all the field";
+    header("Location:memberlogin.php?invalid= $invalid");
+} else{
+    $stmt = $pdo->prepare('SELECT *FROM admin');
+    $stmt->execute();
+    $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    foreach ($value as $item) {
+        if ($username === $item['username'] && $password === $item['password']) {
+            $_SESSION['username'] = $username;
+            header("Location:admin.php");
+            exit;
+        }
+    
+    }
+    
+    if (!isset($_SESSION['username'])) {
+        $invalid = "Invalid Credentials!";
+    }
+}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,21 +56,13 @@
                 <div class="message">
                     <?php echo isset($invalid) ? $invalid : ''; ?>
                 </div>
-                <form action="logindb.php" method="post">
+                <form action="#" method="post">
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username" placeholder="Enter your username"  />
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" placeholder="Enter your password"  />
                     <input type="submit" name="sub" value="Login" class="btn" />
                 </form>
-                <!-- <div class="home_btn">
-                    <a href="../index.php"> <button>Back to home</button></a>
-                </div> -->
-
-
-
-
-                <!-- Add a link to the signup page if needed -->
             </div>
     </section>
 

@@ -6,7 +6,11 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
 }
-
+$id = $_SESSION['user_id'];
+$stmt = $pdo->prepare('SELECT name,email FROM signup WHERE user_id=:user_id');
+$stmt->bindParam(':user_id',$id);
+$stmt->execute();
+$signup = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -86,12 +90,12 @@ if (!isset($_SESSION['user_id'])) {
                 <form id="form" action="donatedb.php" method="POST">
 
                     <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" placeholder="Full Name" />
+                    <input type="text" id="name" name="name" value="<?php echo $signup['name']?>" />
                     <div id="name-error" class="error-message"></div>
 
 
                     <label for=" email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="Email Address" />
+                    <input type="email" id="email" name="email" value="<?php echo $signup['email']?>" />
                     <div id="email-error" class="error-message"></div>
 
                     <label for="phone">Contact Number </label>
@@ -154,11 +158,9 @@ if (!isset($_SESSION['user_id'])) {
             Toast.fire({
                 icon: "success",
                 title: "Data Submitted Successfully"
-                //  title: "Data Not Submitted Successfully"
-
             });
         </script>
-        <!-- <?php
+         <?php
     } elseif (isset($_GET['success']) && $_GET['success'] == 0) { ?>
         <script>
             Swal.fire({
@@ -170,7 +172,7 @@ if (!isset($_SESSION['user_id'])) {
             confirmButton: "swal-btn-red" // Custom CSS class for confirm button
         }
             });
-        </script> -->
+        </script> 
     <?php }
     ?>
 </body>

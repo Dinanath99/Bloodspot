@@ -121,7 +121,7 @@ if (!isset($_SESSION['user_id'])) {
                     </div>
 
                     <label for="image">Image:</label>
-                    <input type="file" id="image" name="image">
+                    <input type="file" id="image" name="image" accept="image/*">
 
                     <label for="qty">Quantity</label>
                     <input type="number" id="qty" name="qty" placeholder="Quantity">
