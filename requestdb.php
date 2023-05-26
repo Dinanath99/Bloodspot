@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'dbconn.php';
 $Pname = $_POST['Pname'];
 $email = $_POST['email'];
@@ -13,9 +14,10 @@ $message = $_POST['message'];
 $status = 'Pending';
 $bloodbank = 'Not visited';
 $timestamp = date('Y-m-d H:i:s');
+$u_id = $_SESSION['user_id'];
 
-$stmt = $pdo->prepare("INSERT INTO requestlist(Pname,email,contact,dob,gender,blood_group,qty,address,message,status,image,bloodbank,timestamp)
-                    VALUES(:Pname,:email,:contact,:dob,:gender,:blood_group,:qty,:address,:message,:status,:image,:bloodbank,:timestamp)");
+$stmt = $pdo->prepare("INSERT INTO requestlist(Pname,email,contact,dob,gender,blood_group,qty,address,message,status,image,bloodbank,timestamp,u_id)
+                    VALUES(:Pname,:email,:contact,:dob,:gender,:blood_group,:qty,:address,:message,:status,:image,:bloodbank,:timestamp,:u_id)");
 $stmt->bindParam(':Pname', $Pname);
 $stmt->bindParam(':email', $email);
 $stmt->bindParam(':contact', $contact);
@@ -29,8 +31,9 @@ $stmt->bindParam(':message', $message);
 $stmt->bindParam(':status', $status);
 $stmt->bindParam(':bloodbank', $bloodbank);
 $stmt->bindParam(':timestamp', $timestamp);
+$stmt->bindParam(':u_id', $u_id);
 if ($stmt->execute()) {
    header("Location: requestblood.php?success=1");
 }
- 
+
 ?>

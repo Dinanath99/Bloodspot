@@ -129,6 +129,12 @@ if (!isset($_SESSION['user_id'])) {
                         <input type="file" id="image" name="image">
                     </div>
 
+                    <div class="group quantity">
+                        <label for="qty">Quantity</label>
+                        <input type="number" id="qty" name="qty" placeholder="Quantity">
+                        <div id="qty-error" class="error-message"></div>
+                    </div>
+
                     <div class="group address">
 
                         <label for="address">Address</label>
