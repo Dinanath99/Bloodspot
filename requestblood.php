@@ -153,25 +153,25 @@ if (!isset($_SESSION['user_id'])) {
     <?php
     if (isset($_GET['success']) && $_GET['success'] == 1) {
         ?>
-        <script>
-            const Toast = Swal.mixin({
-                toast: true,
-                position: "top-end",
-                showConfirmButton: false,
-                timer: 2000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                    toast.addEventListener("mouseenter", Swal.stopTimer)
-                    toast.addEventListener("mouseleave", Swal.resumeTimer)
-                }
-            })
+    <script>
+    const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener("mouseenter", Swal.stopTimer)
+            toast.addEventListener("mouseleave", Swal.resumeTimer)
+        }
+    })
 
-            Toast.fire({
-                icon: "success",
-                title: "Data Submitted Successfully"
-            });
-        </script>
-        <?php
+    Toast.fire({
+        icon: "success",
+        title: "Data Submitted Successfully"
+    });
+    </script>
+    <?php
     }
     ?>
 </body>

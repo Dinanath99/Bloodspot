@@ -106,7 +106,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="dropdown">
                     <button class="dropbtn"><i class="fas fa-user-cog"></i></button>
                     <div class="dropdown-content">
-                        <a href="#">Edit Profile</a>
+                        <a href="adminsetting.php">Edit Profile</a>
                         <a href="logoutadmin.php">Logout</a>
                     </div>
                 </div>
@@ -164,7 +164,8 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <?php echo $item['qty'] ?>
                                 </td>
                                 <td>
-                                  <img src="../img/<?php echo $item['image'] ?>" alt="Image" class="thumbnail" width="25px" height="25px">
+                                    <img src="../img/<?php echo $item['image'] ?>" alt="Image" class="thumbnail"
+                                        width="25px" height="25px">
                                 </td>
                                 <td>
                                     <?php echo $item['address'] ?>
@@ -253,8 +254,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
             xhr.send('donor_id=' + donorId + '&bank=' + bank);
 
         }
-
-</script>
+    </script>
 
     </script>
 
