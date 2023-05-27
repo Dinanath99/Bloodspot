@@ -115,7 +115,8 @@
         Major blood banks in and around Kathmandu Valley.
     </h4>
     <div class="blood_type">
-        <div class="card">
+        <div class="card" >
+            <a href="https://www.google.com/maps/place/Nepal+Red+Cross+Society+Bhaktapur+District+Chapter/@27.6724408,85.4197268,17z/data=!3m1!4b1!4m6!3m5!1s0x39eb1aa4a1a6b0d9:0x1a0f1c68f517736d!8m2!3d27.6724408!4d85.4223017!16s%2Fg%2F1tg7_wwl?entry=ttu" target="_blank">   
             <i class="fa-solid fa-house-medical"></i>
             <h3>
                 Bhaktapur NRCS Blood Bank,
@@ -124,31 +125,35 @@
                 Bhaktapur
                 01-6611661, 01-6612266
             </p>
-
         </div>
-        <div class="card">
+
+        <div class="card" >
+            <a href="https://goo.gl/maps/PMGGbEqGBGx8bDr68?coh=178572&entry=tt" target="_blank">
             <i class="fa-solid fa-house-medical"></i>
             <h3>
-                Central NRCS Blood Bank,
+                Nepal Red Cross Society Central Blood Transfusion Service Center,
             </h3>
             <p>
-                Soaltee-Mode
-                01- 4288485
+                Balkumari, Lalitpur
+                01-4288485
             </p>
-
+            </a>
         </div>
-        <div class="card">
+        <div class="card" onclick="redirectToMap(27.67894643751513, 85.31216916051774)" >
+            <a href="https://goo.gl/maps/dSoMZ3dWpRVSyMD29?coh=178572&entry=tt"  target="_blank">
             <i class="fa-solid fa-house-medical"></i>
             <h3>
-                Lalitpur NRCS Blood Bank,
+                Grande Blood Bank, 
             </h3>
             <p>
-                Pulchowk
-                +97715427033
+                Dhapashi, Kathmandu
+                01-5159277
             </p>
+            </a>
 
         </div>
-        <div class="card">
+        <div class="card" >
+            <a href="https://goo.gl/maps/T1L1FSPxTyAEiSQq7?coh=178572&entry=tt" target="_blank">
             <i class="fa-solid fa-house-medical"></i>
             <h3>
                 Teaching Hospital,
@@ -157,55 +162,58 @@
                 Maharajgunj, Kathmandu
                 01-44123030, 01-4410911
             </p>
-
+            </a>
         </div>
         <div class="card">
+            <a href="https://goo.gl/maps/ELYXjMDYwogTddtd7?coh=178572&entry=tt" target="_blank">
             <i class="fa-solid fa-house-medical"></i>
             <h3>
-                Bir Hospital,
+               Bir Hospital,
             </h3>
             <p>
                 New road gate, Kathmandu
                 01-4221119, 01-4221988
             </p>
-
+            </a>a>
         </div>
-        <div class="card">
+        <div class="card" >
+            <a href="https://goo.gl/maps/qRFx8oPUkRJwzPEu7?coh=178572&entry=tt" target="_blank">
             <i class="fa-solid fa-house-medical"></i>
             <h3>
-                Patan Hospital,
+               Noble Blood Transfusion Centre,
             </h3>
             <p>
-                Patan, Lalitpur,
-                01-5522295
+                Sinamangal, Kathmandu
+                01-4110842
             </p>
-
+            </a>
         </div>
         <div class="card">
+            <a href="https://goo.gl/maps/sjBUd2Rm9Fj5ATde6?coh=178572&entry=tt" target="_blank">
             <i class="fa-solid fa-house-medical"></i>
             <h3>
-                Civil Hospital
+             Ganga Lal Hospital Blood Bank, 
             </h3>
             <p>
-                Minbhawan, Kathmandu
-                01-4107000
+                Bansbari, Kathmandu 
+                01-4371374
             </p>
-
+            </a>
         </div>
-        <div class="card">
+        <div class="card" >
+            <a href="https://goo.gl/maps/LMokfQZmxeAP4K4C7?coh=178572&entry=tt" target="_blank">
             <i class="fa-solid fa-house-medical"></i>
             <h3>
-                Nepal Medical College,
-            </h3>
-            <p>
-                Gokarneswor, Kathmandu
-                01-4911008
+            Kathmandu Medical College And Teaching Hospital,
+        </h3>
+        <p>
+            Sinamangal, Kathmandu
+            01-4469064        
             </p>
-
+        </a>
         </div>
 
     </div>
-
     <!-- Footer section -->
 
     <hr>

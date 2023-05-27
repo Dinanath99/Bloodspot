@@ -6,11 +6,10 @@ const dob=document.getElementById('dob');
 const qty=document.getElementById('qty');
 const address=document.getElementById('address');
 
-form.addEventListener('submit',function(e){
-    e.preventDefault();
-    if(validateName() && validateEmail() && validatePhone() && validateDOB() && validateQty() && validateAddress()){
-    form.submit();
-  }
+form.addEventListener('submit', function(e) {
+    if (!(validateName() && validateEmail() && validatePhone() && validateDOB() && validateQty() && validateAddress())) {
+        e.preventDefault();
+    }
 });
 
 function validateName(){
