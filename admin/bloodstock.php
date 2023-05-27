@@ -100,7 +100,7 @@ if (isset($_REQUEST['logout'])) {
                     <p>
                         <?php echo $item['qty'] ?> units
                     </p>
-                    <button>Request</button>
+                    <!-- <button>Request</button> -->
                 </div>
                 <?php } ?>
 
