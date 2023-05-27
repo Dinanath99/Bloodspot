@@ -35,5 +35,5 @@ $stmt->bindParam(':u_id', $u_id);
 if ($stmt->execute()) {
    header("Location: requestblood.php?success=1");
 }
- 
+
 ?>

@@ -72,10 +72,10 @@ $donate = $stmt->fetchALL(PDO::FETCH_ASSOC);
                         <i class="fas fa-tasks"></i>
                         <span class="nav-item">Event</span>
                     </a></li> -->
-                <!-- <li><a href="#">
+                <li><a href="adminsetting.php">
                         <i class="fas fa-cog"></i>
                         <span class="nav-item">Setting</span>
-                    </a></li> -->
+                    </a></li>
                 <!-- <li><a href="testtable.php">
                         <i class="fas fa-question-circle"></i>
                         <span class="nav-item">Testtable</span>
@@ -94,7 +94,7 @@ $donate = $stmt->fetchALL(PDO::FETCH_ASSOC);
                 <div class="dropdown">
                     <button class="dropbtn"><i class="fas fa-user-cog"></i></button>
                     <div class="dropdown-content">
-                        <!-- <a href="#">Edit Profile</a> -->
+                        <a href="adminsetting.php">Edit Profile</a>
                         <a href="logoutadmin.php">Logout</a>
                     </div>
                 </div>
@@ -107,9 +107,9 @@ $donate = $stmt->fetchALL(PDO::FETCH_ASSOC);
                     <p class="description">Total </p>
                     <div class="actions">
                         <button class="pref">
-                        <?php echo $totalRequest; ?>
-                        </button>                        
-                        <a href="requestlist.php" class="accept" >View</a>                 
+                            <?php echo $totalRequest; ?>
+                        </button>
+                        <a href="requestlist.php" class="accept">View</a>
                     </div>
                 </div>
 
@@ -120,7 +120,7 @@ $donate = $stmt->fetchALL(PDO::FETCH_ASSOC);
                         <button class="pref">
                             <?php echo $totalDonate; ?>
                         </button>
-                        <a href="donorlist.php" class="accept" >View</a>
+                        <a href="donorlist.php" class="accept">View</a>
                     </div>
                 </div>
 
@@ -130,11 +130,11 @@ $donate = $stmt->fetchALL(PDO::FETCH_ASSOC);
                     <div class="actions">
                         <button class="pref">
                             <?php echo $totalQuantity; ?>
-                        </button>                       
-                        <a href="bloodstock.php" class="accept" >View</a>                        
+                        </button>
+                        <a href="bloodstock.php" class="accept">View</a>
                     </div>
                 </div>
-                
+
             </div>
             <div class="recent-donor">
                 <div class="title">
@@ -154,13 +154,21 @@ $donate = $stmt->fetchALL(PDO::FETCH_ASSOC);
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach($donate as $item){?>
+                            <?php foreach ($donate as $item) { ?>
                             <tr>
                                 <!-- <td><img src="user1.jpg" alt="User 1" class="user-image"></td> -->
-                                <td><?php echo $item['name']?></td>
-                                <td><?php echo $item['blood_group']?></td>
-                                <td><?php echo $item['email']?></td>
-                                <td><?php echo $item['address']?></td>
+                                <td>
+                                    <?php echo $item['name'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['blood_group'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['email'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['address'] ?>
+                                </td>
                             </tr>
                             <?php } ?>
                         </tbody>

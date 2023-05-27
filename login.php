@@ -52,11 +52,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <!-- Add the content for the "Donate Now" login page here -->
     <section id="login-form">
         <div class="logo">
-            <a href="index.php"><img src="bloodspot.png" /> </a>
+            <a href="index.php"><img src="img/bloodspot.png" /> </a>
         </div>
         <div class="wrapper">
             <div class="log_img">
-                <img src="logobackground.png" />
+                <img src="img/loginbackground.png" />
             </div>
 
 
