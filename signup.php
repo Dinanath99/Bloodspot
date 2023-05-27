@@ -35,17 +35,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
     <section id="login-form">
         <div class="logo">
-            <a href="index.php"><img src="bloodspot.png" /> </a>
+            <a href="index.php"><img src="img/bloodspot.png" /> </a>
         </div>
         <div class="wrapper">
             <div class="log_img">
-                <img src="signupbg.png" />
+                <img src="img/signupbg.png" />
             </div>
 
             <div class="container">
@@ -91,27 +91,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </section>
     <?php
-    if (isset($success) == 1 ){
+    if (isset($success) == 1) {
         ?>
-    <script>
-    const Toast = Swal.mixin({
-        toast: true,
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 1500,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-            toast.addEventListener("mouseenter", Swal.stopTimer)
-            toast.addEventListener("mouseleave", Swal.resumeTimer)
-        }
-    })
+        <script>
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 1500,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener("mouseenter", Swal.stopTimer)
+                    toast.addEventListener("mouseleave", Swal.resumeTimer)
+                }
+            })
 
-    Toast.fire({
-        icon: "success",
-        title: "Signup Successfully"
-    });
-    </script>
-    <?php
+            Toast.fire({
+                icon: "success",
+                title: "Signup Successfully"
+            });
+        </script>
+        <?php
     }
     ?>
 </body>
