@@ -101,9 +101,9 @@
 
         <ul class="navlist">
             <li><a href="index.php">Home</a></li>
-            <li><a href="">About</a></li>
+            <li><a href="index.php#about">About</a></li>
             <li><a href="#">BloodBank information</a></li>
-            <li><a href="#request">service</a></li>
+            <li><a href="index.php#request">service</a></li>
             <li><a href="login.php">Login</a></li>
         </ul>
         <a href="./admin/memberlogin.php" class="top-btn">Admin</a>
@@ -111,106 +111,108 @@
 
     <!-- hero section -->
 
-    <h4>
+    <h1>
         Major blood banks in and around Kathmandu Valley.
-    </h4>
+    </h1>
     <div class="blood_type">
-        <div class="card" >
-            <a href="https://www.google.com/maps/place/Nepal+Red+Cross+Society+Bhaktapur+District+Chapter/@27.6724408,85.4197268,17z/data=!3m1!4b1!4m6!3m5!1s0x39eb1aa4a1a6b0d9:0x1a0f1c68f517736d!8m2!3d27.6724408!4d85.4223017!16s%2Fg%2F1tg7_wwl?entry=ttu" target="_blank">   
-            <i class="fa-solid fa-house-medical"></i>
-            <h3>
-                Bhaktapur NRCS Blood Bank,
-            </h3>
-            <p>
-                Bhaktapur
-                01-6611661, 01-6612266
-            </p>
+        <h3>major blood bank center in kathamandu vallery </h3>
+        <div class="card">
+            <a href="https://www.google.com/maps/place/Nepal+Red+Cross+Society+Bhaktapur+District+Chapter/@27.6724408,85.4197268,17z/data=!3m1!4b1!4m6!3m5!1s0x39eb1aa4a1a6b0d9:0x1a0f1c68f517736d!8m2!3d27.6724408!4d85.4223017!16s%2Fg%2F1tg7_wwl?entry=ttu"
+                target="_blank">
+                <i class="fa-solid fa-house-medical"></i>
+                <h3>
+                    Bhaktapur NRCS Blood Bank,
+                </h3>
+                <p>
+                    Bhaktapur
+                    01-6611661, 01-6612266
+                </p>
         </div>
 
-        <div class="card" >
+        <div class="card">
             <a href="https://goo.gl/maps/PMGGbEqGBGx8bDr68?coh=178572&entry=tt" target="_blank">
-            <i class="fa-solid fa-house-medical"></i>
-            <h3>
-                Nepal Red Cross Society Central Blood Transfusion Service Center,
-            </h3>
-            <p>
-                Balkumari, Lalitpur
-                01-4288485
-            </p>
+                <i class="fa-solid fa-house-medical"></i>
+                <h3>
+                    Nepal Red Cross Society Central Blood Transfusion Service Center,
+                </h3>
+                <p>
+                    Balkumari, Lalitpur
+                    01-4288485
+                </p>
             </a>
         </div>
-        <div class="card" onclick="redirectToMap(27.67894643751513, 85.31216916051774)" >
-            <a href="https://goo.gl/maps/dSoMZ3dWpRVSyMD29?coh=178572&entry=tt"  target="_blank">
-            <i class="fa-solid fa-house-medical"></i>
-            <h3>
-                Grande Blood Bank, 
-            </h3>
-            <p>
-                Dhapashi, Kathmandu
-                01-5159277
-            </p>
+        <div class="card" onclick="redirectToMap(27.67894643751513, 85.31216916051774)">
+            <a href="https://goo.gl/maps/dSoMZ3dWpRVSyMD29?coh=178572&entry=tt" target="_blank">
+                <i class="fa-solid fa-house-medical"></i>
+                <h3>
+                    Grande Blood Bank,
+                </h3>
+                <p>
+                    Dhapashi, Kathmandu
+                    01-5159277
+                </p>
             </a>
 
         </div>
-        <div class="card" >
+        <div class="card">
             <a href="https://goo.gl/maps/T1L1FSPxTyAEiSQq7?coh=178572&entry=tt" target="_blank">
-            <i class="fa-solid fa-house-medical"></i>
-            <h3>
-                Teaching Hospital,
-            </h3>
-            <p>
-                Maharajgunj, Kathmandu
-                01-44123030, 01-4410911
-            </p>
+                <i class="fa-solid fa-house-medical"></i>
+                <h3>
+                    Teaching Hospital,
+                </h3>
+                <p>
+                    Maharajgunj, Kathmandu
+                    01-44123030, 01-4410911
+                </p>
             </a>
         </div>
         <div class="card">
             <a href="https://goo.gl/maps/ELYXjMDYwogTddtd7?coh=178572&entry=tt" target="_blank">
-            <i class="fa-solid fa-house-medical"></i>
-            <h3>
-               Bir Hospital,
-            </h3>
-            <p>
-                New road gate, Kathmandu
-                01-4221119, 01-4221988
-            </p>
+                <i class="fa-solid fa-house-medical"></i>
+                <h3>
+                    Bir Hospital,
+                </h3>
+                <p>
+                    New road gate, Kathmandu
+                    01-4221119, 01-4221988
+                </p>
             </a>a>
         </div>
-        <div class="card" >
+        <div class="card">
             <a href="https://goo.gl/maps/qRFx8oPUkRJwzPEu7?coh=178572&entry=tt" target="_blank">
-            <i class="fa-solid fa-house-medical"></i>
-            <h3>
-               Noble Blood Transfusion Centre,
-            </h3>
-            <p>
-                Sinamangal, Kathmandu
-                01-4110842
-            </p>
+                <i class="fa-solid fa-house-medical"></i>
+                <h3>
+                    Noble Blood Transfusion Centre,
+                </h3>
+                <p>
+                    Sinamangal, Kathmandu
+                    01-4110842
+                </p>
             </a>
         </div>
         <div class="card">
             <a href="https://goo.gl/maps/sjBUd2Rm9Fj5ATde6?coh=178572&entry=tt" target="_blank">
-            <i class="fa-solid fa-house-medical"></i>
-            <h3>
-             Ganga Lal Hospital Blood Bank, 
-            </h3>
-            <p>
-                Bansbari, Kathmandu 
-                01-4371374
-            </p>
+                <i class="fa-solid fa-house-medical"></i>
+                <h3>
+                    Ganga Lal Hospital Blood Bank,
+                </h3>
+                <p>
+                    Bansbari, Kathmandu
+                    01-4371374
+                </p>
             </a>
         </div>
-        <div class="card" >
+        <div class="card">
             <a href="https://goo.gl/maps/LMokfQZmxeAP4K4C7?coh=178572&entry=tt" target="_blank">
-            <i class="fa-solid fa-house-medical"></i>
-            <h3>
-            Kathmandu Medical College And Teaching Hospital,
-        </h3>
-        <p>
-            Sinamangal, Kathmandu
-            01-4469064        
-            </p>
-        </a>
+                <i class="fa-solid fa-house-medical"></i>
+                <h3>
+                    Kathmandu Medical College And Teaching Hospital,
+                </h3>
+                <p>
+                    Sinamangal, Kathmandu
+                    01-4469064
+                </p>
+            </a>
         </div>
 
     </div>
