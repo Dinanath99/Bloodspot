@@ -1,4 +1,4 @@
-<?php 
+<?php
 include('dbconn.php');
 //total user
 $stmt = $pdo->prepare('SELECT COUNT(*) AS total_user FROM signup');
@@ -41,7 +41,7 @@ $totalQuantity = $qty['total_quantity'];
 
         <ul class="navlist">
             <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="info.php">BloodBank information</a></li>
             <li><a href="#request">service</a></li>
             <li><a href="login.php">Login</a></li>
@@ -55,10 +55,10 @@ $totalQuantity = $qty['total_quantity'];
 
             <!-- <a href="login.php" class="btn1">Donate Blood</a> -->
             <!-- <a href="login.php" class="btn2">Request Blood</a> -->
-            <div class="hero">
+            <!-- <div class="hero">
 
                 <img src="img/hero.jpg" width="250px" />
-            </div>
+            </div> -->
 
         </div>
         </div>
@@ -77,7 +77,9 @@ $totalQuantity = $qty['total_quantity'];
                     <img src="img/donate.png" alt="image">
                 </div>
                 <h3>User Registered</h3>
-                <p><?php echo $totalUser; ?></p>
+                <p>
+                    <?php echo $totalUser; ?>
+                </p>
             </div>
             <div class="sub-box">
                 <div class="sub-img">
@@ -92,7 +94,9 @@ $totalQuantity = $qty['total_quantity'];
                     <img src="img/request.png" alt="image">
                 </div>
                 <h3>Blood storage Unit</h3>
-                <p><?php echo $totalQuantity; ?></p>
+                <p>
+                    <?php echo $totalQuantity; ?>
+                </p>
             </div>
 
         </div>
@@ -189,7 +193,7 @@ $totalQuantity = $qty['total_quantity'];
             <div class="about_us">
                 <p class="sub_heading">About us</p>
                 <ul class="about_footer">
-                    <li><a href="#">About Bloodspot</a></li>
+                    <li><a href="#about">About Bloodspot</a></li>
                     <li><a href="#">Donor login</a></li>
                     <li><a href="#"> </a></li>
                     <li><a href="#">Privacy policy</a></li>
@@ -227,20 +231,20 @@ $totalQuantity = $qty['total_quantity'];
 
     <!-- link to javascript -->
     <script>
-        const header = document.querySelector("header");
-        window.addEventListener("scroll", function () {
-            header.classList.toggle("sticky", window.scrollY > 0);
-        });
-        let menu = document.querySelector('#menu-icon');
-        let navlist = document.querySelector('.navlist');
-        menu.onclick = () => {
-            menu.classList.toggle('bx-x');
-            navlist.classList.toggle('active');
-        };
-        window.onscroll = () => {
-            menu.classList.remove('bx-x');
-            navlist.classList.remove('active');
-        };
+    const header = document.querySelector("header");
+    window.addEventListener("scroll", function() {
+        header.classList.toggle("sticky", window.scrollY > 0);
+    });
+    let menu = document.querySelector('#menu-icon');
+    let navlist = document.querySelector('.navlist');
+    menu.onclick = () => {
+        menu.classList.toggle('bx-x');
+        navlist.classList.toggle('active');
+    };
+    window.onscroll = () => {
+        menu.classList.remove('bx-x');
+        navlist.classList.remove('active');
+    };
     </script>
 </body>
 
