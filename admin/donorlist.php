@@ -63,9 +63,9 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <img src="../img/bloodspot.png" alt="">
                         <!-- <span class="nav-item">Admin Panel</span> -->
                     </a></li>
-                <li><a href="#">
+                <li><a href="admin.php">
                         <i class="fa-solid fa-clock-rotate-left"></i>
-                        <span class="nav-item">History</span>
+                        <span class="nav-item">Dashboard</span>
                     </a></li>
                 <li><a class="active href=" donorlist.php">
                         <i class="fas fa-user"></i>
@@ -73,7 +73,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </a></li>
                 <li><a href="bloodstock.php">
                         <i class="fa-solid fa-layer-group"></i>
-                        <span class="nav-item">blood stock</span>
+                        <span class="nav-item">Blood stock</span>
                     </a></li>
                 <li><a href="requestlist.php">
                         <i class="fas fa-user"></i>

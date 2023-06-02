@@ -6,6 +6,11 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
 }
+$id = $_SESSION['user_id'];
+$stmt = $pdo->prepare("SELECT name FROM signup WHERE user_id = :id");
+$stmt->bindParam(':id', $id);
+$stmt->execute();
+$item = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,7 +78,7 @@ if (!isset($_SESSION['user_id'])) {
                 <!-- addding dropdown -->
                 <div class="dropdown">
 
-                    <button class="dropbtn"><span>Name </span><i class="fas fa-user-cog"></i></button>
+                    <button class="dropbtn"><span><?php echo $item['name'];?> </span><i class="fas fa-user-cog"></i></button>
                     <div class="dropdown-content">
                         <a href="setting.php">Edit Profile</a>
                         <a href="userlogout.php">Logout</a>

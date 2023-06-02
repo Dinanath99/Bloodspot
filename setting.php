@@ -6,6 +6,7 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
 }
+@$invalid = $_GET['invalid'];
 $id = $_SESSION['user_id'];
 $stmt = $pdo->prepare("SELECT * FROM signup WHERE user_id = :id");
 $stmt->bindParam(':id', $id);
@@ -160,14 +161,25 @@ $item = $stmt->fetch(PDO::FETCH_ASSOC);
                 .btn-group button:hover {
                     opacity: 0.8;
                 }
+
+                .message {
+                          margin-top: 15px;
+                          padding: 10px;
+                          color: red;
+                          text-align: center;
+                          font-weight: bold;
+                          font-size: 16px;
+                      }
                 </style>
             </head>
 
             <body>
                 <div class="setting">
-
                     <form method="post" action="setting_update.php">
                         <h2>Edit Profile</h2>
+                        <div class="message">
+                            <?php echo isset($invalid) ? $invalid : ''; ?>
+                        </div>
                         <div class="form-group">
                             <input type="text" id="id" name="id" value="<?php echo $item['user_id'] ?>" hidden>
                         </div>
@@ -180,6 +192,11 @@ $item = $stmt->fetch(PDO::FETCH_ASSOC);
                         <div class="form-group">
                             <label for="email">Email:</label>
                             <input type="email" id="email" name="email" value="<?php echo $item['email'] ?>">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Old Password:</label>
+                            <input type="password" id="password" name="old_password" placeholder="enter your old password">
                         </div>
 
                         <div class="form-group">

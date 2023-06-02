@@ -29,7 +29,7 @@
                     </a></li>
                 <li><a href="#">
                         <i class="fa-solid fa-layer-group"></i>
-                        <span class="nav-item">blood stock</span>
+                        <span class="nav-item">Blood stock</span>
                     </a></li>
                 <li><a href="#">
                         <i class="fas fa-user"></i>

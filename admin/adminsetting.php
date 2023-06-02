@@ -1,3 +1,31 @@
+<?php
+include('dbconn.php');
+include('adminsession.php');
+$id = $_SESSION['username'];
+$stmt = $pdo->prepare("SELECT * FROM admin WHERE username = :id");
+$stmt->bindParam(':id', $id);
+$stmt->execute();
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $name = $_POST['name'];
+    $oldPassword = $_POST['old_password'];
+    $password = $_POST['password'];
+
+
+    if ($oldPassword === $user['password']) {
+        $stmt = $pdo->prepare('UPDATE admin SET username = :name, password = :password WHERE username = :id');
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':id', $id);
+        if($stmt->execute()){
+            $success = 1;
+        }
+    } else {
+        $invalid = "Invalid Password!";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,13 +105,28 @@
         background-color: green;
     }
 
-    #deleteBtn {
-        background-color: red;
-    }
-
     .btn-group button:hover {
         opacity: 0.8;
     }
+
+    .success {
+        margin-top: 15px;
+        padding: 10px;
+        color: green;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .invalid {
+        margin-top: 15px;
+        padding: 10px;
+        color: red;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
     </style>
 </head>
 
@@ -95,9 +138,9 @@
                         <img src="../img/bloodspot.png" alt="">
                         <!-- <span class="nav-item">Admin Panel</span> -->
                     </a></li>
-                <li><a href="#">
+                <li><a href="admin.php">
                         <i class="fa-solid fa-clock-rotate-left"></i>
-                        <span class="nav-item">History</span>
+                        <span class="nav-item">Dashboard</span>
                     </a></li>
                 <li><a href="donorlist.php">
                         <i class="fas fa-user"></i>
@@ -105,28 +148,13 @@
                     </a></li>
                 <li><a href="bloodstock.php">
                         <i class="fa-solid fa-layer-group"></i>
-                        <span class="nav-item">blood stock</span>
+                        <span class="nav-item">Blood stock</span>
                     </a></li>
                 <li><a href="requestlist.php">
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Blood Request</span>
                     </a></li>
-                <!-- <li><a href="#">
-                        <i class="fas fa-tasks"></i>
-                        <span class="nav-item">Event</span>
-                    </a></li> -->
-                <!-- <li><a href="adminsetting.php">
-                        <i class="fas fa-cog"></i>
-                        <span class="nav-item">Setting</span>
-                    </a></li> -->
-                <!-- <li><a href="#">
-                        <i class="fas fa-question-circle"></i>
-                        <span class="nav-item">Help</span>
-                    </a></li> -->
-                <!-- <li><a href="logoutadmin.php" class="logout">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span class="nav-item">Logout</span>
-                    </a></li> -->
+                
             </ul>
         </nav>
         <!-- admin setting -->
@@ -150,15 +178,21 @@
 
                 <form method="post" action="#">
                     <h2>Account Management</h2>
+                    <?php if (isset($success) && $success == 1): ?>
+                       <div class="success">Password updated successfully!</div>
+                    <?php elseif (isset($invalid)): ?>
+                       <div class="invalid"><?php echo $invalid; ?></div>
+                    <?php endif; ?>
+
 
                     <div class="form-group">
                         <label for="name">User:</label>
-                        <input type="text" id="name" name="name">
+                        <input type="text" id="name" name="name" value="<?php echo $user['username'] ?>"readonly>
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Old password:</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your old password">
+                      <label for="password">Old Password:</label>
+                      <input type="password" id="password" name="old_password" placeholder="enter your old password">
                     </div>
 
                     <div class="form-group">
@@ -168,7 +202,6 @@
 
                     <div class="btn-group">
                         <button type="submit" id="saveBtn">Save Changes</button>
-                        <button id="deleteBtn">Delete</button>
                     </div>
 
                 </form>
