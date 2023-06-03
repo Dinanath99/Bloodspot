@@ -50,18 +50,12 @@ $signup = $stmt->fetch(PDO::FETCH_ASSOC);
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Blood stock</span>
                     </a></li>
-                <!-- <li><a href="#">
-                        <i class="fas fa-tasks"></i>
-                        <span class="nav-item">Blood center</span>
-                    </a></li> -->
+
                 <li><a href="#">
                         <i class="fas fa-question-circle"></i>
                         <span class="nav-item">Help</span>
                     </a></li>
-                <!-- <li><a href="userlogout.php" class="logout">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span class="nav-item">Logout</span>
-                    </a></li> -->
+
             </ul>
         </nav>
 
@@ -138,37 +132,37 @@ $signup = $stmt->fetch(PDO::FETCH_ASSOC);
     <?php
     if (isset($_GET['success']) && $_GET['success'] == 1) {
         ?>
-        <script>
-            const Toast = Swal.mixin({
-                toast: true,
-                position: "top-end",
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                    toast.addEventListener("mouseenter", Swal.stopTimer)
-                    toast.addEventListener("mouseleave", Swal.resumeTimer)
-                }
-            })
+    <script>
+    const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener("mouseenter", Swal.stopTimer)
+            toast.addEventListener("mouseleave", Swal.resumeTimer)
+        }
+    })
 
-            Toast.fire({
-                icon: "success",
-                title: "Data Submitted Successfully"
-            });
-        </script>
-        <?php
+    Toast.fire({
+        icon: "success",
+        title: "Data Submitted Successfully"
+    });
+    </script>
+    <?php
     } elseif (isset($_GET['success']) && $_GET['success'] == 0) { ?>
-        <script>
-            Swal.fire({
-                icon: "error",
-                title: "Oops...",
-                text: "You can only donate if three months have passed since your last donation.",
-                buttonsStyling: false,
-                customClass: {
-                    confirmButton: "swal-btn-red" // Custom CSS class for confirm button
-                }
-            });
-        </script>
+    <script>
+    Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "You can only donate if three months have passed since your last donation.",
+        buttonsStyling: false,
+        customClass: {
+            confirmButton: "swal-btn-red" // Custom CSS class for confirm button
+        }
+    });
+    </script>
     <?php }
     ?>
 </body>
