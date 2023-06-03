@@ -7,7 +7,7 @@ $stmt->bindParam(':id', $id);
 $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
     $oldPassword = $_POST['old_password'];
     $password = $_POST['password'];
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':password', $password);
         $stmt->bindParam(':id', $id);
-        if($stmt->execute()){
+        if ($stmt->execute()) {
             $success = 1;
         }
     } else {
@@ -41,92 +41,92 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     <!-- style for admin setting -->
     <style>
-    .setting {
-        display: flex;
-        justify-content: column;
-        align-items: center;
-        margin: 30px;
-        /* background-color: orange; */
+        .setting {
+            display: flex;
+            justify-content: column;
+            align-items: center;
+            margin: 30px;
+            /* background-color: orange; */
 
 
-    }
+        }
 
-    h2 {
-        text-align: center;
-    }
+        h2 {
+            text-align: center;
+        }
 
-    form {
-        min-width: 400px;
-        margin: 0 auto;
-        /* background: rebeccapurple; */
-        border-radius: 20px;
-        padding: 10px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, .2);
-    }
+        form {
+            min-width: 400px;
+            margin: 0 auto;
+            /* background: rebeccapurple; */
+            border-radius: 20px;
+            padding: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+        }
 
-    .form-group {
-        margin-bottom: 0px;
-    }
+        .form-group {
+            margin-bottom: 0px;
+        }
 
-    .form-group label {
-        display: block;
-        font-weight: 700;
-        margin-bottom: 0.5em;
-    }
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+        }
 
-    .form-group input[type="text"],
-    .form-group input[type="email"],
-    .form-group input[type="number"],
-    .form-group input[type="password"] {
-        width: 100%;
-        padding: 6px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="number"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 6px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
 
-    }
+        }
 
-    .btn-group {
-        margin: 15px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+        .btn-group {
+            margin: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .btn-group button {
-        padding: 8px 16px;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-weight: 700;
-    }
+        .btn-group button {
+            padding: 8px 16px;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 700;
+        }
 
-    #saveBtn {
-        background-color: green;
-    }
+        #saveBtn {
+            background-color: green;
+            text-align: center;
+        }
 
-    .btn-group button:hover {
-        opacity: 0.8;
-    }
+        .btn-group button:hover {
+            opacity: 0.8;
+        }
 
-    .success {
-        margin-top: 15px;
-        padding: 10px;
-        color: green;
-        text-align: center;
-        font-weight: bold;
-        font-size: 16px;
-    }
+        .success {
+            margin-top: 15px;
+            padding: 10px;
+            color: green;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
 
-    .invalid {
-        margin-top: 15px;
-        padding: 10px;
-        color: red;
-        text-align: center;
-        font-weight: bold;
-        font-size: 16px;
-    }
-
+        .invalid {
+            margin-top: 15px;
+            padding: 10px;
+            color: red;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
     </style>
 </head>
 
@@ -154,7 +154,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Blood Request</span>
                     </a></li>
-                
+
             </ul>
         </nav>
         <!-- admin setting -->
@@ -179,20 +179,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                 <form method="post" action="#">
                     <h2>Account Management</h2>
                     <?php if (isset($success) && $success == 1): ?>
-                       <div class="success">Password updated successfully!</div>
+                        <div class="success">Password updated successfully!</div>
                     <?php elseif (isset($invalid)): ?>
-                       <div class="invalid"><?php echo $invalid; ?></div>
+                        <div class="invalid">
+                            <?php echo $invalid; ?>
+                        </div>
                     <?php endif; ?>
 
 
                     <div class="form-group">
                         <label for="name">User:</label>
-                        <input type="text" id="name" name="name" value="<?php echo $user['username'] ?>"readonly>
+                        <input type="text" id="name" name="name" value="<?php echo $user['username'] ?>" readonly>
                     </div>
 
                     <div class="form-group">
-                      <label for="password">Old Password:</label>
-                      <input type="password" id="password" name="old_password" placeholder="enter your old password">
+                        <label for="password">Old Password:</label>
+                        <input type="password" id="password" name="old_password" placeholder="enter your old password">
                     </div>
 
                     <div class="form-group">
