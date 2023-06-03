@@ -54,15 +54,54 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Send email notification
         if ($status == 'Accepted') {
-            $stmt = $pdo->prepare("SELECT email FROM requestlist WHERE id = :donor_id");
+            $stmt = $pdo->prepare("SELECT email, Pname FROM requestlist WHERE id = :donor_id");
             $stmt->bindParam(':donor_id', $donor_id);
             $stmt->execute();
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            $email = $result['email'];  
-
+            $email = $result['email'];
+        
             $subject = 'Blood Request Accepted';
-            $body = "Dear User,\n\nYour blood request has been accepted. Please visit the blood bank tomorrow on " . date('Y-m-d', strtotime('+1 day')) . " with the required documents.\n\nThank you!";
-
+            $body = "
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <style>
+                    /* Add any custom CSS styles here */
+                    body {
+                        font-family: Arial, sans-serif;
+                    }
+                    h2 {
+                        color: #C00;
+                    }
+                    ol {
+                        margin-left: 20px;
+                    }
+                    .email-content {
+                        text-align: left;
+                        margin: 0 auto;
+                        max-width: 600px;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class'email-content'>
+                    <h1><a href='https://imgbb.com/'><img src='https://i.ibb.co/pyM7V3W/bloodspot-removebg-preview.png' alt='bloodspot-removebg-preview' border='0' width='200'></a></h1>
+                    <h2>Blood Request Accepted</h2>
+                    <p>Dear " . $result['Pname'] . ",</p>
+                    <p>We are delighted to inform you that your blood request has been accepted. We understand the urgency of your situation and are committed to providing the necessary support.</p>
+                    <p>We kindly request you to visit our blood bank tomorrow, on " . date('Y-m-d', strtotime('+1 day')) . ", to proceed with the donation process. Please ensure you bring the required documents mentioned below:</p>
+                    <ol>
+                        <li>Identification proof (e.g., driver's license, passport)</li>
+                        <li>Any relevant medical records or reports</li>
+                    </ol>
+                    <p>Our compassionate team will be ready to assist you upon your arrival. Your contribution will make a significant difference in saving lives, and we deeply appreciate your willingness to donate.</p>
+                    <p>If you have any further questions or need assistance, please feel free to contact us. We are here to provide guidance and support throughout the process.</p>
+                    <p>Once again, thank you for your generosity and commitment to helping others. Together, we can make a positive impact on the lives of those in need.</p>
+                    <p>Best regards,</p>
+                    <p>Bloodspot Team</p>
+                </div>
+            </body>
+            </html>";
             sendEmail($email, $subject, $body);
         } elseif ($status == 'Rejected') {
             $stmt = $pdo->prepare("SELECT email,Pname FROM requestlist WHERE id = :donor_id");
@@ -72,24 +111,44 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $email = $result['email'];
 
             $subject = 'Blood Request Rejected';
-            $body = "Dear ".$result['Pname'].",\n\nWe regret to inform you that your blood request has been rejected due to some illegitimate information.\n\nThank you!";
             $body = '
-            <html>
-            <head>
-                <style>
-                    /* Add any custom CSS styles here */
-                </style>
-            </head>
-            <body>
-                <div style="text-align: center;">
-                    <img src="./img/logo.png" alt="BloodSpot Logo" width="200">
-                    <h2 style="color: red;">Blood Request Rejected</h2>
-                    <p>Dear ' . $result['Pname'] . ',</p>
-                    <p>We regret to inform you that your blood request has been rejected due to some illegitimate information.</p>
-                    <p>Thank you!</p>
-                </div>
-            </body>
-            </html>';
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <style>
+            /* Add any custom CSS styles here */
+            body {
+                font-family: Arial, sans-serif;
+            }
+            h2 {
+                color: #C00;
+            }
+            ol {
+                margin-left: 20px;
+            }
+            .email-content {
+                text-align: left;
+                margin: 0 auto;
+                max-width: 600px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="email-content">
+            <h1><a href="https://imgbb.com/"><img src="https://i.ibb.co/pyM7V3W/bloodspot-removebg-preview.png" alt="bloodspot-removebg-preview" border="0" width="200"></a></h1>
+            <h2>Blood Request Rejected</h2>
+            <p>Dear '.$result['Pname'].',</p>
+            <p>We regret to inform you that your blood request has been rejected. We carefully consider each request based on various factors, and unfortunately, we are unable to proceed with your request at this time.</p>
+            <p>We understand the importance of your situation, and we encourage you to reach out to other blood banks or healthcare providers who may be able to assist you.</p>
+            <p>If you have any questions or need further information, please feel free to contact us. We are here to provide any guidance or support we can.</p>
+            <p>Once again, we apologize for any inconvenience caused, and we appreciate your understanding.</p>
+            <p>Best regards,</p>
+            <p>Bloodspot Team</p>
+
+        </div>
+    </body>
+    </html>';
+    
             sendEmail($email, $subject, $body);
         }
     }
