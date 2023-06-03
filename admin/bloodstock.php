@@ -44,7 +44,7 @@ if (isset($_REQUEST['logout'])) {
                         <!-- <span class="nav-item">Admin Panel</span> -->
                     </a></li>
                 <li><a href="admin.php">
-                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <i class="fa-solid fa-house"></i>
                         <span class="nav-item">Dashboard</span>
                     </a></li>
                 <li><a href="donorlist.php">
@@ -59,22 +59,7 @@ if (isset($_REQUEST['logout'])) {
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Blood Requester</span>
                     </a></li>
-                <!-- <li><a href="#">
-                        <i class="fas fa-tasks"></i>
-                        <span class="nav-item">Event</span>
-                    </a></li> -->
-                <!-- <li><a href="#">
-                        <i class="fas fa-cog"></i>
-                        <span class="nav-item">Setting</span>
-                    </a></li> -->
-                <!-- <li><a href="#">
-                        <i class="fas fa-question-circle"></i>
-                        <span class="nav-item">Help</span>
-                    </a></li> -->
-                <!-- <li><a href="logoutadmin.php" class="logout">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span class="nav-item">Logout</span>
-                    </a></li> -->
+
             </ul>
         </nav>
 
@@ -92,16 +77,16 @@ if (isset($_REQUEST['logout'])) {
             <!-- blood group section -->
             <div class="blood_type">
                 <?php foreach ($bloodGroups as $item) { ?>
-                <div class="card">
-                    <i class="fa-solid fa-droplet"></i>
-                    <h3>
-                        <?php echo $item['bloodGroup'] ?>
-                    </h3>
-                    <p>
-                        <?php echo $item['qty'] ?> units
-                    </p>
-                    <!-- <button>Request</button> -->
-                </div>
+                    <div class="card">
+                        <i class="fa-solid fa-droplet"></i>
+                        <h3>
+                            <?php echo $item['bloodGroup'] ?>
+                        </h3>
+                        <p>
+                            <?php echo $item['qty'] ?> units
+                        </p>
+                        <!-- <button>Request</button> -->
+                    </div>
                 <?php } ?>
 
             </div>

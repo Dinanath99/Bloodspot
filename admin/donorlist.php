@@ -64,7 +64,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <!-- <span class="nav-item">Admin Panel</span> -->
                     </a></li>
                 <li><a href="admin.php">
-                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <i class="fa-solid fa-house"></i>
                         <span class="nav-item">Dashboard</span>
                     </a></li>
                 <li><a class="active href=" donorlist.php">
@@ -79,22 +79,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Blood Request</span>
                     </a></li>
-                <!-- <li><a href="#">
-                        <i class="fas fa-tasks"></i>
-                        <span class="nav-item">Event</span>
-                    </a></li> -->
-                <!-- <li><a href="#">
-                        <i class="fas fa-cog"></i>
-                        <span class="nav-item">Setting</span>
-                    </a></li> -->
-                <!-- <li><a href="#">
-                        <i class="fas fa-question-circle"></i>
-                        <span class="nav-item">Help</span>
-                    </a></li> -->
-                <!-- <li><a href="logoutadmin.php" class="logout">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span class="nav-item">Logout</span>
-                    </a></li> -->
+
             </ul>
         </nav>
 
@@ -161,7 +146,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <?php echo $item['timestamp'] ?>
                             </td>
                             <!-- this code helps to update specific cell e.g status-2  -->
-                              <!-- <td id="status-<?php echo $item['id']; ?>">
+                            <!-- <td id="status-<?php echo $item['id']; ?>">
                                 <?php
                                     $status = $item['status'];
                                     if ($status == 'Accepted' || $status == "Rejected") {

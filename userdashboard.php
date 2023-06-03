@@ -49,22 +49,12 @@ $item = $stmt->fetch(PDO::FETCH_ASSOC);
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Blood stock</span>
                     </a></li>
-                <!-- <li><a href="#">
-                        <i class="fas fa-tasks"></i>
-                        <span class="nav-item">Blood center</span>
-                    </a></li> -->
-                <!-- <li><a href="#">
-                        <i class="fas fa-cog"></i>
-                        <span class="nav-item">Setting</span>
-                    </a></li> -->
+
                 <li><a href="#">
                         <i class="fas fa-question-circle"></i>
                         <span class="nav-item">Help</span>
                     </a></li>
-                <!-- <li><a href="userlogout.php" class="logout">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span class="nav-item">Logout</span>
-                    </a></li> -->
+
             </ul>
         </nav>
 
@@ -78,7 +68,9 @@ $item = $stmt->fetch(PDO::FETCH_ASSOC);
                 <!-- addding dropdown -->
                 <div class="dropdown">
 
-                    <button class="dropbtn"><span><?php echo $item['name'];?> </span><i class="fas fa-user-cog"></i></button>
+                    <button class="dropbtn"><span>
+                            <?php echo $item['name']; ?>
+                        </span><i class="fas fa-user-cog"></i></button>
                     <div class="dropdown-content">
                         <a href="setting.php">Edit Profile</a>
                         <a href="userlogout.php">Logout</a>
