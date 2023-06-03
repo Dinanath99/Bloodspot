@@ -16,10 +16,12 @@
     <div class="container">
         <nav>
             <ul>
-                <li><a href="#" class="logo">
+                <li>
+                    <div class="logo">
                         <img src="logo.png" alt="">
                         <span class="nav-item">Amdin Panel</span>
-                    </a></li>
+                    </div>
+                </li>
                 <li><a href="#">
                         <i class="fas fa-home"></i>
                         <span class="nav-item">Home</span> </a></li>

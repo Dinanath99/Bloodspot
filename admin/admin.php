@@ -48,10 +48,11 @@ $donate = $stmt->fetchALL(PDO::FETCH_ASSOC);
     <div class="container">
         <nav>
             <ul>
-                <li><a href="admin.php" class="logo">
+                <li>
+                    <div class="logo">
                         <img src="../img/bloodspot.png" alt="">
-                        <!-- <span class="nav-item">Admin Panel</span> -->
-                    </a></li>
+                    </div>
+                </li>
                 <li><a href="#">
                         <i class="fa-solid fa-house"></i>
                         <span class="nav-item">Dashboard</span>
