@@ -81,12 +81,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         margin: 0 auto;
                         max-width: 600px;
                     }
+                    .center-align {
+                        text-align: center;
+                    }
                 </style>
             </head>
             <body>
                 <div class'email-content'>
-                    <h1><a href='https://imgbb.com/'><img src='https://i.ibb.co/pyM7V3W/bloodspot-removebg-preview.png' alt='bloodspot-removebg-preview' border='0' width='200'></a></h1>
-                    <h2>Blood Request Accepted</h2>
+                <h1 class='center-align'><a href='https://imgbb.com/'><img src='https://i.ibb.co/pyM7V3W/bloodspot-removebg-preview.png' alt='bloodspot-removebg-preview' border='0' width='200'></a></h1>
+                <h2 class='center-align'>Blood Request Rejected</h2>
                     <p>Dear " . $result['Pname'] . ",</p>
                     <p>We are delighted to inform you that your blood request has been accepted. We understand the urgency of your situation and are committed to providing the necessary support.</p>
                     <p>We kindly request you to visit our blood bank tomorrow, on " . date('Y-m-d', strtotime('+1 day')) . ", to proceed with the donation process. Please ensure you bring the required documents mentioned below:</p>
@@ -131,12 +134,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 margin: 0 auto;
                 max-width: 600px;
             }
+            .center-align {
+                text-align: center;
+            }
         </style>
     </head>
     <body>
         <div class="email-content">
-            <h1><a href="https://imgbb.com/"><img src="https://i.ibb.co/pyM7V3W/bloodspot-removebg-preview.png" alt="bloodspot-removebg-preview" border="0" width="200"></a></h1>
-            <h2>Blood Request Rejected</h2>
+        <h1 class="center-align"><a href="https://imgbb.com/"><img src="https://i.ibb.co/pyM7V3W/bloodspot-removebg-preview.png" alt="bloodspot-removebg-preview" border="0" width="200"></a></h1>
+        <h2 class="center-align">Blood Request Rejected</h2>
             <p>Dear '.$result['Pname'].',</p>
             <p>We regret to inform you that your blood request has been rejected. We carefully consider each request based on various factors, and unfortunately, we are unable to proceed with your request at this time.</p>
             <p>We understand the importance of your situation, and we encourage you to reach out to other blood banks or healthcare providers who may be able to assist you.</p>
