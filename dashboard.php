@@ -25,6 +25,13 @@ $stmt->bindParam(':u_id', $u_id);
 $stmt->execute();
 $request = $stmt->fetchALL(PDO::FETCH_ASSOC);
 
+//user 
+$id = $_SESSION['user_id'];
+$stmt = $pdo->prepare("SELECT name FROM signup WHERE user_id = :id");
+$stmt->bindParam(':id', $id);
+$stmt->execute();
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
 
 ?>
 <!DOCTYPE html>
@@ -51,7 +58,7 @@ $request = $stmt->fetchALL(PDO::FETCH_ASSOC);
                         <img src="./img/bloodspot.png" alt="">
                     </div>
                 </li>
-                <li><a class="active" href="history.php">
+                <li><a class="active" href="dashboard.php">
                         <i class="fa-solid fa-clock-rotate-left"></i>
                         <span class="nav-item">History</span> </a></li>
                 <li><a href="donateblood.php">
@@ -79,10 +86,11 @@ $request = $stmt->fetchALL(PDO::FETCH_ASSOC);
 
         <section class="main">
             <div class="main-top">
-                <h1>User History</h1>
+                <h1>welcome</h1>
                 <!-- addding dropdown -->
                 <div class="dropdown">
                     <button class="dropbtn"><span>
+                            <?php echo $user['name']; ?>
                         </span><i class="fas fa-user-cog"></i></button>
                     <div class="dropdown-content">
                         <a href="setting.php">Edit Profile</a>

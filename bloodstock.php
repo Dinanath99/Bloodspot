@@ -34,9 +34,9 @@ $bloodGroups = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <img src="./img/bloodspot.png" alt="">
                     </div>
                 </li>
-                <li><a href="history.php">
-                        <i class="fa-solid fa-clock-rotate-left"></i>
-                        <span class="nav-item">History</span> </a></li>
+                <li><a href="userdashboard.php">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="nav-item">Dashboard</span> </a></li>
                 <li><a href="donateblood.php">
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Donate Blood</span>
@@ -83,16 +83,16 @@ $bloodGroups = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <div class="blood_type">
                 <?php foreach ($bloodGroups as $item) { ?>
-                <div class="card">
-                    <i class="fa-solid fa-droplet"></i>
-                    <h3>
-                        <?php echo $item['bloodGroup'] ?>
-                    </h3>
-                    <p>
-                        <?php echo $item['qty'] ?> units
-                    </p>
-                    <!-- <button>Request</button> -->
-                </div>
+                    <div class="card">
+                        <i class="fa-solid fa-droplet"></i>
+                        <h3>
+                            <?php echo $item['bloodGroup'] ?>
+                        </h3>
+                        <p>
+                            <?php echo $item['qty'] ?> units
+                        </p>
+                        <!-- <button>Request</button> -->
+                    </div>
                 <?php } ?>
             </div>
         </section>

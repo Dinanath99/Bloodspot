@@ -36,9 +36,9 @@ $signup = $stmt->fetch(PDO::FETCH_ASSOC);
                         <img src="./img/bloodspot.png" alt="">
                     </div>
                 </li>
-                <li><a href="history.php">
-                        <i class="fa-solid fa-clock-rotate-left"></i>
-                        <span class="nav-item">History</span> </a></li>
+                <li><a href="userdashboard.php">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="nav-item">Dashboard</span> </a></li>
                 <li><a class="active" href="donateblood.php">
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Donate Blood</span>

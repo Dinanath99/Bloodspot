@@ -32,9 +32,9 @@ if (!isset($_SESSION['user_id'])) {
                         <img src="./img/bloodspot.png" alt="">
                     </div>
                 </li>
-                <li><a href="history.php">
-                        <i class="fa-solid fa-clock-rotate-left"></i>
-                        <span class="nav-item">History</span>
+                <li><a href="userdashboard.php">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="nav-item">Dashboard</span>
                     </a></li>
                 <li><a href="donateblood.php">
                         <i class="fas fa-user"></i>
@@ -150,25 +150,25 @@ if (!isset($_SESSION['user_id'])) {
     <?php
     if (isset($_GET['success']) && $_GET['success'] == 1) {
         ?>
-        <script>
-            const Toast = Swal.mixin({
-                toast: true,
-                position: "top-end",
-                showConfirmButton: false,
-                timer: 2000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                    toast.addEventListener("mouseenter", Swal.stopTimer)
-                    toast.addEventListener("mouseleave", Swal.resumeTimer)
-                }
-            })
+    <script>
+    const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener("mouseenter", Swal.stopTimer)
+            toast.addEventListener("mouseleave", Swal.resumeTimer)
+        }
+    })
 
-            Toast.fire({
-                icon: "success",
-                title: "Data Submitted Successfully"
-            });
-        </script>
-        <?php
+    Toast.fire({
+        icon: "success",
+        title: "Data Submitted Successfully"
+    });
+    </script>
+    <?php
     }
     ?>
 </body>
