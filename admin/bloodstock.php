@@ -39,10 +39,11 @@ if (isset($_REQUEST['logout'])) {
     <div class="container">
         <nav>
             <ul>
-                <li><a href="admin.php" class="logo">
+                <li>
+                    <div class="logo">
                         <img src="../img/bloodspot.png" alt="">
-                        <!-- <span class="nav-item">Admin Panel</span> -->
-                    </a></li>
+                    </div>
+                </li>
                 <li><a href="admin.php">
                         <i class="fa-solid fa-house"></i>
                         <span class="nav-item">Dashboard</span>

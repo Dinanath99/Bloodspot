@@ -46,10 +46,11 @@ $request = $stmt->fetchALL(PDO::FETCH_ASSOC);
     <div class="container">
         <nav>
             <ul>
-                <li><a href="userdashboard.php" class="logo">
+                <li>
+                    <div class="logo">
                         <img src="./img/bloodspot.png" alt="">
-                        <!-- <span class="nav-item">Welcome<span class="username"> User</span></span> -->
-                    </a></li>
+                    </div>
+                </li>
                 <li><a class="active" href="history.php">
                         <i class="fa-solid fa-clock-rotate-left"></i>
                         <span class="nav-item">History</span> </a></li>

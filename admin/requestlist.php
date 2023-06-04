@@ -210,10 +210,11 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="container">
         <nav>
             <ul>
-                <li><a href="admin.php" class="logo">
-                        <img src="../img/bloodspot.png" alt="">
-                        <!-- <span class="nav-item">Admin Panel</span> -->
-                    </a></li>
+                <li>
+                    <div class="logo">
+                        <i mg src="../img/bloodspot.png" alt="">
+                    </div>
+                </li>
                 <li><a href="admin.php">
                         <i class="fa-solid fa-house"></i>
                         <span class="nav-item">Dashboard</span>

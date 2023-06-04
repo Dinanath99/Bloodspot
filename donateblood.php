@@ -31,10 +31,11 @@ $signup = $stmt->fetch(PDO::FETCH_ASSOC);
     <div class="container">
         <nav>
             <ul>
-                <li><a href="userdashboard.php" class="logo">
+                <li>
+                    <div class="logo">
                         <img src="./img/bloodspot.png" alt="">
-                        <!-- <span class="nav-item">Welcome<span class="username"> User</span></span> -->
-                    </a></li>
+                    </div>
+                </li>
                 <li><a href="history.php">
                         <i class="fa-solid fa-clock-rotate-left"></i>
                         <span class="nav-item">History</span> </a></li>
@@ -132,37 +133,37 @@ $signup = $stmt->fetch(PDO::FETCH_ASSOC);
     <?php
     if (isset($_GET['success']) && $_GET['success'] == 1) {
         ?>
-    <script>
-    const Toast = Swal.mixin({
-        toast: true,
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-            toast.addEventListener("mouseenter", Swal.stopTimer)
-            toast.addEventListener("mouseleave", Swal.resumeTimer)
-        }
-    })
+        <script>
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener("mouseenter", Swal.stopTimer)
+                    toast.addEventListener("mouseleave", Swal.resumeTimer)
+                }
+            })
 
-    Toast.fire({
-        icon: "success",
-        title: "Data Submitted Successfully"
-    });
-    </script>
-    <?php
+            Toast.fire({
+                icon: "success",
+                title: "Data Submitted Successfully"
+            });
+        </script>
+        <?php
     } elseif (isset($_GET['success']) && $_GET['success'] == 0) { ?>
-    <script>
-    Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "You can only donate if three months have passed since your last donation.",
-        buttonsStyling: false,
-        customClass: {
-            confirmButton: "swal-btn-red" // Custom CSS class for confirm button
-        }
-    });
-    </script>
+        <script>
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "You can only donate if three months have passed since your last donation.",
+                buttonsStyling: false,
+                customClass: {
+                    confirmButton: "swal-btn-red" // Custom CSS class for confirm button
+                }
+            });
+        </script>
     <?php }
     ?>
 </body>
