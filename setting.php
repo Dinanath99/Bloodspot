@@ -163,6 +163,23 @@ $item = $stmt->fetch(PDO::FETCH_ASSOC);
                     font-weight: bold;
                     font-size: 16px;
                 }
+                #hideclose,
+                #Chideclose {
+                    display: none;
+                } 
+               .setting .toggle-password {
+        position: relative;
+        display: inline-block;
+    }
+
+   .setting .toggle-password i {
+        position: absolute;
+        right: 8px;
+        top: 90%;
+        transform: translateY(-50%);
+        color: #849a9a;
+        cursor: pointer;
+    }                              
                 </style>
             </head>
 
@@ -189,13 +206,21 @@ $item = $stmt->fetch(PDO::FETCH_ASSOC);
 
                         <div class="form-group">
                             <label for="password">Old Password:</label>
-                            <input type="password" id="password" name="old_password"
+                            <input type="password" id="old_password" name="old_password"
                                 placeholder="enter your old password">
+                            <span class="eye" onclick="togglePassword()">
+                            <i id="hideopen" class="fa-solid fa-eye" style="color: #849a9a;"></i>
+                            <i id="hideclose" class="fa-solid fa-eye-slash" style="color: #849a9a;"></i>
+                        </span>
                         </div>
 
                         <div class="form-group">
                             <label for="password">New Password:</label>
                             <input type="password" id="password" name="password" placeholder="enter your new password">
+                            <span class="eye" onclick="toggleCPassword()">
+                            <i id="Chideopen" class="fa-solid fa-eye" style="color: #849a9a;"></i>
+                            <i id="Chideclose" class="fa-solid fa-eye-slash" style="color: #849a9a;"></i>
+                        </span>
                         </div>
 
                         <div class="btn-group">
@@ -205,6 +230,38 @@ $item = $stmt->fetch(PDO::FETCH_ASSOC);
                         </div>
 
                     </form>
+                    <script>
+                    function togglePassword() {
+                        const x = document.getElementById('old_password');
+                        const show = document.getElementById('hideopen');
+                        const hide = document.getElementById('hideclose');
+                        if (x.type === "password") {
+                            x.type = "text";
+                            show.style.display = "none";
+                            hide.style.display = "block";
+
+                        } else {
+                            x.type = "password";
+                            show.style.display = "block";
+                            hide.style.display = "none";
+                        }
+                    }
+
+                    function toggleCPassword() {
+                    const y= document.getElementById('password');
+                    const show=document.getElementById('Chideopen');
+                    const hide=document.getElementById('Chideclose');
+                    if (y.type === "password") {
+                      y.type = "text";
+                      show.style.display="none";
+                      hide.style.display="block";    
+                    } else{
+                      y.type = "password";
+                      show.style.display="block";
+                      hide.style.display="none";   
+                    }
+                  }
+                </script>
                 </div>
             </body>
 

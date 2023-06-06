@@ -98,15 +98,6 @@ input:focus {
     border: 2px solid red;
 }
 
-.toggle-password {
-    position: relative;
-}
-
-.toggle-password i {
-    position: absolute;
-    right: 10px;
-    top: 29px;
-}
 
 /* Form submit button */
 .btn {
@@ -170,7 +161,7 @@ a:hover {
 }
 
 .home_btn button:hover {
-
+    
     background-color: #f00;
     cursor: pointer;
 }
@@ -195,9 +186,19 @@ a:hover {
     color: rgb(182, 35, 35);
 }
 
-#hideopen,
-#Chideopen {
+#hideclose,
+#Chideclose {
     display: none;
+}
+
+.toggle-password {
+    position: relative;
+}
+
+.toggle-password i {
+    position: absolute;
+    right: 10px;
+    top: 29px;
 }
 
 /* navbar */

@@ -95,12 +95,12 @@ function togglePassword() {
   const hide=document.getElementById('hideclose');
   if (x.type === "password") {
     x.type = "text";
-    show.style.display="block";
-    hide.style.display="none";    
+    show.style.display="none";
+    hide.style.display="block";    
   } else{
     x.type = "password";
-    show.style.display="none";
-    hide.style.display="block";   
+    show.style.display="block";
+    hide.style.display="none";   
   }
 }
 function toggleCPassword() {
@@ -109,11 +109,11 @@ function toggleCPassword() {
   const hide=document.getElementById('Chideclose');
   if (y.type === "password") {
     y.type = "text";
-    show.style.display="block";
-    hide.style.display="none";    
+    show.style.display="none";
+    hide.style.display="block";    
   } else{
     y.type = "password";
-    show.style.display="none";
-    hide.style.display="block";   
+    show.style.display="block";
+    hide.style.display="none";   
   }
 }

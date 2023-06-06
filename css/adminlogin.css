@@ -89,11 +89,11 @@ label {
 /* Form input fields */
 input[type="text"],
 input[type="password"] {
-    width: 99%;
+    width: 95%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
-    border-radius: 2px;
+    border-radius: 5px;
 }
 
 input:focus {
@@ -186,4 +186,18 @@ a:hover {
     text-align: center;
     background-color: #f9f9f9;
     border-top: 1px solid #ccc;
+}
+
+#hideclose,
+#Chideclose {
+    display: none;
+}
+.toggle-password {
+    position: relative;
+}
+
+.toggle-password i {
+    position: absolute;
+    right: 10px;
+    top: 29px;
 }
