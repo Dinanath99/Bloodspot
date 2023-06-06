@@ -211,7 +211,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     <div class="form-group">
                         <label for="password">Old Password:</label>
-                        <input type="password" id="old_password" name="old_password" placeholder="enter your old password">
+                        <input type="password" id="old_password" name="old_password" placeholder="Enter your old password">
                                                     <span class="eye" onclick="togglePassword()">
                             <i id="hideopen" class="fa-solid fa-eye" style="color: #849a9a;"></i>
                             <i id="hideclose" class="fa-solid fa-eye-slash" style="color: #849a9a;"></i>
@@ -220,7 +220,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     <div class="form-group">
                         <label for="password">New Password:</label>
-                        <input type="password" id="password" name="password" placeholder="enter your new password">
+                        <input type="password" id="password" name="password" placeholder="Enter your new password">
                         <span class="eye" onclick="toggleCPassword()">
                             <i id="Chideopen" class="fa-solid fa-eye" style="color: #849a9a;"></i>
                             <i id="Chideclose" class="fa-solid fa-eye-slash" style="color: #849a9a;"></i>

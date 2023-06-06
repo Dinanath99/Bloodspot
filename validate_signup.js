@@ -42,12 +42,16 @@ function validateEmail(){
 
 function validatePassword(){
    const passValue = passwordInput.value.trim();
+   const passRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\W_])/;
    if(passValue === ''){
        setError(passwordInput,"Password is required", 'password-error');
        return false;
    } else if(passValue.length < 8){
        setError(passwordInput," Password must be atleast 8 characters", 'password-error');
        return false;
+   } else if(!passRegex.test(passValue)){
+    setError(passwordInput,"Password must contain at least least one uppercase letter, one lowercase letter, one digit, and one special character.", 'password-error');
+    return false;
    } else {
        removeError(passwordInput, 'password-error');
        return true;
