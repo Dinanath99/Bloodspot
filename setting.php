@@ -54,14 +54,7 @@ $item = $stmt->fetch(PDO::FETCH_ASSOC);
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Blood stock</span>
                     </a></li>
-                <!-- <li><a href="#">
-                        <i class="fas fa-tasks"></i>
-                        <span class="nav-item">Blood center</span>
-                    </a></li> -->
-                <!-- <li><a href="setting.php">
-                        <i class="fas fa-cog"></i>
-                        <span class="nav-item">Setting</span>
-                    </a></li> -->
+
                 <li><a href="#">
                         <i class="fas fa-question-circle"></i>
                         <span class="nav-item">Help</span>
@@ -163,13 +156,13 @@ $item = $stmt->fetch(PDO::FETCH_ASSOC);
                 }
 
                 .message {
-                          margin-top: 15px;
-                          padding: 10px;
-                          color: red;
-                          text-align: center;
-                          font-weight: bold;
-                          font-size: 16px;
-                      }
+                    margin-top: 15px;
+                    padding: 10px;
+                    color: red;
+                    text-align: center;
+                    font-weight: bold;
+                    font-size: 16px;
+                }
                 </style>
             </head>
 
@@ -196,7 +189,8 @@ $item = $stmt->fetch(PDO::FETCH_ASSOC);
 
                         <div class="form-group">
                             <label for="password">Old Password:</label>
-                            <input type="password" id="password" name="old_password" placeholder="enter your old password">
+                            <input type="password" id="password" name="old_password"
+                                placeholder="enter your old password">
                         </div>
 
                         <div class="form-group">

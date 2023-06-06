@@ -25,6 +25,13 @@ $stmt->bindParam(':u_id', $u_id);
 $stmt->execute();
 $request = $stmt->fetchALL(PDO::FETCH_ASSOC);
 
+//user 
+$id = $_SESSION['user_id'];
+$stmt = $pdo->prepare("SELECT name FROM signup WHERE user_id = :id");
+$stmt->bindParam(':id', $id);
+$stmt->execute();
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
 
 ?>
 <!DOCTYPE html>
@@ -46,11 +53,12 @@ $request = $stmt->fetchALL(PDO::FETCH_ASSOC);
     <div class="container">
         <nav>
             <ul>
-                <li><a href="userdashboard.php" class="logo">
+                <li>
+                    <div class="logo">
                         <img src="./img/bloodspot.png" alt="">
-                        <!-- <span class="nav-item">Welcome<span class="username"> User</span></span> -->
-                    </a></li>
-                <li><a class="active" href="history.php">
+                    </div>
+                </li>
+                <li><a class="active" href="dashboard.php">
                         <i class="fa-solid fa-clock-rotate-left"></i>
                         <span class="nav-item">History</span> </a></li>
                 <li><a href="donateblood.php">
@@ -65,22 +73,12 @@ $request = $stmt->fetchALL(PDO::FETCH_ASSOC);
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Blood stock</span>
                     </a></li>
-                <!-- <li><a href="#">
-                        <i class="fas fa-tasks"></i>
-                        <span class="nav-item">Blood center</span>
-                    </a></li> -->
-                <!-- <li><a href="setting.php">
-                        <i class="fas fa-cog"></i>
-                        <span class="nav-item">Setting</span>
-                    </a></li> -->
+
                 <li><a href="#">
                         <i class="fas fa-question-circle"></i>
                         <span class="nav-item">Help</span>
                     </a></li>
-                <!-- <li><a href="userlogout.php" class="logout">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span class="nav-item">Logout</span>
-                    </a></li> -->
+
             </ul>
         </nav>
 
@@ -88,10 +86,12 @@ $request = $stmt->fetchALL(PDO::FETCH_ASSOC);
 
         <section class="main">
             <div class="main-top">
-                <h1>User History</h1>
+                <h1>welcome</h1>
                 <!-- addding dropdown -->
                 <div class="dropdown">
-                    <button class="dropbtn"><i class="fas fa-user-cog"></i></button>
+                    <button class="dropbtn"><span>
+                            <?php echo $user['name']; ?>
+                        </span><i class="fas fa-user-cog"></i></button>
                     <div class="dropdown-content">
                         <a href="setting.php">Edit Profile</a>
                         <a href="userlogout.php">Logout</a>
@@ -101,9 +101,9 @@ $request = $stmt->fetchALL(PDO::FETCH_ASSOC);
             <div class="user-history">
                 <div class="donate-history">
                     <h3>Donate History</h3>
-                  <?php  if ($donate) {
-                    $totalDonated = count($donate);
-                    $lastDonated = date('Y-m-d', strtotime($donate[$totalDonated - 1]['timestamp']));?>
+                    <?php if ($donate) {
+                        $totalDonated = count($donate);
+                        $lastDonated = date('Y-m-d', strtotime($donate[$totalDonated - 1]['timestamp'])); ?>
                     <table border="3">
                         <thead>
                             <tr>
@@ -113,19 +113,24 @@ $request = $stmt->fetchALL(PDO::FETCH_ASSOC);
                             </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                        <td><?php echo $donate[$totalDonated - 1]['name']?></td>
-                        <td><?php echo $totalDonated ?></td>
-                        <td><?php echo $lastDonated ?></td>
-                        </tr>
+                            <tr>
+                                <td>
+                                    <?php echo $donate[$totalDonated - 1]['name'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $totalDonated ?>
+                                </td>
+                                <td>
+                                    <?php echo $lastDonated ?>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
-                    <?php }
-                    else {
+                    <?php } else {
                         echo '<p>No donation history available.</p>';
                     } ?>
-                  </div>
-                  
+                </div>
+
                 <div class="donate-history">
                     <h3>Recently Requested Forms </h3>
                     <?php if ($item) { ?>

@@ -31,13 +31,14 @@ $signup = $stmt->fetch(PDO::FETCH_ASSOC);
     <div class="container">
         <nav>
             <ul>
-                <li><a href="userdashboard.php" class="logo">
+                <li>
+                    <div class="logo">
                         <img src="./img/bloodspot.png" alt="">
-                        <!-- <span class="nav-item">Welcome<span class="username"> User</span></span> -->
-                    </a></li>
-                <li><a href="history.php">
-                        <i class="fa-solid fa-clock-rotate-left"></i>
-                        <span class="nav-item">History</span> </a></li>
+                    </div>
+                </li>
+                <li><a href="userdashboard.php">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="nav-item">Dashboard</span> </a></li>
                 <li><a class="active" href="donateblood.php">
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Donate Blood</span>
@@ -50,18 +51,12 @@ $signup = $stmt->fetch(PDO::FETCH_ASSOC);
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Blood stock</span>
                     </a></li>
-                <!-- <li><a href="#">
-                        <i class="fas fa-tasks"></i>
-                        <span class="nav-item">Blood center</span>
-                    </a></li> -->
+
                 <li><a href="#">
                         <i class="fas fa-question-circle"></i>
                         <span class="nav-item">Help</span>
                     </a></li>
-                <!-- <li><a href="userlogout.php" class="logout">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span class="nav-item">Logout</span>
-                    </a></li> -->
+
             </ul>
         </nav>
 

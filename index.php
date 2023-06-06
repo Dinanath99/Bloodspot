@@ -146,34 +146,7 @@ $totalQuantity = $qty['total_quantity'];
     <!-- Footer section -->
 
     <hr>
-    <!-- <footer>
 
-        <div class="footer-container">
-            <div class="footer-logo">
-                <img src="img/logo.png" alt="Bloodspot" />
-            </div>
-            <div class="footer-links">
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Categories</a></li>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Admin</a></li>
-                    <li><a href="#">Exchange Blood</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-social">
-            <ul>
-                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-            </ul>
-        </div>
-
-        <P>Copyright 2023 alright reserved</P>
-    </footer> -->
     <footer>
         <div class="links">
             <div class="short_description">
@@ -231,20 +204,20 @@ $totalQuantity = $qty['total_quantity'];
 
     <!-- link to javascript -->
     <script>
-    const header = document.querySelector("header");
-    window.addEventListener("scroll", function() {
-        header.classList.toggle("sticky", window.scrollY > 0);
-    });
-    let menu = document.querySelector('#menu-icon');
-    let navlist = document.querySelector('.navlist');
-    menu.onclick = () => {
-        menu.classList.toggle('bx-x');
-        navlist.classList.toggle('active');
-    };
-    window.onscroll = () => {
-        menu.classList.remove('bx-x');
-        navlist.classList.remove('active');
-    };
+        const header = document.querySelector("header");
+        window.addEventListener("scroll", function () {
+            header.classList.toggle("sticky", window.scrollY > 0);
+        });
+        let menu = document.querySelector('#menu-icon');
+        let navlist = document.querySelector('.navlist');
+        menu.onclick = () => {
+            menu.classList.toggle('bx-x');
+            navlist.classList.toggle('active');
+        };
+        window.onscroll = () => {
+            menu.classList.remove('bx-x');
+            navlist.classList.remove('active');
+        };
     </script>
 </body>
 

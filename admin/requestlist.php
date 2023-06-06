@@ -216,12 +216,13 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="container">
         <nav>
             <ul>
-                <li><a href="admin.php" class="logo">
-                        <img src="../img/bloodspot.png" alt="">
-                        <!-- <span class="nav-item">Admin Panel</span> -->
-                    </a></li>
+                <li>
+                    <div class="logo">
+                        <i mg src="../img/bloodspot.png" alt="">
+                    </div>
+                </li>
                 <li><a href="admin.php">
-                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <i class="fa-solid fa-house"></i>
                         <span class="nav-item">Dashboard</span>
                     </a></li>
                 <li><a href="donorlist.php">
@@ -236,22 +237,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Blood Request</span>
                     </a></li>
-                <!-- <li><a href="#">
-                        <i class="fas fa-tasks"></i>
-                        <span class="nav-item">Event</span>
-                    </a></li> -->
-                <!-- <li><a href="#">
-                        <i class="fas fa-cog"></i>
-                        <span class="nav-item">Setting</span>
-                    </a></li> -->
-                <!-- <li><a href="#">
-                        <i class="fas fa-question-circle"></i>
-                        <span class="nav-item">Help</span>
-                    </a></li> -->
-                <!-- <li><a href="logoutadmin.php" class="logout">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span class="nav-item">Logout</span>
-                    </a></li> -->
+
             </ul>
         </nav>
 
@@ -345,8 +331,12 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <td>
                                 <select name="status" onchange="updateStatus(this,<?php echo $item['id']; ?>)">
                                     <option value="" disabled selected>Update</option>
-                                    <option class="accept" value="Accepted" <?php echo ($status == 'Accepted' || $status == 'Rejected') ? 'disabled' : ''; ?>>Accept</option>
-                                    <option value="Rejected" <?php echo ($status == 'Accepted' || $status == 'Rejected') ? 'disabled' : ''; ?>>Reject</option>
+                                    <option class="accept" value="Accepted"
+                                        <?php echo ($status == 'Accepted' || $status == 'Rejected') ? 'disabled' : ''; ?>>
+                                        Accept</option>
+                                    <option value="Rejected"
+                                        <?php echo ($status == 'Accepted' || $status == 'Rejected') ? 'disabled' : ''; ?>>
+                                        Reject</option>
                                 </select>
                             </td>
                             <td id="bank-<?php echo $item['id'] ?>">

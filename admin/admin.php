@@ -48,12 +48,13 @@ $donate = $stmt->fetchALL(PDO::FETCH_ASSOC);
     <div class="container">
         <nav>
             <ul>
-                <li><a href="admin.php" class="logo">
+                <li>
+                    <div class="logo">
                         <img src="../img/bloodspot.png" alt="">
-                        <!-- <span class="nav-item">Admin Panel</span> -->
-                    </a></li>
+                    </div>
+                </li>
                 <li><a href="#">
-                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <i class="fa-solid fa-house"></i>
                         <span class="nav-item">Dashboard</span>
                     </a></li>
                 <li><a href="donorlist.php">
@@ -68,18 +69,7 @@ $donate = $stmt->fetchALL(PDO::FETCH_ASSOC);
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Blood Requester</span>
                     </a></li>
-                <li><a href="adminsetting.php">
-                        <i class="fas fa-cog"></i>
-                        <span class="nav-item">Setting</span>
-                    </a></li>
-                <!-- <li><a href="testtable.php">
-                        <i class="fas fa-question-circle"></i>
-                        <span class="nav-item">Testtable</span>
-                    </a></li> -->
-                <!-- <li><a href="logoutadmin.php" class="logout">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span class="nav-item">Logout</span>
-                    </a></li> -->
+
             </ul>
         </nav>
 

@@ -59,12 +59,13 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="container">
         <nav>
             <ul>
-                <li><a href="admin.php" class="logo">
+                <li>
+                    <div class="logo">
                         <img src="../img/bloodspot.png" alt="">
-                        <!-- <span class="nav-item">Admin Panel</span> -->
-                    </a></li>
+                    </div>
+                </li>
                 <li><a href="admin.php">
-                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <i class="fa-solid fa-house"></i>
                         <span class="nav-item">Dashboard</span>
                     </a></li>
                 <li><a class="active href=" donorlist.php">
@@ -79,22 +80,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Blood Request</span>
                     </a></li>
-                <!-- <li><a href="#">
-                        <i class="fas fa-tasks"></i>
-                        <span class="nav-item">Event</span>
-                    </a></li> -->
-                <!-- <li><a href="#">
-                        <i class="fas fa-cog"></i>
-                        <span class="nav-item">Setting</span>
-                    </a></li> -->
-                <!-- <li><a href="#">
-                        <i class="fas fa-question-circle"></i>
-                        <span class="nav-item">Help</span>
-                    </a></li> -->
-                <!-- <li><a href="logoutadmin.php" class="logout">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span class="nav-item">Logout</span>
-                    </a></li> -->
+
             </ul>
         </nav>
 
@@ -132,44 +118,44 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <tbody>
                         <?php $count = 1;
                         foreach ($value as $item) { ?>
-                        <tr>
-                            <td>
-                                <?php echo $count ?>
-                            </td>
-                            <td>
-                                <?php echo $item['name'] ?>
-                            </td>
-                            <td>
-                                <?php echo $item['email'] ?>
-                            </td>
-                            <td>
-                                <?php echo $item['contact'] ?>
-                            </td>
-                            <td>
-                                <?php echo $item['dob'] ?>
-                            </td>
-                            <td>
-                                <?php echo $item['gender'] ?>
-                            </td>
-                            <td>
-                                <?php echo $item['blood_group'] ?>
-                            </td>
-                            <td>
-                                <?php echo $item['address'] ?>
-                            </td>
-                            <td>
-                                <?php echo $item['timestamp'] ?>
-                            </td>
-                            <!-- this code helps to update specific cell e.g status-2  -->
-                              <!-- <td id="status-<?php echo $item['id']; ?>">
+                            <tr>
+                                <td>
+                                    <?php echo $count ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['name'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['email'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['contact'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['dob'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['gender'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['blood_group'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['address'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['timestamp'] ?>
+                                </td>
+                                <!-- this code helps to update specific cell e.g status-2  -->
+                                <!-- <td id="status-<?php echo $item['id']; ?>">
                                 <?php
-                                    $status = $item['status'];
-                                    if ($status == 'Accepted' || $status == "Rejected") {
-                                        echo $status;
-                                    } else {
-                                        echo 'Pending';
-                                    }
-                                    ?> 
+                                $status = $item['status'];
+                                if ($status == 'Accepted' || $status == "Rejected") {
+                                    echo $status;
+                                } else {
+                                    echo 'Pending';
+                                }
+                                ?> 
                             </td> 
                             <td>
                                 <!-- <form action="<?php echo $_SERVER['PHP_SELF']; ?>" > 
@@ -180,8 +166,8 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <option class="reject" value="Rejected">Reject</option>
                                 </select>
                             </td> -->
-                            <td id="bank-<?php echo $item['id']; ?>">
-                                <?php
+                                <td id="bank-<?php echo $item['id']; ?>">
+                                    <?php
                                     $status = $item['bloodbank'];
                                     if ($status == 'Visited') {
                                         echo $status;
@@ -189,17 +175,17 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         echo 'Not Visited';
                                     }
                                     ?>
-                            </td>
-                            <td>
-                                <select name="bank" onchange="updatebank(this,<?php echo $item['id']; ?>)">
-                                    <!-- <option value="Not Visited">Not Visited</option> -->
-                                    <option value="" disabled selected>Not Visited</option>
-                                    <option value="Visited">Visit</option>
-                                </select>
-                            </td>
+                                </td>
+                                <td>
+                                    <select name="bank" onchange="updatebank(this,<?php echo $item['id']; ?>)">
+                                        <!-- <option value="Not Visited">Not Visited</option> -->
+                                        <option value="" disabled selected>Not Visited</option>
+                                        <option value="Visited">Visit</option>
+                                    </select>
+                                </td>
 
-                        </tr>
-                        <?php $count++;
+                            </tr>
+                            <?php $count++;
                         } ?>
 
                     <tbody>
@@ -208,41 +194,41 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </section>
     </div>
     <script>
-    // function updateStatus(selectElement, donorId) {
-    //     var status = selectElement.value;
-    //     var xhr = new XMLHttpRequest();
-    //     xhr.open('POST', '<?php echo $_SERVER["PHP_SELF"]; ?>', true);
-    //     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    //     xhr.onreadystatechange = function() {
-    //         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-    //             // yesley  databasema k aayo bhanera dekhaucha hai
-    //             console.log(xhr.responseText);
+        // function updateStatus(selectElement, donorId) {
+        //     var status = selectElement.value;
+        //     var xhr = new XMLHttpRequest();
+        //     xhr.open('POST', '<?php echo $_SERVER["PHP_SELF"]; ?>', true);
+        //     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        //     xhr.onreadystatechange = function() {
+        //         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+        //             // yesley  databasema k aayo bhanera dekhaucha hai
+        //             console.log(xhr.responseText);
 
-    //             // This will dynamically update the data in status cell 
-    //             var statusCell = document.getElementById('status-' + donorId);
-    //             statusCell.textContent = status;
-    //         }
-    //     };
-    //     xhr.send('donor_id=' + donorId + '&status=' + status);
-    // }
+        //             // This will dynamically update the data in status cell 
+        //             var statusCell = document.getElementById('status-' + donorId);
+        //             statusCell.textContent = status;
+        //         }
+        //     };
+        //     xhr.send('donor_id=' + donorId + '&status=' + status);
+        // }
 
-    function updatebank(selectElement, donorId) {
-        var bank = selectElement.value;
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', '<?php echo $_SERVER["PHP_SELF"]; ?>', true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                // yesley  databasema k aayo bhanera dekhaucha hai
-                console.log(xhr.responseText);
+        function updatebank(selectElement, donorId) {
+            var bank = selectElement.value;
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '<?php echo $_SERVER["PHP_SELF"]; ?>', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                    // yesley  databasema k aayo bhanera dekhaucha hai
+                    console.log(xhr.responseText);
 
-                // This will dynamically update the data in bank cell 
-                var statusCell = document.getElementById('bank-' + donorId);
-                statusCell.textContent = bank;
-            }
-        };
-        xhr.send('donor_id=' + donorId + '&bank=' + bank);
-    }
+                    // This will dynamically update the data in bank cell 
+                    var statusCell = document.getElementById('bank-' + donorId);
+                    statusCell.textContent = bank;
+                }
+            };
+            xhr.send('donor_id=' + donorId + '&bank=' + bank);
+        }
     </script>
 
 
