@@ -68,7 +68,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <i class="fa-solid fa-house"></i>
                         <span class="nav-item">Dashboard</span>
                     </a></li>
-                <li><a class="active href=" donorlist.php">
+                <li><a class="active" href=" donorlist.php">
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Donor list</span>
                     </a></li>

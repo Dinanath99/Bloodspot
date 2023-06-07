@@ -141,21 +141,21 @@ $donate = $stmt->fetchALL(PDO::FETCH_ASSOC);
                         </thead>
                         <tbody>
                             <?php foreach ($donate as $item) { ?>
-                            <tr>
-                                <!-- <td><img src="user1.jpg" alt="User 1" class="user-image"></td> -->
-                                <td>
-                                    <?php echo $item['name'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['blood_group'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['email'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['address'] ?>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <!-- <td><img src="user1.jpg" alt="User 1" class="user-image"></td> -->
+                                    <td>
+                                        <?php echo $item['name'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['blood_group'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['email'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['address'] ?>
+                                    </td>
+                                </tr>
                             <?php } ?>
                         </tbody>
                     </table>
