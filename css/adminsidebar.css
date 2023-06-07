@@ -8,6 +8,7 @@
     text-decoration: none;
     box-sizing: border-box;
     font-family: "poppins", sans-serif;
+    font-style: normal !important;
 
 }
 
@@ -109,6 +110,7 @@ nav.fas {
     top: 0px;
     margin-left: 20px;
     font-size: 20px;
+    font-weight: bold;
 }
 
 

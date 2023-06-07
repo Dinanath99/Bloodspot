@@ -53,7 +53,7 @@ $donate = $stmt->fetchALL(PDO::FETCH_ASSOC);
                         <img src="../img/bloodspot.png" alt="">
                     </div>
                 </li>
-                <li><a href="#">
+                <li><a href="#" class="active">
                         <i class="fa-solid fa-house"></i>
                         <span class="nav-item">Dashboard</span>
                     </a></li>

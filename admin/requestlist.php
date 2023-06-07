@@ -207,9 +207,6 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
-    <!--  adding css for view the image -->
-    <script src="../modal.js" defer></script>
 </head>
 
 <body>
@@ -218,7 +215,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <ul>
                 <li>
                     <div class="logo">
-                        <i mg src="../img/bloodspot.png" alt="">
+                        <img src="../img/bloodspot.png" alt="">
                     </div>
                 </li>
                 <li><a href="admin.php">
