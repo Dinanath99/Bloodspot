@@ -238,6 +238,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <span class="nav-item">Blood Request</span>
                     </a></li>
 
+
             </ul>
         </nav>
 
@@ -306,7 +307,8 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             </td>
                             <td>
                                 <a target="_blank" href="../img/<?php echo $item['image']?>">
-                                <img src="../img/<?php echo $item['image'] ?>" alt="Image" class="thumbnail" width="100px" height="80px">
+                                    <img src="../img/<?php echo $item['image'] ?>" alt="Image" class="thumbnail"
+                                        width="100px" height="80px">
                             </td>
                             <td>
                                 <?php echo $item['address'] ?>
