@@ -209,7 +209,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
     <!--  adding css for view the image -->
-
+    <script src="../modal.js" defer></script>
 </head>
 
 <body>
@@ -305,8 +305,8 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <?php echo $item['qty'] ?>
                             </td>
                             <td>
-                                <img src="../img/<?php echo $item['image'] ?>" alt="Image" class="thumbnail"
-                                    width="25px" height="25px">
+                                <a target="_blank" href="../img/<?php echo $item['image']?>">
+                                <img src="../img/<?php echo $item['image'] ?>" alt="Image" class="thumbnail" width="100px" height="80px">
                             </td>
                             <td>
                                 <?php echo $item['address'] ?>

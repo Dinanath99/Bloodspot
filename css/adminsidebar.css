@@ -217,6 +217,9 @@ nav.fas {
     border-top-right-radius: 12px;
 
 }
+th {
+    z-index: 11;
+}
 
 .fl-table {
     border-radius: 5px;
