@@ -305,7 +305,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <td>
                                 <a target="_blank" href="../img/<?php echo $item['image']?>">
                                     <img src="../img/<?php echo $item['image'] ?>" alt="Image" class="thumbnail"
-                                        width="100px" height="80px">
+                                        width="24px" height="auto">
                             </td>
                             <td>
                                 <?php echo $item['address'] ?>

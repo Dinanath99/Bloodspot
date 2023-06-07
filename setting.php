@@ -103,6 +103,7 @@ $item = $stmt->fetch(PDO::FETCH_ASSOC);
                     /* background: rebeccapurple; */
                     border-radius: 20px;
                     padding: 10px;
+                    background-color: #AFAFAF;
                     box-shadow: 0 0 5px rgba(0, 0, 0, .2);
                 }
 
@@ -121,10 +122,11 @@ $item = $stmt->fetch(PDO::FETCH_ASSOC);
                 .form-group input[type="number"],
                 .form-group input[type="password"] {
                     width: 100%;
-                    padding: 6px;
+                    padding: 7px 10px;
                     border: 1px solid #ccc;
                     border-radius: 4px;
-
+                    margin-bottom: 2vh;
+                    font-size: 0.87rem;
                 }
 
                 .btn-group {
@@ -167,19 +169,18 @@ $item = $stmt->fetch(PDO::FETCH_ASSOC);
                 #Chideclose {
                     display: none;
                 } 
-               .setting .toggle-password {
-        position: relative;
-        display: inline-block;
-    }
 
-   .setting .toggle-password i {
+                .form-group{
+                    position: relative;
+                }
+
+   .setting .fa-eye, .fa-eye-slash{
         position: absolute;
-        right: 8px;
-        top: 90%;
-        transform: translateY(-50%);
+        left: 31vw;
+        top: 7.5vh;
         color: #849a9a;
         cursor: pointer;
-    }                              
+    }  
                 </style>
             </head>
 
@@ -206,8 +207,7 @@ $item = $stmt->fetch(PDO::FETCH_ASSOC);
 
                         <div class="form-group">
                             <label for="password">Old Password:</label>
-                            <input type="password" id="old_password" name="old_password"
-                                placeholder="enter your old password">
+                            <input type="password" id="old_password" name="old_password" placeholder="enter your old password">
                             <span class="eye" onclick="togglePassword()">
                             <i id="hideopen" class="fa-solid fa-eye" style="color: #849a9a;"></i>
                             <i id="hideclose" class="fa-solid fa-eye-slash" style="color: #849a9a;"></i>

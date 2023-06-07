@@ -8,7 +8,6 @@
     text-decoration: none;
     box-sizing: border-box;
     font-family: "poppins", sans-serif;
-
 }
 
 /* root variable */
@@ -45,6 +44,7 @@ nav {
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     min-height: 100vh;
     line-height: 2rem;
+    font-weight: bold;
 
     /* making sticky */
 }
