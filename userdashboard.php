@@ -70,7 +70,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                         <span class="nav-item">Request Blood</span>
                     </a></li>
                 <li><a href="bloodstock.php">
-                        <i class="fas fa-user"></i>
+                        <i class="fa-solid fa-droplet"></i>
                         <span class="nav-item">Blood stock</span>
                     </a></li>
 
@@ -104,28 +104,28 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                     <?php if ($donate) {
                         $totalDonated = count($donate);
                         $lastDonated = date('Y-m-d', strtotime($donate[$totalDonated - 1]['timestamp'])); ?>
-                    <table border="3">
-                        <thead>
-                            <tr>
-                                <th>Full Name</th>
-                                <th>Total Donated</th>
-                                <th>Last Donated</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <?php echo $donate[$totalDonated - 1]['name'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $totalDonated ?>
-                                </td>
-                                <td>
-                                    <?php echo $lastDonated ?>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        <table border="3">
+                            <thead>
+                                <tr>
+                                    <th>Full Name</th>
+                                    <th>Total Donated</th>
+                                    <th>Last Donated</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <?php echo $donate[$totalDonated - 1]['name'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $totalDonated ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $lastDonated ?>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     <?php } else {
                         echo '<p>No donation history available.</p>';
                     } ?>
@@ -134,54 +134,54 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                 <div class="donate-history">
                     <h3>Recently Requested Forms </h3>
                     <?php if ($item) { ?>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Full Name</th>
-                                <th>Email</th>
-                                <th>Contact</th>
-                                <th>Date of Birth</th>
-                                <th>Gender</th>
-                                <th>Blood Group</th>
-                                <th>Quantity</th>
-                                <th>Address</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <?php echo $item['Pname'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['email'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['contact'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['dob'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['gender'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['blood_group'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['qty'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['address'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['status'] ?>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Full Name</th>
+                                    <th>Email</th>
+                                    <th>Contact</th>
+                                    <th>Date of Birth</th>
+                                    <th>Gender</th>
+                                    <th>Blood Group</th>
+                                    <th>Quantity</th>
+                                    <th>Address</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <?php echo $item['Pname'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['email'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['contact'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['dob'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['gender'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['blood_group'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['qty'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['address'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['status'] ?>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     <?php } else { ?>
-                    <p> No recently Requested Forms.</p>
+                        <p> No recently Requested Forms.</p>
                     <?php } ?>
 
 
@@ -208,39 +208,39 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                             <?php
                             $count = 1;
                             foreach ($request as $item) { ?>
-                            <tr>
-                                <td>
-                                    <?php echo $count ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['Pname'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['email'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['contact'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['dob'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['gender'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['blood_group'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['qty'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['address'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $item['status'] ?>
-                                </td>
+                                <tr>
+                                    <td>
+                                        <?php echo $count ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['Pname'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['email'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['contact'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['dob'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['gender'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['blood_group'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['qty'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['address'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $item['status'] ?>
+                                    </td>
 
-                                <?php $count++;
+                                    <?php $count++;
                             } ?>
                         </tbody>
                     </table>

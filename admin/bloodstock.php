@@ -53,7 +53,7 @@ if (isset($_REQUEST['logout'])) {
                         <span class="nav-item">Donor list</span>
                     </a></li>
                 <li><a class="active" href="bloodstock.php">
-                        <i class="fa-solid fa-layer-group"></i>
+                        <i class="fa-solid fa-droplet"></i>
                         <span class="nav-item">Blood stock</span>
                     </a></li>
                 <li><a href="requestlist.php">

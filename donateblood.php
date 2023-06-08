@@ -48,7 +48,7 @@ $signup = $stmt->fetch(PDO::FETCH_ASSOC);
                         <span class="nav-item">Request Blood</span>
                     </a></li>
                 <li><a href="bloodstock.php">
-                        <i class="fas fa-user"></i>
+                        <i class="fa-solid fa-droplet"></i>
                         <span class="nav-item">Blood stock</span>
                     </a></li>
 
