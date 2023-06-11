@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>user dashboard</title>
+    <title>admin dashboard</title>
     <link rel="stylesheet" href="../css/adminsidebar.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -61,6 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             /* background: rebeccapurple; */
             border-radius: 20px;
             padding: 10px;
+                    background-color: #AFAFAF;
             box-shadow: 0 0 5px rgba(0, 0, 0, .2);
         }
 
@@ -75,15 +76,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         .form-group input[type="text"],
-        .form-group input[type="email"],
-        .form-group input[type="number"],
-        .form-group input[type="password"] {
-            width: 100%;
-            padding: 6px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-
-        }
+                .form-group input[type="email"],
+                .form-group input[type="number"],
+                .form-group input[type="password"] {
+                    width: 100%;
+                    padding: 7px 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    margin-bottom: 2vh;
+                    font-size: 0.87rem;
+                }
 
         .btn-group {
             margin: 15px;
@@ -127,23 +129,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             font-weight: bold;
             font-size: 16px;
         }
+        .error-message {
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: rgb(182, 35, 35);
+        }
         #hideclose,
                 #Chideclose {
                     display: none;
                 } 
-               .setting .toggle-password {
-        position: relative;
-        display: inline-block;
-    }
+                .form-group{
+                    position: relative;
+                }
 
-   .setting .toggle-password i {
+   .setting .fa-eye, .fa-eye-slash{
         position: absolute;
-        right: 8px;
-        top: 90%;
-        transform: translateY(-50%);
+        left: 27vw;
+        top: 6.7vh;
         color: #849a9a;
         cursor: pointer;
-    } 
+    }  
     </style>
 </head>
 
@@ -216,6 +221,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <i id="hideopen" class="fa-solid fa-eye" style="color: #849a9a;"></i>
                             <i id="hideclose" class="fa-solid fa-eye-slash" style="color: #849a9a;"></i>
                         </span>
+                        <div id="old-password-error" class="error-message"></div>
                     </div>
 
                     <div class="form-group">
@@ -226,44 +232,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <i id="Chideclose" class="fa-solid fa-eye-slash" style="color: #849a9a;"></i>
                         </span>
                     </div>
-
+                    <div id="password-error" class="error-message"></div>
                     <div class="btn-group">
                         <button type="submit" id="saveBtn">Save Changes</button>
                     </div>
 
                 </form>
-                <script>
-                    function togglePassword() {
-                        const x = document.getElementById('old_password');
-                        const show = document.getElementById('hideopen');
-                        const hide = document.getElementById('hideclose');
-                        if (x.type === "password") {
-                            x.type = "text";
-                            show.style.display = "none";
-                            hide.style.display = "block";
-
-                        } else {
-                            x.type = "password";
-                            show.style.display = "block";
-                            hide.style.display = "none";
-                        }
-                    }
-
-                    function toggleCPassword() {
-                    const y= document.getElementById('password');
-                    const show=document.getElementById('Chideopen');
-                    const hide=document.getElementById('Chideclose');
-                    if (y.type === "password") {
-                      y.type = "text";
-                      show.style.display="none";
-                      hide.style.display="block";    
-                    } else{
-                      y.type = "password";
-                      show.style.display="block";
-                      hide.style.display="none";   
-                    }
-                  }
-                </script>
+                <script src="../setting_js.js"></script>
             </div>
         </section>
 

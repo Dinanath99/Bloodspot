@@ -81,14 +81,14 @@ $totalQuantity = $qty['total_quantity'];
                     <?php echo $totalUser; ?>
                 </p>
             </div>
-            <div class="sub-box">
+            <!-- <div class="sub-box">
                 <div class="sub-img">
                     <img src="img/drop.png" alt="image">
                 </div>
                 <h3>
                     Blood unit collected</h3>
                 <?php echo $totalUser; ?>
-            </div>
+            </div> -->
             <div class="sub-box">
                 <div class="sub-img">
                     <img src="img/request.png" alt="image">
