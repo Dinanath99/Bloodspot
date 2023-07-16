@@ -4,14 +4,11 @@ const form = document.querySelector('form');
 
 form.addEventListener('submit', function(event) {
     event.preventDefault();
-    if (validateForm()) {
+    if (validatePassword() && validateOldPassword()) {
         form.submit();
     }
 });
 
-function validateForm() {
-    return validatePassword() && validateOldPassword();
-}
 
 function validatePassword() {
     const passValue = passwordInput.value.trim();

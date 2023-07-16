@@ -28,27 +28,31 @@ function validateName(){
     }
   }
 
-  function validateEmail(){
-    const emailvalue = email.value.trim();
+  function validateEmail() {
+    const emailValue = email.value.trim();
     const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if (emailvalue === ''){
-        setError(email, "Email is required", 'email-error');
-    } else if(!emailRegex.test(emailvalue)) {
-        setError(email, "Invalid email format!", 'email-error');
+    if (emailValue === '') {
+      setError(email, "Email is required", 'email-error');
+      return false;
+    } else if (!emailRegex.test(emailValue)) {
+      setError(email, "Invalid email format!", 'email-error');
+      return false;
     } else {
-        removeError( email, 'email-error');
-        return true;
+      removeError(email, 'email-error');
+      return true;
     }
- }
+  }
 
 
   function validatePhone(){
     const phonevalue = contact.value.trim();
-    const phoneRegex = /^\d{10}$/;
+    const phoneRegex = /^9\d{9}$/;
     if (phonevalue === ''){
         setError(contact, "Phone number is required", 'contact-error');
+        return false;
     } else if(!phoneRegex.test(phonevalue)) {
-        setError(contact, "Number must be atleast 10", 'contact-error');
+        setError(contact, "Invalid Phone Number", 'contact-error');
+        return false;
     } else {
         removeError(contact, 'contact-error');
         return true;
@@ -61,8 +65,10 @@ function validateName(){
     const age = current.getFullYear() - given.getFullYear();
     if (dobvalue === ''){
         setError(dob, "Date of Birth is required", 'dob-error');
+        return false;
     } else if (age < 18 || age > 60){
         setError(dob, "Your age must be between 18-60", 'dob-error');
+        return false;
     } else {
         removeError(dob, 'dob-error');
         return true;
@@ -74,6 +80,7 @@ function validateName(){
     const addressvalue = address.value.trim();
     if (addressvalue === ''){
         setError(address, "Address is required", 'addr-error');
+        return false;
     }  else {
         removeError(address, 'addr-error');
         return true;
