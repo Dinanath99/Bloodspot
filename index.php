@@ -53,17 +53,12 @@ $totalQuantity = $qty['total_quantity'];
     <section class="home" id="home">
         <div class="home-text">
 
-            <!-- <a href="login.php" class="btn1">Donate Blood</a> -->
-            <!-- <a href="login.php" class="btn2">Request Blood</a> -->
-            <!-- <div class="hero">
 
-                <img src="img/hero.jpg" width="250px" />
-            </div> -->
 
         </div>
         </div>
         <div Request home-img">
-            <!-- <img src="background.jpg"> -->
+
 
         </div>
 
@@ -81,14 +76,8 @@ $totalQuantity = $qty['total_quantity'];
                     <?php echo $totalUser; ?>
                 </p>
             </div>
-            <!-- <div class="sub-box">
-                <div class="sub-img">
-                    <img src="img/drop.png" alt="image">
-                </div>
-                <h3>
-                    Blood unit collected</h3>
-                <?php echo $totalUser; ?>
-            </div> -->
+
+
             <div class="sub-box">
                 <div class="sub-img">
                     <img src="img/request.png" alt="image">
@@ -112,17 +101,18 @@ $totalQuantity = $qty['total_quantity'];
         <div class="about-text">
             <!-- <h3>i am designer</h3> -->
             <h2>Why BloodSpot?</h2>
-            <p>Existing blood management system in Nepal is manual, cumbersome and inefficient. Most blood banks record
-                the information on blood collection/supply manually in registers.
+            <p>The existing blood management system in Nepal is manual, cumbersome, and inefficient. Most blood banks
+                record
+                the information on blood collection or supply manually in registers.
 
-                Maintaining blood stock inventory is tedious with laborious back-office paperwork and managing
-                information on availability and shortage of blood is a tall task.
+                Maintaining an inventory of blood supply requires a lot of labor, and processing data on blood
+                availability and shortages is a difficult task.
 
-                A social initiative for a smart, transparent and holistic blood management service from collection to
-                supply.
+                An effort on behalf of society to manage blood from collection to supply in an intelligent, open, and
+                comprehensive manner.
 
-                When it comes to blood, right information at the right time can be the answer to a life and death
-                situation.</p>
+                The difference between life and death when it comes to blood may depend on obtaining the appropriate
+                information at the right time.</p>
         </div>
     </section>
 

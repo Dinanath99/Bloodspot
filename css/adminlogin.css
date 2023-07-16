@@ -42,10 +42,7 @@ html {
 .log_img img {
     max-width: 400px;
     max-height: 600px;
-    /* background-color: #f9f9f9; */
-    /* border: 1px solid #ccc; */
-    /* border-radius: 5px; */
-    /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); */
+
     background: white;
 }
 
@@ -53,7 +50,6 @@ html {
 .container {
     width: 500px;
     max-height: 500px;
-    /* margin: 50px auto;  */
     padding: 20px;
     background-color: #f9f9f9;
     border: 1px solid #ccc;
@@ -192,6 +188,7 @@ a:hover {
 #Chideclose {
     display: none;
 }
+
 .toggle-password {
     position: relative;
 }
