@@ -66,7 +66,7 @@ $donate = $stmt->fetchALL(PDO::FETCH_ASSOC);
                         <span class="nav-item">Blood stock</span>
                     </a></li>
                 <li><a href="requestlist.php">
-                        <i class="fas fa-user"></i>
+                        <i class="fa-solid fa-users"></i>
                         <span class="nav-item">Blood Requester</span>
                     </a></li>
 

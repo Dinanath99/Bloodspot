@@ -42,7 +42,7 @@ $bloodGroups = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <span class="nav-item">Donate Blood</span>
                     </a></li>
                 <li><a href="requestblood.php">
-                        <i class="fa-solid fa-layer-group"></i>
+                        <i class="fa-solid fa-users"></i>
                         <span class="nav-item">Request Blood</span>
                     </a></li>
                 <li><a class="active" href="bloodstock.php">
@@ -50,10 +50,6 @@ $bloodGroups = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <span class="nav-item">Blood stock</span>
                     </a></li>
 
-                <li><a href="#">
-                        <i class="fas fa-question-circle"></i>
-                        <span class="nav-item">Help</span>
-                    </a></li>
 
             </ul>
         </nav>
@@ -73,16 +69,16 @@ $bloodGroups = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <div class="blood_type">
                 <?php foreach ($bloodGroups as $item) { ?>
-                <div class="card">
-                    <i class="fa-solid fa-droplet"></i>
-                    <h3>
-                        <?php echo $item['bloodGroup'] ?>
-                    </h3>
-                    <p>
-                        <?php echo $item['qty'] ?> units
-                    </p>
-                    <!-- <button>Request</button> -->
-                </div>
+                    <div class="card">
+                        <i class="fa-solid fa-droplet"></i>
+                        <h3>
+                            <?php echo $item['bloodGroup'] ?>
+                        </h3>
+                        <p>
+                            <?php echo $item['qty'] ?> units
+                        </p>
+                        <!-- <button>Request</button> -->
+                    </div>
                 <?php } ?>
             </div>
         </section>

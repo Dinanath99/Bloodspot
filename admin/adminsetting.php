@@ -41,114 +41,113 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <!-- style for admin setting -->
     <style>
-        .setting {
-            display: flex;
-            justify-content: column;
-            align-items: center;
-            margin: 30px;
-            /* background-color: orange; */
+    .setting {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+    }
+
+    .edit {
+        width: 500px;
+        max-height: 600px;
+        /* margin: 50px auto; */
+        padding: 15px;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Form title */
+    h2 {
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Form labels */
+    label {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    /* signup success*/
+    .message {
+        margin-top: 15px;
+        padding: 10px;
+        color: red;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    input {
+        width: 95%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 15px;
+        color: black;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    input:focus {
+        outline: none;
+        border: 2px solid red;
+    }
 
 
-        }
+    /* Form submit button */
+    .btn-group {
+        margin: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-        h2 {
-            text-align: center;
-        }
-
-        form {
-            min-width: 400px;
-            margin: 0 auto;
-            /* background: rebeccapurple; */
-            border-radius: 20px;
-            padding: 10px;
-                    background-color: #AFAFAF;
-            box-shadow: 0 0 5px rgba(0, 0, 0, .2);
-        }
-
-        .form-group {
-            margin-bottom: 0px;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: 700;
-            margin-bottom: 0.5em;
-        }
-
-        .form-group input[type="text"],
-                .form-group input[type="email"],
-                .form-group input[type="number"],
-                .form-group input[type="password"] {
-                    width: 100%;
-                    padding: 7px 10px;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    margin-bottom: 2vh;
-                    font-size: 0.87rem;
-                }
-
-        .btn-group {
-            margin: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .btn-group button {
-            padding: 8px 16px;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 700;
-        }
-
-        #saveBtn {
-            background-color: green;
-            text-align: center;
-        }
-
-        .btn-group button:hover {
-            opacity: 0.8;
-        }
-
-        .success {
-            margin-top: 15px;
-            padding: 10px;
-            color: green;
-            text-align: center;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        .invalid {
-            margin-top: 15px;
-            padding: 10px;
-            color: red;
-            text-align: center;
-            font-weight: bold;
-            font-size: 16px;
-        }
-        .error-message {
-            font-size: 14px;
-            margin-bottom: 5px;
-            color: rgb(182, 35, 35);
-        }
-        #hideclose,
-                #Chideclose {
-                    display: none;
-                } 
-                .form-group{
-                    position: relative;
-                }
-
-   .setting .fa-eye, .fa-eye-slash{
-        position: absolute;
-        left: 27vw;
-        top: 6.7vh;
-        color: #849a9a;
+    .btn-group button {
+        padding: 8px 16px;
+        color: white;
+        border: none;
+        border-radius: 4px;
         cursor: pointer;
-    }  
+        font-weight: 700;
+    }
+
+    #saveBtn {
+        background-color: green;
+    }
+
+    #deleteBtn {
+        background-color: #cf1217;
+    }
+
+
+    .error-message {
+        font-size: 14px;
+        margin-bottom: 5px;
+        color: rgb(182, 35, 35);
+    }
+
+    #hideclose,
+    #Chideclose {
+        display: none;
+    }
+
+    .toggle-password {
+        position: relative;
+    }
+
+    .toggle-password i {
+        position: absolute;
+        right: 30px;
+        top: 39px;
+    }
     </style>
 </head>
 
@@ -169,7 +168,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <span class="nav-item">Donor list</span>
                     </a></li>
                 <li><a href="bloodstock.php">
-                        <i class="fa-solid fa-layer-group"></i>
+                        <i class="fa-solid fa-droplet"></i>
                         <span class="nav-item">Blood stock</span>
                     </a></li>
                 <li><a href="requestlist.php">
@@ -197,48 +196,53 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
             <div class="setting">
+                <div class="edit">
 
-                <form method="post" action="#">
-                    <h2>Account Management</h2>
-                    <?php if (isset($success) && $success == 1): ?>
+
+                    <form method="post" action="#">
+                        <h2>Account Management</h2>
+                        <?php if (isset($success) && $success == 1): ?>
                         <div class="success">Password updated successfully!</div>
-                    <?php elseif (isset($invalid)): ?>
+                        <?php elseif (isset($invalid)): ?>
                         <div class="invalid">
                             <?php echo $invalid; ?>
                         </div>
-                    <?php endif; ?>
+                        <?php endif; ?>
 
 
-                    <div class="form-group">
-                        <label for="name">User:</label>
-                        <input type="text" id="name" name="name" value="<?php echo $user['username'] ?>" readonly>
-                    </div>
+                        <div class="form-group">
+                            <label for="name">User:</label>
+                            <input type="text" id="name" name="name" value="<?php echo $user['username'] ?>" readonly>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="password">Old Password:</label>
-                        <input type="password" id="old_password" name="old_password" placeholder="Enter your old password">
-                                                    <span class="eye" onclick="togglePassword()">
-                            <i id="hideopen" class="fa-solid fa-eye" style="color: #849a9a;"></i>
-                            <i id="hideclose" class="fa-solid fa-eye-slash" style="color: #849a9a;"></i>
-                        </span>
-                        <div id="old-password-error" class="error-message"></div>
-                    </div>
+                        <div class="toggle-password">
+                            <label for="password">Old Password:</label>
+                            <input type="password" id="old_password" name="old_password"
+                                placeholder="Enter your old password">
+                            <span class="eye" onclick="togglePassword()">
+                                <i id="hideopen" class="fa-solid fa-eye" style="color: #849a9a;"></i>
+                                <i id="hideclose" class="fa-solid fa-eye-slash" style="color: #849a9a;"></i>
+                            </span>
+                            <div id="old-password-error" class="error-message"></div>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="password">New Password:</label>
-                        <input type="password" id="password" name="password" placeholder="Enter your new password">
-                        <span class="eye" onclick="toggleCPassword()">
-                            <i id="Chideopen" class="fa-solid fa-eye" style="color: #849a9a;"></i>
-                            <i id="Chideclose" class="fa-solid fa-eye-slash" style="color: #849a9a;"></i>
-                        </span>
-                    </div>
-                    <div id="password-error" class="error-message"></div>
-                    <div class="btn-group">
-                        <button type="submit" id="saveBtn">Save Changes</button>
-                    </div>
+                        <div class="toggle-password">
+                            <label for="password">New Password:</label>
+                            <input type="password" id="password" name="password" placeholder="Enter your new password">
+                            <span class="eye" onclick="toggleCPassword()">
+                                <i id="Chideopen" class="fa-solid fa-eye" style="color: #849a9a;"></i>
+                                <i id="Chideclose" class="fa-solid fa-eye-slash" style="color: #849a9a;"></i>
+                            </span>
+                        </div>
+                        <div id="password-error" class="error-message"></div>
+                        <div class="btn-group">
+                            <button type="submit" id="saveBtn">Save Changes</button>
+                        </div>
 
-                </form>
-                <script src="../setting_js.js"></script>
+                    </form>
+                    <script src="../setting_js.js"></script>
+
+                </div>
             </div>
         </section>
 

@@ -1,6 +1,17 @@
 /* Reset some default styles */
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000;
+    --second-color: #010005;
+    --big-font: 5rem;
+    --h2-font: 3rem;
+    --p-font: 1.1rem;
+    --main-color: #CF1217;
+    /* --main-color: rgb(234, 28, 28); */
+
+}
 
 body,
 html {
@@ -104,7 +115,9 @@ input:focus {
     width: 100%;
     padding: 10px;
     text-align: center;
-    background-color: #ff2d2d;
+    /* background-color: #ff2d2d; */
+    background-color: var(--main-color);
+
     color: #fff;
     font-size: 16px;
     border: none;

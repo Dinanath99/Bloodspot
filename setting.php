@@ -39,15 +39,16 @@ $item = $stmt->fetch(PDO::FETCH_ASSOC);
                         <img src="./img/bloodspot.png" alt="">
                         <!-- <span class="nav-item">Welcome<span class="username"> User</span></span> -->
                     </a></li>
-                <li><a href="history.php">
-                        <i class="fa-solid fa-clock-rotate-left"></i>
-                        <span class="nav-item">History</span> </a></li>
+                <li><a href="userdashboard.php">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="nav-item">Dashboard</span>
+                    </a></li>
                 <li><a href="donateblood.php">
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Donate Blood</span>
                     </a></li>
                 <li><a href="requestblood.php">
-                        <i class="fa-solid fa-layer-group"></i>
+                        <i class="fa-solid fa-users"></i>
                         <span class="nav-item">Request Blood</span>
                     </a></li>
                 <li><a href="bloodstock.php">
@@ -55,10 +56,7 @@ $item = $stmt->fetch(PDO::FETCH_ASSOC);
                         <span class="nav-item">Blood stock</span>
                     </a></li>
 
-                <li><a href="#">
-                        <i class="fas fa-question-circle"></i>
-                        <span class="nav-item">Help</span>
-                    </a></li>
+
             </ul>
         </nav>
 
@@ -88,151 +86,170 @@ $item = $stmt->fetch(PDO::FETCH_ASSOC);
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>Edit Profile</title>
                 <style>
-                .setting {
-                    display: flex;
-                    justify-content: column;
-                    align-items: center;
-                    margin: 30px;
-                    /* background-color: orange; */
+                    .setting {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        width: 100%;
+                        height: 100vh;
+                        background: #fff;
+                    }
 
-                }
+                    .edit {
+                        width: 500px;
+                        max-height: 600px;
+                        /* margin: 50px auto; */
+                        padding: 15px;
+                        background-color: #f9f9f9;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+                    }
 
-                form {
-                    min-width: 450px;
-                    margin: 0 auto;
-                    /* background: rebeccapurple; */
-                    border-radius: 20px;
-                    padding: 10px;
-                    background-color: #eee6d9bd;
-                    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
-                }
+                    /* Form title */
+                    h2 {
+                        font-size: 24px;
+                        text-align: center;
+                        margin-bottom: 20px;
+                    }
 
-                .form-group {
-                    margin-bottom: 0px;
-                }
+                    /* Form labels */
+                    label {
+                        display: block;
+                        font-size: 14px;
+                        margin-bottom: 5px;
+                    }
 
-                .form-group label {
-                    display: block;
-                    font-weight: 700;
-                    margin-bottom: 0.5em;
-                }
+                    /* signup success*/
+                    .message {
+                        margin-top: 15px;
+                        padding: 10px;
+                        color: red;
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: 16px;
+                    }
 
-                .form-group input[type="text"],
-                .form-group input[type="email"],
-                .form-group input[type="number"],
-                .form-group input[type="password"] {
-                    width: 100%;
-                    padding: 7px 10px;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    margin-bottom: 2vh;
-                    font-size: 0.87rem;
-                }
+                    input {
+                        width: 95%;
+                        padding: 10px;
+                        border-radius: 5px;
+                        border: none;
+                        margin-bottom: 15px;
+                        color: black;
+                        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+                    }
 
-                .btn-group {
-                    margin: 15px;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                }
+                    input:focus {
+                        outline: none;
+                        border: 2px solid red;
+                    }
 
-                .btn-group button {
-                    padding: 8px 16px;
-                    color: white;
-                    border: none;
-                    border-radius: 4px;
-                    cursor: pointer;
-                    font-weight: 700;
-                }
 
-                #saveBtn {
-                    background-color: green;
-                }
+                    /* Form submit button */
+                    .btn-group {
+                        margin: 15px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
 
-                #deleteBtn {
-                    background-color: #cf1217;
-                }
+                    .btn-group button {
+                        padding: 8px 16px;
+                        color: white;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        font-weight: 700;
+                    }
 
-                .btn-group button:hover {
-                    opacity: 0.8;
-                }
+                    #saveBtn {
+                        background-color: green;
+                    }
 
-                .message {
-                    margin-top: 15px;
-                    padding: 10px;
-                    color: red;
-                    text-align: center;
-                    font-weight: bold;
-                    font-size: 16px;
-                }
-                #hideclose,
-                #Chideclose {
-                    display: none;
-                } 
+                    #deleteBtn {
+                        background-color: #cf1217;
+                    }
 
-                .form-group{
-                    position: relative;
-                }
 
-   .setting .fa-eye, .fa-eye-slash{
-        position: absolute;
-        left: 31vw;
-        top: 7.5vh;
-        color: #849a9a;
-        cursor: pointer;
-    }  
+                    .error-message {
+                        font-size: 14px;
+                        margin-bottom: 5px;
+                        color: rgb(182, 35, 35);
+                    }
+
+                    #hideclose,
+                    #Chideclose {
+                        display: none;
+                    }
+
+                    .toggle-password {
+                        position: relative;
+                    }
+
+                    .toggle-password i {
+                        position: absolute;
+                        right: 30px;
+                        top: 39px;
+                    }
                 </style>
             </head>
 
             <body>
                 <div class="setting">
-                    <form method="post" action="setting_update.php">
-                        <h2>Edit Profile</h2>
-                        <div class="message">
-                            <?php echo isset($invalid) ? $invalid : ''; ?>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="id" name="id" value="<?php echo $item['user_id'] ?>" hidden>
-                        </div>
+                    <div class="edit">
 
-                        <div class="form-group">
-                            <label for="name">Name:</label>
-                            <input type="text" id="name" name="name" value="<?php echo $item['name'] ?>" readonly>
-                        </div>
+                        <form method="post" action="setting_update.php">
+                            <h2>Edit Profile</h2>
+                            <div class="message">
+                                <?php echo isset($invalid) ? $invalid : ''; ?>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="id" name="id" value="<?php echo $item['user_id'] ?>" hidden>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" value="<?php echo $item['email'] ?>">
-                        </div>
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" value="<?php echo $item['name'] ?>" readonly>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="password">Old Password:</label>
-                            <input type="password" id="old_password" name="old_password" placeholder="Enter your old password">
-                            <span class="eye" onclick="togglePassword()">
-                            <i id="hideopen" class="fa-solid fa-eye" style="color: #849a9a;"></i>
-                            <i id="hideclose" class="fa-solid fa-eye-slash" style="color: #849a9a;"></i>
-                        </span>
-                        <div id="old-password-error" class="error-message"></div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" value="<?php echo $item['email'] ?>">
+                            </div>
+
+                            <div class="toggle-password">
+                                <label for="password">Old Password:</label>
+                                <input type="password" id="old_password" name="old_password"
+                                    placeholder="Enter your old password">
+                                <span class="eye" onclick="togglePassword()">
+                                    <i id="hideopen" class="fa-solid fa-eye" style="color: #849a9a;"></i>
+                                    <i id="hideclose" class="fa-solid fa-eye-slash" style="color: #849a9a;"></i>
+                                </span>
+                                <div id="old-password-error" class="error-message"></div>
+                            </div>
+
+                            <div class="toggle-password">
+                                <label for="password">New Password:</label>
+                                <input type="password" id="password" name="password"
+                                    placeholder="Enter your new password">
+                                <span class="eye" onclick="toggleCPassword()">
+                                    <i id="Chideopen" class="fa-solid fa-eye" style="color: #849a9a;"></i>
+                                    <i id="Chideclose" class="fa-solid fa-eye-slash" style="color: #849a9a;"></i>
+                                </span>
+                                <div id="password-error" class="error-message"></div>
+                            </div>
+
+                            <div class="btn-group">
+                                <button type="submit" id="saveBtn" onclick="submitForm(event)">Save Changes</button>
+                                <button id="deleteBtn"
+                                    onclick="confirmDelete(event,<?php echo $item['user_id']; ?>)">Delete</button>
+                            </div>
+
+                        </form>
+                        <script src="setting_js.js"></script>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="password">New Password:</label>
-                        <input type="password" id="password" name="password" placeholder="Enter your new password">
-                        <span class="eye" onclick="toggleCPassword()">
-                            <i id="Chideopen" class="fa-solid fa-eye" style="color: #849a9a;"></i>
-                            <i id="Chideclose" class="fa-solid fa-eye-slash" style="color: #849a9a;"></i>
-                        </span>
-                        <div id="password-error" class="error-message"></div>
-                        </div>
-
-                        <div class="btn-group">
-                            <button type="submit" id="saveBtn" onclick="submitForm(event)">Save Changes</button>
-                            <button id="deleteBtn"
-                                onclick="confirmDelete(event,<?php echo $item['user_id']; ?>)">Delete</button>
-                        </div>
-
-                    </form>
-                    <script src="setting_js.js"></script>
                 </div>
             </body>
 
@@ -243,56 +260,56 @@ $item = $stmt->fetch(PDO::FETCH_ASSOC);
     <?php
     if (isset($_GET['success']) && $_GET['success'] == 1) {
         ?>
-    <script>
-    const Toast = Swal.mixin({
-        toast: true,
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 1500,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-            toast.addEventListener("mouseenter", Swal.stopTimer)
-            toast.addEventListener("mouseleave", Swal.resumeTimer)
-        }
-    })
+        <script>
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 1500,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener("mouseenter", Swal.stopTimer)
+                    toast.addEventListener("mouseleave", Swal.resumeTimer)
+                }
+            })
 
-    Toast.fire({
-        icon: "success",
-        title: "Data Updated Successfully"
-    }).then(() => {
-        // Remove the success flag from the URL
-        window.history.replaceState(null, null, window.location.pathname);
-    });
-    </script>
-    <?php
+            Toast.fire({
+                icon: "success",
+                title: "Data Updated Successfully"
+            }).then(() => {
+                // Remove the success flag from the URL
+                window.history.replaceState(null, null, window.location.pathname);
+            });
+        </script>
+        <?php
     } ?>
 
     <script>
-    function submitForm(event) {
-        event.preventDefault();
-        // Get the form element
-        var form = document.querySelector('form');
-        form.submit();
-    }
+        function submitForm(event) {
+            event.preventDefault();
+            // Get the form element
+            var form = document.querySelector('form');
+            form.submit();
+        }
 
-    function confirmDelete(event, userId) {
-        event.preventDefault(); // Prevent form submission
+        function confirmDelete(event, userId) {
+            event.preventDefault(); // Prevent form submission
 
-        Swal.fire({
-            title: "Are you sure?",
-            text: "This action cannot be undone.",
-            icon: "warning",
-            showCancelButton: true,
-            cancelButtonColor: "green",
-            confirmButtonColor: "red",
-            cancelButtonText: "Cancel",
-            confirmButtonText: "OK"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location.href = "setting_delete.php?id=" + userId;
-            }
-        });
-    }
+            Swal.fire({
+                title: "Are you sure?",
+                text: "This action cannot be undone.",
+                icon: "warning",
+                showCancelButton: true,
+                cancelButtonColor: "green",
+                confirmButtonColor: "red",
+                cancelButtonText: "Cancel",
+                confirmButtonText: "OK"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "setting_delete.php?id=" + userId;
+                }
+            });
+        }
     </script>
 
 

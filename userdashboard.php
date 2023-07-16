@@ -66,7 +66,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                         <span class="nav-item">Donate Blood</span>
                     </a></li>
                 <li><a href="requestblood.php">
-                        <i class="fa-solid fa-layer-group"></i>
+                        <i class="fa-solid fa-users"></i>
                         <span class="nav-item">Request Blood</span>
                     </a></li>
                 <li><a href="bloodstock.php">

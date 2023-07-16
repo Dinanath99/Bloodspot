@@ -41,7 +41,7 @@ if (!isset($_SESSION['user_id'])) {
                         <span class="nav-item">Donate Blood</span>
                     </a></li>
                 <li><a class="active" href="requestblood.php">
-                        <i class="fa-solid fa-layer-group"></i>
+                        <i class="fa-solid fa-users"></i>
                         <span class="nav-item">Request Blood</span>
                     </a></li>
                 <li><a href="bloodstock.php">
@@ -49,10 +49,6 @@ if (!isset($_SESSION['user_id'])) {
                         <span class="nav-item">Blood stock</span>
                     </a></li>
 
-                <li><a href="#">
-                        <i class="fas fa-question-circle"></i>
-                        <span class="nav-item">Help</span>
-                    </a></li>
 
             </ul>
         </nav>
@@ -151,25 +147,25 @@ if (!isset($_SESSION['user_id'])) {
     <?php
     if (isset($_GET['success']) && $_GET['success'] == 1) {
         ?>
-    <script>
-    const Toast = Swal.mixin({
-        toast: true,
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 2000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-            toast.addEventListener("mouseenter", Swal.stopTimer)
-            toast.addEventListener("mouseleave", Swal.resumeTimer)
-        }
-    })
+        <script>
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener("mouseenter", Swal.stopTimer)
+                    toast.addEventListener("mouseleave", Swal.resumeTimer)
+                }
+            })
 
-    Toast.fire({
-        icon: "success",
-        title: "Data Submitted Successfully"
-    });
-    </script>
-    <?php
+            Toast.fire({
+                icon: "success",
+                title: "Data Submitted Successfully"
+            });
+        </script>
+        <?php
     }
     ?>
 </body>
