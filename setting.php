@@ -103,7 +103,7 @@ $item = $stmt->fetch(PDO::FETCH_ASSOC);
                     /* background: rebeccapurple; */
                     border-radius: 20px;
                     padding: 10px;
-                    background-color: #AFAFAF;
+                    background-color: #eee6d9bd;
                     box-shadow: 0 0 5px rgba(0, 0, 0, .2);
                 }
 
@@ -150,7 +150,7 @@ $item = $stmt->fetch(PDO::FETCH_ASSOC);
                 }
 
                 #deleteBtn {
-                    background-color: red;
+                    background-color: #cf1217;
                 }
 
                 .btn-group button:hover {

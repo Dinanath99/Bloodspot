@@ -74,11 +74,6 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                         <span class="nav-item">Blood stock</span>
                     </a></li>
 
-                <li><a href="#">
-                        <i class="fas fa-question-circle"></i>
-                        <span class="nav-item">Help</span>
-                    </a></li>
-
             </ul>
         </nav>
 
@@ -86,7 +81,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         <section class="main">
             <div class="main-top">
-                <h1>welcome</h1>
+                <h1>Welcome</h1>
                 <!-- addding dropdown -->
                 <div class="dropdown">
                     <button class="dropbtn"><span>

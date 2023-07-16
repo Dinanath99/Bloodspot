@@ -118,6 +118,7 @@ if (!isset($_SESSION['user_id'])) {
                     <div class="group image">
                         <label for="image">Image:</label>
                         <input type="file" id="image" name="image">
+                        <div id="image-error" class="error-message"></div>
                     </div>
 
                     <div class="group quantity">
@@ -139,7 +140,7 @@ if (!isset($_SESSION['user_id'])) {
                     </div>
 
                     <div class="group button-container">
-                        <input type="submit" class="btn" value="Submit" />
+                        <input type="submit" id="submit-btn" class="btn" value="Submit" />
                     </div>
 
                 </form>

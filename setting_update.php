@@ -23,7 +23,7 @@ if ($user && password_verify($Old_password, $user['password'])) {
         header('Location: setting.php?success=1');
     }
 } else {
-    $invalid = "Invalid Password!";
+    $invalid = "Incorrect Password!";
     header("Location: setting.php?invalid= $invalid");
 }
 

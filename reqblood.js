@@ -4,18 +4,20 @@ const email=document.getElementById('email');
 const contact=document.getElementById('contact');
 const dob=document.getElementById('dob');
 const qty=document.getElementById('qty');
+const img=document.getElementById('image');
 const address=document.getElementById('address');
 
 form.addEventListener('submit', function(e) {
-    if (!(validateName() && validateEmail() && validatePhone() && validateDOB() && validateQty() && validateAddress())) {
-        e.preventDefault();
+    e.preventDefault();
+    if ((validateName() && validateEmail() && validatePhone() && validateDOB() && validateQty() && validateImg() && validateAddress())) {
+        form.submit();
     }
 });
 
 function validateName(){
     const namevalue = nameInput.value.trim();
     const nameregex = /^[a-zA-Z\s]+$/;
-    if(namevalue === ''){
+    if(namevalue == ''){
       setError(nameInput, 'Name needs to be filled out', 'name-error');
       return false;
     } else if (!nameregex.test(namevalue)){
@@ -27,13 +29,15 @@ function validateName(){
     }
   }
 
-  function validateEmail(){
+function validateEmail(){
     const emailvalue = email.value.trim();
     const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if (emailvalue === ''){
+    if (emailvalue == ''){
         setError(email, "Email is required", 'email-error');
+        return false;
     } else if(!emailRegex.test(emailvalue)) {
         setError(email, "Invalid email format!", 'email-error');
+        return false;
     } else {
         removeError( email, 'email-error');
         return true;
@@ -41,41 +45,59 @@ function validateName(){
  }
 
 
-  function validatePhone(){
+function validatePhone(){
     const phonevalue = contact.value.trim();
-    const phoneRegex = /^\d{10}$/;
-    if (phonevalue === ''){
+    const phoneRegex = /^9\d{9}$/;
+    if (phonevalue == ''){
         setError(contact, "Phone number is required", 'contact-error');
+        return false;
     } else if(!phoneRegex.test(phonevalue)) {
-        setError(contact, "Number must be atleast 10", 'contact-error');
+        setError(contact, "Incorrect Phone Number", 'contact-error');
+        return false;
     } else {
         removeError(contact, 'contact-error');
         return true;
     }
  }
-  function validateDOB(){
+
+function validateDOB(){
     const dobvalue = dob.value.trim();
-    if (dobvalue === ''){
+    if (dobvalue == ''){
         setError(dob, "Date of Birth is required", 'dob-error');
+        return false;
     }  else {
         removeError(dob, 'dob-error');
         return true;
     }
  }
 
-  function validateQty(){
+function validateQty(){
     const qtyvalue = qty.value.trim();
-    if (qtyvalue === ''){
+    if (qtyvalue == ''){
         setError(qty, "Quantity is required", 'qty-error');
+        return false;
     }  else {
         removeError(qty, 'qty-error');
         return true;
     }
  }
 
-  function validateAddress(){
+function validateImg() {
+    const file = img.files[0];
+    const fileName = file.name;
+    const imageRegex = /\.(jpeg|jpg|png)$/;
+    if  (!imageRegex.test(fileName)) {
+        setError(img, "Invalid image file. Only JPEG, JPG, and PNG file are allowed.", 'image-error');
+        return false;
+      } else {
+        removeError(img, 'image-error');
+        return true;
+      }
+    }
+
+function validateAddress(){
     const addressvalue = address.value.trim();
-    if (addressvalue === ''){
+    if (addressvalue == ''){
         setError(address, "Address is required", 'addr-error');
     }  else {
         removeError(address, 'addr-error');
@@ -83,7 +105,6 @@ function validateName(){
     }
  }
 
- // Set error message
 function setError(inputElement, message, errorId) {
     const errorElement = document.getElementById(errorId);
     errorElement.textContent = message;
@@ -91,7 +112,6 @@ function setError(inputElement, message, errorId) {
 
 }
 
-// Remove error message
 function removeError( inputElement, errorId) {
     const errorElement = document.getElementById(errorId);
     errorElement.textContent = '';
@@ -104,4 +124,5 @@ email.addEventListener('blur', validateEmail);
 contact.addEventListener('blur', validatePhone);
 dob.addEventListener('blur', validateDOB);
 qty.addEventListener('blur', validateQty);
+img.addEventListener('change', validateImg);
 address.addEventListener('blur', validateAddress);

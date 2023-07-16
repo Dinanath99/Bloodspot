@@ -14,7 +14,6 @@ $blood_group = $_POST['blood_group'];
 $address = $_POST['address'];
 $status = 'Pending';
 $bloodbank = 'Not visited';
-//  time zone to Asia/Kathmandu
 date_default_timezone_set('Asia/Kathmandu');
 $timestamp = date('Y-m-d H:i:s');
 $u_id = $_SESSION['user_id'];
@@ -24,7 +23,7 @@ $stmt->bindParam(':u_id', $u_id);
 $stmt->execute();
 $date = $stmt->fetch(PDO::FETCH_ASSOC);
 $lastdonate = $date['timestamp'];
-$oneMonthAgo = date('Y-m-d H:i:s', strtotime('-2 minute'));
+$oneMonthAgo = date('Y-m-d H:i:s', strtotime('-3 month'));
 if ($lastdonate > $oneMonthAgo) {
 header('Location: donateblood.php?success=0');
 } else {

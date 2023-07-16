@@ -13,6 +13,7 @@ $image = $_POST['image'];
 $message = $_POST['message'];
 $status = 'Pending';
 $bloodbank = 'Not visited';
+date_default_timezone_set('Asia/Kathmandu');
 $timestamp = date('Y-m-d H:i:s');
 $u_id = $_SESSION['user_id'];
 

@@ -43,7 +43,7 @@ $totalQuantity = $qty['total_quantity'];
             <li><a href="#">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="info.php">BloodBank information</a></li>
-            <li><a href="#request">service</a></li>
+            <li><a href="#request">Service</a></li>
             <li><a href="login.php">Login</a></li>
         </ul>
         <a href="./admin/memberlogin.php" class="top-btn">Admin</a>

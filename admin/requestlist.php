@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <body>
                 <div class'email-content'>
                 <h1 class='center-align'><a href='https://imgbb.com/'><img src='https://i.ibb.co/pyM7V3W/bloodspot-removebg-preview.png' alt='bloodspot-removebg-preview' border='0' width='200'></a></h1>
-                <h2 class='center-align'>Blood Request Rejected</h2>
+                <h2 class='center-align'>Blood Request Accepted</h2>
                     <p>Dear " . $result['Pname'] . ",</p>
                     <p>We are delighted to inform you that your blood request has been accepted. We understand the urgency of your situation and are committed to providing the necessary support.</p>
                     <p>We kindly request you to visit our blood bank tomorrow, on " . date('Y-m-d', strtotime('+1 day')) . ", to proceed with the donation process. Please ensure you bring the required documents mentioned below:</p>
@@ -97,8 +97,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <li>Identification proof (e.g., driver's license, passport)</li>
                         <li>Any relevant medical records or reports</li>
                     </ol>
-                    <p>Our compassionate team will be ready to assist you upon your arrival. Your contribution will make a significant difference in saving lives, and we deeply appreciate your willingness to donate.</p>
-                    <p>If you have any further questions or need assistance, please feel free to contact us. We are here to provide guidance and support throughout the process.</p>
+                    <p>Our compassionate team will be ready to assist you upon your arrival. We are aware of the importance and time-sensitive nature of your request, and we are dedicated to fulfilling it promptly.</p>
+                    <pIf you have any further questions or need assistance, please feel free to contact us. We are here to provide guidance and support throughout the process.</p>
                     <p>Once again, thank you for your generosity and commitment to helping others. Together, we can make a positive impact on the lives of those in need.</p>
                     <p>Best regards,</p>
                     <p>Bloodspot Team</p>
