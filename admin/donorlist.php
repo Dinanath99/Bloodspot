@@ -96,7 +96,24 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </div>
             </div>
 
+
+            <!-- Search code -->
+            <?php
+                $name = strtolower($_POST['search']);
+                
+                $stmt =$pdo->prepare("SELECT * FROM donatelist where lower(name) LIKE :name");
+                $stmt->bindParam(':name', $name_like);
+                $name_like = '%' . $name . '%';
+                $stmt -> execute();
+                $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            ?>
+             <!-- search code ends here -->
+             
             <div class="table-wrapper">
+                <form action="adminsearchdb.php" method = "POST" style = "background-color:aqua;">
+                    <input type="search" name="search" id="search">
+                </form>
                 <table class="fl-table">
                     <thead>
                         <tr>
