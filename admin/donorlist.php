@@ -95,8 +95,21 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                 </div>
             </div>
+            <form action="searchdb.php" method="POST">
+                <div id="search">
+                    <label for="search">
+                        <i class="fa-brands fa-searchengin"><input type="text" id="search" name="search" /></i>
+                    </label>
+                    <input type="submit" value="Search">
+                </div>
+            </form>
 
             <div class="table-wrapper">
+
+                <form action="" method="">
+                    <input type="text" id="search" name="search" />
+
+                </form>
                 <table class="fl-table">
                     <thead>
                         <tr>
@@ -177,8 +190,8 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     ?>
                                 </td>
                                 <td>
-                                    <select name="bank" onchange="updatebank(this,<?php echo $item['id']; ?>)">
-                                        <!-- <option value="Not Visited">Not Visited</option> -->
+                                    <select name=" bank" onchange="updatebank(this,<?php echo $item['id']; ?>)">
+                                        <!-- <option value=" Not Visited">Not Visited</option> -->
                                         <option value="" disabled selected>Not Visited</option>
                                         <option value="Visited">Visit</option>
                                     </select>
