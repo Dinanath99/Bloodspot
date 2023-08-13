@@ -7,13 +7,13 @@ $Old_password = $_POST['old_password'];
 $password = $_POST['password'];
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-$stmt = $pdo->prepare("SELECT password FROM signup WHERE user_id =:id");
+$stmt = $pdo->prepare("SELECT password FROM user WHERE user_id =:id");
 $stmt->bindParam(':id', $id);
 $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if ($user && password_verify($Old_password, $user['password'])) {
-    $stmt = $pdo->prepare('UPDATE signup SET name =:name, email =:email, password =:password WHERE user_id =:id');
+    $stmt = $pdo->prepare('UPDATE user SET name =:name, email =:email, password =:password WHERE user_id =:id');
     $stmt->bindParam(':id', $id);
     $stmt->bindParam(':name',$name);
     $stmt->bindParam(':email',$email);

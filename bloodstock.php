@@ -49,22 +49,10 @@ $bloodGroups = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Blood stock</span>
                     </a></li>
-                <!-- <li><a href="#">
-                        <i class="fas fa-tasks"></i>
-                        <span class="nav-item">Blood center</span>
-                    </a></li> -->
-                <!-- <li><a href="setting.php">
-                        <i class="fas fa-cog"></i>
-                        <span class="nav-item">Setting</span>
-                    </a></li> -->
                 <li><a href="#">
                         <i class="fas fa-question-circle"></i>
                         <span class="nav-item">Help</span>
                     </a></li>
-                <!-- <li><a href="userlogout.php" class="logout">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span class="nav-item">Logout</span>
-                    </a></li> -->
             </ul>
         </nav>
         <!-- container section started for blood stock -->

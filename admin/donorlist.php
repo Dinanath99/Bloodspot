@@ -107,6 +107,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <th>Date of Birth</th>
                             <th>Gender</th>
                             <th>Blood Group</th>
+                            <th>Weight</th>
                             <th>Address</th>
                             <th>Time Stamp</th>
                             <!-- <th>Status</th>
@@ -133,6 +134,9 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 </td>
                                 <td>
                                     <?php echo $item['dob'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $item['weight'] ?>
                                 </td>
                                 <td>
                                     <?php echo $item['gender'] ?>

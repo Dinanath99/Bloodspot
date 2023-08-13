@@ -3,12 +3,13 @@ const nameInput=document.getElementById('name');
 const email=document.getElementById('email');
 const contact=document.getElementById('contact');
 const dob=document.getElementById('dob');
+const weight=document.getElementById('weight');
 const address=document.getElementById('address');
 
 form.addEventListener('submit',function(e){
     e.preventDefault();
     
-    if(validateName() && validateEmail() && validatePhone() && validateDOB() && validateAddress()){
+    if(validateName() && validateEmail() && validatePhone() && validateDOB() && validateWeight() && validateAddress()){
     form.submit();
   }
 });
@@ -74,6 +75,19 @@ function validateName(){
         return true;
     }
  }
+  function validateWeight(){
+    const weightvalue = weight.value.trim();
+    if (weightvalue === ''){
+        setError(weight, "Weight is required", 'weight-error');
+        return false;
+    } else if (weightvalue < 50){
+        setError(weight, "You must weigh at least 50 kg.", 'weight-error');
+        return false;
+    } else {
+        removeError(weight, 'weight-error');
+        return true;
+    }
+ }
 
 
   function validateAddress(){
@@ -107,4 +121,5 @@ nameInput.addEventListener('blur', validateName);
 email.addEventListener('blur', validateEmail);
 contact.addEventListener('blur', validatePhone);
 dob.addEventListener('blur', validateDOB);
+weight.addEventListener('blur', validateWeight);
 address.addEventListener('blur', validateAddress);

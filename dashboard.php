@@ -27,7 +27,7 @@ $request = $stmt->fetchALL(PDO::FETCH_ASSOC);
 
 //user 
 $id = $_SESSION['user_id'];
-$stmt = $pdo->prepare("SELECT name FROM signup WHERE user_id = :id");
+$stmt = $pdo->prepare("SELECT name FROM user WHERE user_id = :id");
 $stmt->bindParam(':id', $id);
 $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);

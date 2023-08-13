@@ -7,14 +7,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Check if the email already exists in the database
-    $stmt = $pdo->prepare('SELECT COUNT(*) FROM signup WHERE email = :email');
+    $stmt = $pdo->prepare('SELECT COUNT(*) FROM user WHERE email = :email');
     $stmt->bindParam(':email', $email);
     $stmt->execute();
     $emailCount = $stmt->fetchColumn();
     if ($emailCount > 0) {
         $msg = 'Email already exit.';
     } else {
-        $stmt = $pdo->prepare('INSERT INTO signup(name,email,password) VALUES (:name,:email,:password)');
+        $stmt = $pdo->prepare('INSERT INTO user(name,email,password) VALUES (:name,:email,:password)');
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':password', $hashed_password);

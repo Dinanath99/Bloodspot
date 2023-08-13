@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $stmt = $pdo->prepare("DELETE FROM signup WHERE user_id = :id");
+    $stmt = $pdo->prepare("DELETE FROM user WHERE user_id = :id");
     $stmt->bindParam(':id', $id);
     if ($stmt->execute()) {
         session_destroy();

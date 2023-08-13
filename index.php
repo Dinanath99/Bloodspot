@@ -1,7 +1,7 @@
 <?php
 include('dbconn.php');
 //total user
-$stmt = $pdo->prepare('SELECT COUNT(*) AS total_user FROM signup');
+$stmt = $pdo->prepare('SELECT COUNT(*) AS total_user FROM user');
 $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 $totalUser = $user['total_user'];

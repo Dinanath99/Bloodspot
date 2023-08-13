@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $invalid = 'Fill all the field';
     } else {
 
-        $stmt = $pdo->prepare("SELECT * FROM signup WHERE email = :email");
+        $stmt = $pdo->prepare("SELECT * FROM user WHERE email = :email");
         $stmt->bindParam(':email', $email);
         $stmt->execute();
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -97,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         }
                     }
                 </script>
-                <p>Don't have an account? <a href="signup.php">Sign up</a></p>
+                <p>Don't have an account? <a href="user.php">Sign up</a></p>
                 <!-- Add a link to the signup page if needed -->
                 <!-- <div class="home_btn">
                     <a href="index.php"> <button>Back to home</button></a>

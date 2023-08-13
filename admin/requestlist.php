@@ -98,8 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <li>Any relevant medical records or reports</li>
                     </ol>
                     <p>Our compassionate team will be ready to assist you upon your arrival. We are aware of the importance and time-sensitive nature of your request, and we are dedicated to fulfilling it promptly.</p>
-                    <pIf you have any further questions or need assistance, please feel free to contact us. We are here to provide guidance and support throughout the process.</p>
-                    <p>Once again, thank you for your generosity and commitment to helping others. Together, we can make a positive impact on the lives of those in need.</p>
+                    <pIf you have any further questions or need assistance, please feel free to contact us. We are here to provide guidance and support throughout the process.</p>                    
                     <p>Best regards,</p>
                     <p>Bloodspot Team</p>
                 </div>
