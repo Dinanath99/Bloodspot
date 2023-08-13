@@ -17,6 +17,15 @@ date_default_timezone_set('Asia/Kathmandu');
 $timestamp = date('Y-m-d H:i:s');
 $u_id = $_SESSION['user_id'];
 
+$stmt = $pdo->prepare("SELECT qty,bloodGroup FROM viewstock WHERE bloodGroup = :bloodgroup");
+$stmt->bindParam(':bloodgroup',$blood_group);
+$stmt->execute();
+$item = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if($qty > $item['qty']){
+   header("Location: requestblood.php?success=0");
+}
+else{
 $stmt = $pdo->prepare("INSERT INTO requestlist(Pname,email,contact,dob,gender,blood_group,qty,address,message,status,image,bloodbank,timestamp,u_id)
                     VALUES(:Pname,:email,:contact,:dob,:gender,:blood_group,:qty,:address,:message,:status,:image,:bloodbank,:timestamp,:u_id)");
 $stmt->bindParam(':Pname', $Pname);
@@ -36,5 +45,5 @@ $stmt->bindParam(':u_id', $u_id);
 if ($stmt->execute()) {
    header("Location: requestblood.php?success=1");
 }
-
+}
 ?>

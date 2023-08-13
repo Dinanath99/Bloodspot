@@ -6,6 +6,11 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
 }
+$id = $_SESSION['user_id'];
+$stmt = $pdo->prepare('SELECT name,email FROM user WHERE user_id=:user_id');
+$stmt->bindParam(':user_id', $id);
+$stmt->execute();
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 ?>
 <!DOCTYPE html>
@@ -40,13 +45,13 @@ if (!isset($_SESSION['user_id'])) {
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Donate Blood</span>
                     </a></li>
+                    <li><a href="bloodstock.php">
+                            <i class="fa-solid fa-droplet"></i>
+                            <span class="nav-item">Blood stock</span>
+                        </a></li>
                 <li><a class="active" href="requestblood.php">
                         <i class="fa-solid fa-users"></i>
                         <span class="nav-item">Request Blood</span>
-                    </a></li>
-                <li><a href="bloodstock.php">
-                        <i class="fa-solid fa-droplet"></i>
-                        <span class="nav-item">Blood stock</span>
                     </a></li>
 
 
@@ -73,12 +78,12 @@ if (!isset($_SESSION['user_id'])) {
                     <div class="group name">
 
                         <label for="Pname">Patient Name</label>
-                        <input type="text" id="Pname" name="Pname" placeholder="Patient Name" /><br>
+                        <input type="text" id="Pname" name="Pname" value="<?php echo $user['name'] ?>" /><br>
                         <div id="name-error" class="error-message"></div>
                     </div>
                     <div class="group email">
                         <label for=" email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="Email Address" /> <br>
+                        <input type="email" id="email" name="email" value="<?php echo $user['email'] ?>"/> <br>
                         <div id="email-error" class="error-message"></div>
                     </div>
                     <div class="group contact">
@@ -167,6 +172,19 @@ if (!isset($_SESSION['user_id'])) {
         </script>
         <?php
     }
+    else if (isset($_GET['success']) && $_GET['success'] == 0) {
+        ?>
+          <script>
+               Swal.fire({
+               icon: 'error',
+                title: 'Sorry for inconvenience!!!',
+                text:  "We don't have enough required blood quantity.",
+                confirmButtonColor: '#cf1217'
+})
+            </script>
+            <?php
+   
+    }  
     ?>
 </body>
 

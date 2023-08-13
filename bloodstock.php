@@ -41,13 +41,13 @@ $bloodGroups = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Donate Blood</span>
                     </a></li>
-                <li><a href="requestblood.php">
-                        <i class="fa-solid fa-users"></i>
-                        <span class="nav-item">Request Blood</span>
-                    </a></li>
                 <li><a class="active" href="bloodstock.php">
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Blood stock</span>
+                    </a></li>
+                <li><a href="requestblood.php">
+                        <i class="fa-solid fa-users"></i>
+                        <span class="nav-item">Request Blood</span>
                     </a></li>
 
 

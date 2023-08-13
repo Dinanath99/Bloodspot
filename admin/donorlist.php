@@ -95,18 +95,18 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                 </div>
             </div>
-            <form action="searchdb.php" method="POST">
+            <!-- <form action="searchdb.php" method="POST">
                 <div id="search">
                     <label for="search">
                         <i class="fa-brands fa-searchengin"><input type="text" id="search" name="search" /></i>
                     </label>
                     <input type="submit" value="Search">
                 </div>
-            </form>
+            </form> -->
 
 
             <!-- Search code -->
-            <?php
+            <!-- <?php
             $name = strtolower($_POST['search']);
 
             $stmt = $pdo->prepare("SELECT * FROM donatelist where lower(name) LIKE :name");
@@ -115,13 +115,13 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $stmt->execute();
             $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            ?>
+            ?> -->
             <!-- search code ends here -->
-
+<!-- 
             <div class="table-wrapper">
                 <form action="adminsearchdb.php" method="POST" style="background-color:aqua;">
                     <input type="search" name="search" id="search">
-                </form>
+                </form> -->
                 <table class="fl-table">
                     <thead>
                         <tr>
@@ -135,9 +135,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <th>Weight</th>
                             <th>Address</th>
                             <th>Time Stamp</th>
-                            <!-- <th>Status</th>
-                            <th>Action</th> -->
-                            <th>Visit Status</th>
+                            <th>Donate Status</th>
                             <th>BloodBank</th>
                         </tr>
                     </thead>
@@ -207,9 +205,8 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 </td>
                                 <td>
                                     <select name=" bank" onchange="updatebank(this,<?php echo $item['id']; ?>)">
-                                        <!-- <option value=" Not Visited">Not Visited</option> -->
-                                        <option value="" disabled selected>Not Visited</option>
-                                        <option value="Visited">Visit</option>
+                                        <option value="" disabled selected>Not Donated</option>
+                                        <option value="Donated">Donate</option>
                                     </select>
                                 </td>
 

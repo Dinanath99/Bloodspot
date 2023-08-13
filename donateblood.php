@@ -64,8 +64,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     header('Location: donateblood.php?success=0');
     } else {
     
-       $stmt = $pdo->prepare("INSERT INTO donatelist(name,email,contact,dob,gender,blood_group,address,weight,status,timestamp,bloodbank,u_id)
-                        VALUES(:name,:email,:contact,:dob,:gender,:blood_group,:address,:weight,:status,:timestamp,:bloodbank,:u_id)");
+       $stmt = $pdo->prepare("INSERT INTO donatelist(name,email,contact,dob,gender,blood_group,address,weight,timestamp,bloodbank,u_id)
+                        VALUES(:name,:email,:contact,:dob,:gender,:blood_group,:address,:weight,:timestamp,:bloodbank,:u_id)");
        $stmt->bindParam(':name', $name);
        $stmt->bindParam(':email', $email);
        $stmt->bindParam(':contact', $contact);
@@ -74,7 +74,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
        $stmt->bindParam(':blood_group', $blood_group);
        $stmt->bindParam(':weight', $weight);
        $stmt->bindParam(':address', $address);
-       $stmt->bindParam(':status', $status);
        $stmt->bindParam(':timestamp', $timestamp);
        $stmt->bindParam(':bloodbank', $bloodbank);
        $stmt->bindParam(':u_id', $u_id);
@@ -176,13 +175,13 @@ $signup = $stmt->fetch(PDO::FETCH_ASSOC);
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Donate Blood</span>
                     </a></li>
+                <li><a href="bloodstock.php">
+                            <i class="fa-solid fa-droplet"></i>
+                            <span class="nav-item">Blood stock</span>
+                     </a></li>
                 <li><a href="requestblood.php">
                         <i class="fa-solid fa-users"></i>
                         <span class="nav-item">Request Blood</span>
-                    </a></li>
-                <li><a href="bloodstock.php">
-                        <i class="fa-solid fa-droplet"></i>
-                        <span class="nav-item">Blood stock</span>
                     </a></li>
 
 
