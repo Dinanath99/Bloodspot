@@ -226,8 +226,6 @@
         box-shadow: 18px 0px 87px 0px rgba(255, 0, 0, 0.7);
 
         border-radius: 12px;
-        /* will-change: transform; */
-        /* transform: perspective(100px) rotateX(3.80deg) rotateY(3.23deg) scale3d(1.05, 1.05, 1.05); */
         transform: scale(1.1);
     }
 
@@ -290,11 +288,6 @@
         color: var(--main-color);
     }
 
-    /* .about-text h3 {
-    color: var(--main-color);
-    font-size: 20px;
-    font-weight: 500;
-} */
 
     .request-text p {
         max-width: 550px;

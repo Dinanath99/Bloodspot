@@ -77,7 +77,7 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <span class="nav-item">Blood stock</span>
                     </a></li>
                 <li><a href="requestlist.php">
-                        <i class="fas fa-user"></i>
+                        <i class="fa-solid fa-users"></i>
                         <span class="nav-item">Blood Request</span>
                     </a></li>
 
@@ -95,8 +95,33 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                 </div>
             </div>
+            <form action="searchdb.php" method="POST">
+                <div id="search">
+                    <label for="search">
+                        <i class="fa-brands fa-searchengin"><input type="text" id="search" name="search" /></i>
+                    </label>
+                    <input type="submit" value="Search">
+                </div>
+            </form>
+
+
+            <!-- Search code -->
+            <?php
+            $name = strtolower($_POST['search']);
+
+            $stmt = $pdo->prepare("SELECT * FROM donatelist where lower(name) LIKE :name");
+            $stmt->bindParam(':name', $name_like);
+            $name_like = '%' . $name . '%';
+            $stmt->execute();
+            $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            ?>
+            <!-- search code ends here -->
 
             <div class="table-wrapper">
+                <form action="adminsearchdb.php" method="POST" style="background-color:aqua;">
+                    <input type="search" name="search" id="search">
+                </form>
                 <table class="fl-table">
                     <thead>
                         <tr>
@@ -181,8 +206,8 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     ?>
                                 </td>
                                 <td>
-                                    <select name="bank" onchange="updatebank(this,<?php echo $item['id']; ?>)">
-                                        <!-- <option value="Not Visited">Not Visited</option> -->
+                                    <select name=" bank" onchange="updatebank(this,<?php echo $item['id']; ?>)">
+                                        <!-- <option value=" Not Visited">Not Visited</option> -->
                                         <option value="" disabled selected>Not Visited</option>
                                         <option value="Visited">Visit</option>
                                     </select>

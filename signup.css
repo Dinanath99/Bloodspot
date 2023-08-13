@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000;
+    --second-color: #010005;
+    --big-font: 5rem;
+    --h2-font: 3rem;
+    --p-font: 1.1rem;
+    --main-color: #CF1217;
+    /* --main-color: rgb(234, 28, 28); */
+
+}
+
 body,
 html {
     margin: 0;
@@ -105,7 +118,7 @@ input:focus {
     width: 100%;
     padding: 10px;
     text-align: center;
-    background-color: #ff2d2d;
+    background-color: var(--main-color);
     color: #fff;
     font-family: 'Comfortaa', sans-serif;
     font-size: 16px;
@@ -161,7 +174,7 @@ a:hover {
 }
 
 .home_btn button:hover {
-    
+
     background-color: #f00;
     cursor: pointer;
 }

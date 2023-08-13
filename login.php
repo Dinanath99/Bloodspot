@@ -82,26 +82,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </form>
 
                 <script>
-                    function togglePassword() {
-                        const x = document.getElementById('password');
-                        const show = document.getElementById('hideopen');
-                        const hide = document.getElementById('hideclose');
-                        if (x.type === "password") {
-                            x.type = "text";
-                            show.style.display = "none";
-                            hide.style.display = "block";
-                        } else {
-                            x.type = "password";
-                            show.style.display = "block";
-                            hide.style.display = "none";
-                        }
+                function togglePassword() {
+                    const x = document.getElementById('password');
+                    const show = document.getElementById('hideopen');
+                    const hide = document.getElementById('hideclose');
+                    if (x.type === "password") {
+                        x.type = "text";
+                        show.style.display = "none";
+                        hide.style.display = "block";
+                    } else {
+                        x.type = "password";
+                        show.style.display = "block";
+                        hide.style.display = "none";
                     }
+                }
                 </script>
                 <p>Don't have an account? <a href="user.php">Sign up</a></p>
                 <!-- Add a link to the signup page if needed -->
-                <!-- <div class="home_btn">
-                    <a href="index.php"> <button>Back to home</button></a>
-                </div> -->
+
             </div>
 
         </div>

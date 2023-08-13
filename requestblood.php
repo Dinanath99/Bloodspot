@@ -41,7 +41,7 @@ if (!isset($_SESSION['user_id'])) {
                         <span class="nav-item">Donate Blood</span>
                     </a></li>
                 <li><a class="active" href="requestblood.php">
-                        <i class="fa-solid fa-layer-group"></i>
+                        <i class="fa-solid fa-users"></i>
                         <span class="nav-item">Request Blood</span>
                     </a></li>
                 <li><a href="bloodstock.php">
@@ -49,10 +49,6 @@ if (!isset($_SESSION['user_id'])) {
                         <span class="nav-item">Blood stock</span>
                     </a></li>
 
-                <li><a href="#">
-                        <i class="fas fa-question-circle"></i>
-                        <span class="nav-item">Help</span>
-                    </a></li>
 
             </ul>
         </nav>
@@ -123,7 +119,7 @@ if (!isset($_SESSION['user_id'])) {
 
                     <div class="group quantity">
                         <label for="qty">Quantity</label>
-                        <input type="number" id="qty" name="qty" placeholder="Quantity">
+                        <input type="number" id="qty" name="qty" placeholder="Unit">
                         <div id="qty-error" class="error-message"></div>
                     </div>
 
