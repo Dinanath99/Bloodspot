@@ -246,7 +246,7 @@ th {
 .fl-table th {
     text-align: center;
     padding: 8px;
-
+    word-break: break-all;
 }
 
 .fl-table td {
