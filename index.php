@@ -150,7 +150,7 @@ $totalQuantity = $qty['total_quantity'];
                 <p class="sub_heading">Contact Info</p>
                 <p> Address : Balkumari-02,
                     Lalitpur, Nepal <br>
-                    Phone : +977 1234567 <br>
+                    Phone : +977 98XXXXXXXX <br>
                     Email : team@bloodspot.com</p>
             </div>
             <div class="about_us">

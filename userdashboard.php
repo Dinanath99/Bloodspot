@@ -132,7 +132,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Full Name</th>
+                                    <th>Patient Name</th>
                                     <th>Email</th>
                                     <th>Contact</th>
                                     <th>Date of Birth</th>
@@ -188,7 +188,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                         <thead>
                             <tr>
                                 <th>S.N</th>
-                                <th>Full Name</th>
+                                <th>Patient Name</th>
                                 <th>Email</th>
                                 <th>Contact</th>
                                 <th>Date of Birth</th>
