@@ -94,34 +94,10 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <a href="logoutadmin.php">Logout</a>
                     </div>
                 </div>
-            </div>
-            <!-- <form action="searchdb.php" method="POST">
-                <div id="search">
-                    <label for="search">
-                        <i class="fa-brands fa-searchengin"><input type="text" id="search" name="search" /></i>
-                    </label>
-                    <input type="submit" value="Search">
-                </div>
-            </form> -->
-
-
-            <!-- Search code -->
-            <!-- <?php
-            $name = strtolower($_POST['search']);
-
-            $stmt = $pdo->prepare("SELECT * FROM donatelist where lower(name) LIKE :name");
-            $stmt->bindParam(':name', $name_like);
-            $name_like = '%' . $name . '%';
-            $stmt->execute();
-            $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-            ?> -->
-            <!-- search code ends here -->
-<!-- 
+</div>
+  
             <div class="table-wrapper">
-                <form action="adminsearchdb.php" method="POST" style="background-color:aqua;">
-                    <input type="search" name="search" id="search">
-                </form> -->
+                
                 <table class="fl-table">
                     <thead>
                         <tr>
