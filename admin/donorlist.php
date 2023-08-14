@@ -96,63 +96,60 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </div>
             </div>
 
-    </div>
-
-    <div class="table-wrapper">
-
-        <table class="fl-table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Full Name</th>
-                    <th>Email</th>
-                    <th>Contact</th>
-                    <th>Date of Birth</th>
-                    <th>Gender</th>
-                    <th>Blood Group</th>
-                    <th>Weight</th>
-                    <th>Address</th>
-                    <th>Time Stamp</th>
-                    <th>Donate Status</th>
-                    <th>BloodBank</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php $count = 1;
-                foreach ($value as $item) { ?>
-                <tr>
-                    <td>
-                        <?php echo $count ?>
-                    </td>
-                    <td>
-                        <?php echo $item['name'] ?>
-                    </td>
-                    <td>
-                        <?php echo $item['email'] ?>
-                    </td>
-                    <td>
-                        <?php echo $item['contact'] ?>
-                    </td>
-                    <td>
-                        <?php echo $item['dob'] ?>
-                    </td>
-                    <td>
-                        <?php echo $item['weight'] ?>
-                    </td>
-                    <td>
-                        <?php echo $item['gender'] ?>
-                    </td>
-                    <td>
-                        <?php echo $item['blood_group'] ?>
-                    </td>
-                    <td>
-                        <?php echo $item['address'] ?>
-                    </td>
-                    <td>
-                        <?php echo $item['timestamp'] ?>
-                    </td>
-                    <!-- this code helps to update specific cell e.g status-2  -->
-                    <!-- <td id="status-<?php echo $item['id']; ?>">
+            <div class="table-wrapper">
+                <table class="fl-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Contact</th>
+                            <th>Date of Birth</th>
+                            <th>Gender</th>
+                            <th>Blood Group</th>
+                            <th>Weight</th>
+                            <th>Address</th>
+                            <th>Time Stamp</th>
+                            <th>Donate Status</th>
+                            <th>BloodBank</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php $count = 1;
+                        foreach ($value as $item) { ?>
+                        <tr>
+                            <td>
+                                <?php echo $count ?>
+                            </td>
+                            <td>
+                                <?php echo $item['name'] ?>
+                            </td>
+                            <td>
+                                <?php echo $item['email'] ?>
+                            </td>
+                            <td>
+                                <?php echo $item['contact'] ?>
+                            </td>
+                            <td>
+                                <?php echo $item['dob'] ?>
+                            </td>
+                            <td>
+                                <?php echo $item['weight'] ?>
+                            </td>
+                            <td>
+                                <?php echo $item['gender'] ?>
+                            </td>
+                            <td>
+                                <?php echo $item['blood_group'] ?>
+                            </td>
+                            <td>
+                                <?php echo $item['address'] ?>
+                            </td>
+                            <td>
+                                <?php echo $item['timestamp'] ?>
+                            </td>
+                            <!-- this code helps to update specific cell e.g status-2  -->
+                            <!-- <td id="status-<?php echo $item['id']; ?>">
                                 <?php
                                 $status = $item['status'];
                                 if ($status == 'Accepted' || $status == "Rejected") {
@@ -171,31 +168,31 @@ $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <option class="reject" value="Rejected">Reject</option>
                                 </select>
                             </td> -->
-                    <td id="bank-<?php echo $item['id']; ?>">
-                        <?php
-                            $status = $item['bloodbank'];
-                            if ($status == 'Visited') {
-                                echo $status;
-                            } else {
-                                echo 'Not Visited';
-                            }
-                            ?>
-                    </td>
-                    <td>
-                        <select name=" bank" onchange="updatebank(this,<?php echo $item['id']; ?>)">
-                            <option value="" disabled selected>Not Donated</option>
-                            <option value="Donated">Donate</option>
-                        </select>
-                    </td>
+                            <td id="bank-<?php echo $item['id']; ?>">
+                                <?php
+                                    $status = $item['bloodbank'];
+                                    if ($status == 'Visited') {
+                                        echo $status;
+                                    } else {
+                                        echo 'Not Visited';
+                                    }
+                                    ?>
+                            </td>
+                            <td>
+                                <select name=" bank" onchange="updatebank(this,<?php echo $item['id']; ?>)">
+                                    <option value="" disabled selected>Not Donated</option>
+                                    <option value="Donated">Donate</option>
+                                </select>
+                            </td>
 
-                </tr>
-                <?php $count++;
-                } ?>
+                        </tr>
+                        <?php $count++;
+                        } ?>
 
-            <tbody>
-        </table>
-    </div>
-    </section>
+                    <tbody>
+                </table>
+            </div>
+        </section>
     </div>
     <script>
     // function updateStatus(selectElement, donorId) {
